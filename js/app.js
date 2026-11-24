@@ -29,7 +29,6 @@
     });
   }
 
-  // إغلاق تلقائي بعد 1.8 ثانية
   autoHideTimer = setTimeout(hideIntro, 1800);
 })();
 
@@ -61,7 +60,6 @@
     items.forEach((item) => observer.observe(item));
   }
 
-  // ضمان إظهار كل العناصر حتى لا يبقى أي قسم مخفيًا بعد اختفاء شاشة البداية
   setTimeout(() => {
     items.forEach(showElement);
   }, 500);
@@ -186,30 +184,28 @@
     }
   }
 
-  if (!window.YT) {
-    const tag = document.createElement('script');
-    tag.src = 'https://www.youtube.com/iframe_api';
-    document.head.appendChild(tag);
-  }
+  function createPlayer() {
+    if (ytPlayer || !window.YT || !window.YT.Player) return;
 
-  const prevReady = window.onYouTubeIframeAPIReady;
-  window.onYouTubeIframeAPIReady = function () {
-    if (typeof prevReady === 'function') prevReady();
+    const vars = {
+      controls: 0,
+      disablekb: 1,
+      fs: 0,
+      iv_load_policy: 3,
+      modestbranding: 1,
+      rel: 0,
+      playsinline: 1,
+    };
+
+    if (window.location.protocol.startsWith('http')) {
+      vars.origin = window.location.origin;
+    }
 
     ytPlayer = new window.YT.Player('yt-intro-player', {
       videoId: VIDEO_ID,
       width: '100%',
       height: '100%',
-      playerVars: {
-        controls: 0,
-        disablekb: 1,
-        fs: 0,
-        iv_load_policy: 3,
-        modestbranding: 1,
-        rel: 0,
-        playsinline: 1,
-        origin: window.location.origin,
-      },
+      playerVars: vars,
       events: {
         onReady: (event) => {
           const vol = event.target.getVolume ? event.target.getVolume() : 100;
@@ -228,7 +224,23 @@
         },
       },
     });
-  };
+  }
+
+  if (window.YT && window.YT.Player) {
+    createPlayer();
+  } else {
+    const existingScript = document.querySelector('script[src="https://www.youtube.com/iframe_api"]');
+    if (!existingScript) {
+      const tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+      document.head.appendChild(tag);
+    }
+    const prevReady = window.onYouTubeIframeAPIReady;
+    window.onYouTubeIframeAPIReady = function () {
+      if (typeof prevReady === 'function') prevReady();
+      createPlayer();
+    };
+  }
 
   if (surfaceToggle) {
     surfaceToggle.addEventListener('click', togglePlayPause);
