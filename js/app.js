@@ -33,6 +33,40 @@
   autoHideTimer = setTimeout(hideIntro, 1800);
 })();
 
+/* ==================== REVEAL ITEMS ON SCROLL & LOAD ==================== */
+(function initRevealItems() {
+  const items = document.querySelectorAll('.reveal-item');
+  if (!items.length) return;
+
+  function showElement(el) {
+    el.classList.add('visible', 'revealed', 'is-visible', 'active', 'show');
+    el.style.opacity = '1';
+    el.style.transform = 'none';
+    el.style.visibility = 'visible';
+  }
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            showElement(entry.target);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.05 }
+    );
+
+    items.forEach((item) => observer.observe(item));
+  }
+
+  // ضمان إظهار كل العناصر حتى لا يبقى أي قسم مخفيًا بعد اختفاء شاشة البداية
+  setTimeout(() => {
+    items.forEach(showElement);
+  }, 500);
+})();
+
 /* ==================== STARRY PARTICLE CANVAS ==================== */
 (function initParticleCanvas() {
   const canvas = document.getElementById('particle-canvas');
