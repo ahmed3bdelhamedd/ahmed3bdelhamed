@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="favicon.svg" />
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=3.5" />
+  <link rel="stylesheet" href="css/style.css?v=3.6" />
 </head>
 <body class="antialiased">
 
@@ -410,7 +410,15 @@
           <h2 class="section-heading" data-i18n="Video.heading">A short introduction</h2>
           <p class="section-subheading mx-auto mt-4" data-i18n="Video.subheading">A quick video about who I am and what I work on.</p>
         </div>
-        <div id="intro-video-frame" class="video-frame glass-card reveal-item"></div>
+        <div id="intro-video-frame" class="video-frame glass-card reveal-item overflow-hidden">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/YUjKYepiFJo?rel=0"
+            title="Ahmed Abdelhamed Introduction Video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            class="w-full h-full min-h-[320px] sm:min-h-[480px] rounded-2xl border-0"
+          ></iframe>
+        </div>
       </div>
     </section>
 
@@ -579,25 +587,45 @@
         </div>
 
         <article class="my-course glass-card reveal-item">
-          <div class="my-course-cover">
-            <img src="images/my-course.jpg" alt="My course" loading="lazy" onerror="this.style.display='none'" />
-          </div>
+          <a
+            href="https://couesese.ahmedabdelhamed.com/course?slug=linkedin-growth-engine-2026-from-profile-to-placement"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="my-course-cover block"
+            aria-label="LinkedIn Growth Engine 2026: From Profile to Placement"
+          >
+            <img src="images/my-course.jpg" alt="LinkedIn Growth Engine 2026: From Profile to Placement" loading="lazy" onerror="this.style.display='none'" />
+          </a>
           <div>
             <span class="my-course-tag" data-i18n="MyCourse.badge">My own course</span>
-            <h3 class="text-2xl sm:text-3xl font-bold text-foreground mb-3" data-i18n="MyCourse.title">Your course title here</h3>
-            <p class="text-muted-foreground leading-relaxed" data-i18n="MyCourse.desc">Short description: who the course is for, what students learn, and the outcome.</p>
+            <h3 class="text-2xl sm:text-3xl font-bold text-foreground mb-3">
+              <a
+                href="https://couesese.ahmedabdelhamed.com/course?slug=linkedin-growth-engine-2026-from-profile-to-placement"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:text-primary transition-colors"
+                data-i18n="MyCourse.title"
+              >
+                LinkedIn Growth Engine 2026: From Profile to Placement
+              </a>
+            </h3>
+            <p class="text-muted-foreground leading-relaxed" data-i18n="MyCourse.desc">A practical roadmap to optimize your LinkedIn profile, build authority, and turn connections into real career opportunities and placements.</p>
             <ul>
-              <li data-i18n="MyCourse.point1">Learning outcome one</li>
-              <li data-i18n="MyCourse.point2">Learning outcome two</li>
-              <li data-i18n="MyCourse.point3">Learning outcome three</li>
+              <li data-i18n="MyCourse.point1">Position and optimize your profile to attract recruiters and clients</li>
+              <li data-i18n="MyCourse.point2">Create high-signal content and outreach workflows that drive growth</li>
+              <li data-i18n="MyCourse.point3">Convert profile visibility into interviews, offers, and placement</li>
             </ul>
             <div class="flex flex-wrap gap-2 text-xs text-muted-foreground mb-6">
-              <span class="px-2 py-1 rounded-md bg-muted/50" data-i18n="MyCourse.level">Level: Beginner</span>
-              <span class="px-2 py-1 rounded-md bg-muted/50" data-i18n="MyCourse.duration">Duration: -- hours</span>
-              <span class="px-2 py-1 rounded-md bg-muted/50" data-i18n="MyCourse.language">Language: Arabic</span>
+              <span class="px-2 py-1 rounded-md bg-muted/50" data-i18n="MyCourse.level">Level: All Levels</span>
+              <span class="px-2 py-1 rounded-md bg-muted/50" data-i18n="MyCourse.duration">Self-paced</span>
+              <span class="px-2 py-1 rounded-md bg-muted/50" data-i18n="MyCourse.language">Language: Arabic / English</span>
             </div>
-            <!-- Replace the href with your real course link if you have one (Udemy, YouTube, Drive...) -->
-            <a href="https://wa.me/201116512028" target="_blank" rel="noreferrer" class="btn-primary inline-flex items-center gap-2">
+            <a
+              href="https://couesese.ahmedabdelhamed.com/course?slug=linkedin-growth-engine-2026-from-profile-to-placement"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-primary inline-flex items-center gap-2"
+            >
               <span data-i18n="MyCourse.enroll">Enroll now</span>
             </a>
           </div>
@@ -1046,7 +1074,7 @@
   </div>
 
   <!-- Scripts -->
-  <script src="js/translations.js?v=3.5"></script>
-  <script src="js/app.js?v=3.5"></script>
+  <script src="js/translations.js?v=3.6"></script>
+  <script src="js/app.js?v=3.6"></script>
 </body>
 </html>
