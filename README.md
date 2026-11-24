@@ -9,7 +9,7 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Ahmed%20Abdelhamed-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ahmed3bdelhamed/)
 [![Behance](https://img.shields.io/badge/Behance-Portfolio-1769FF?style=for-the-badge&logo=behance&logoColor=white)](https://www.behance.net/ahmedabdelhamed14)
 [![WhatsApp](https://img.shields.io/badge/WhatsApp-01116512028-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/201116512028)
-[![Email](https://img.shields.io/badge/Email-Contact%20Me-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:ahmed3bdelhamedwork@gmail.com)
+[![Email](https://img.shields.io/badge/Email-Contact%20Me-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:info@ahmedabdelhamed.com)
 
 </div>
 
@@ -21,7 +21,6 @@
 
 أؤمن بأن القيمة الحقيقية لا تأتي من الأرقام وحدها ولا من التصميم وحده، بل من دمج **دقة المحاسبة والتحليل المالي** مع **قوة التكنولوجيا والهوية البصرية** لبناء أنظمة وتقارير ومنتجات رقمية تصنع فرقًا ملموسًا.
 
-> **"I don't just analyze numbers or build interfaces—I build ecosystems where financial precision, data intelligence, and creative execution drive real growth."**
 
 ---
 
@@ -62,7 +61,6 @@
 يسعدني دائمًا التواصل لمناقشة فرص العمل، التعاون في المشاريع، أو الاستشارات في مجالات التحليل المالي، البيانات، والحلول الرقمية:
 
 - 💼 **LinkedIn:** [linkedin.com/in/ahmed3bdelhamed](https://www.linkedin.com/in/ahmed3bdelhamed/)
-- 📧 **البريد الإلكتروني:** [ahmed3bdelhamedwork@gmail.com](mailto:ahmed3bdelhamedwork@gmail.com)
 - 📱 **واتساب / هاتف:** [`01116512028`](https://wa.me/201116512028)
 - 🌐 **الموقع الإلكتروني:** [ahmedabdelhamed.com](https://www.ahmedabdelhamed.com/)
 - 📍 **الموقع:** القاهرة، مصر (Cairo, Egypt)
