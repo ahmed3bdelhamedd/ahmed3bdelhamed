@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experience & Internships | Ahmed Abdelhamed</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: { surfaceDark: '#06080e', cardDark: '#0d121f', surfaceLight: '#f5f7fb' },
+          fontFamily: { arabic: ['Cairo', 'sans-serif'], english: ['Plus Jakarta Sans', 'sans-serif'] }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-surfaceLight text-slate-900 dark:bg-surfaceDark dark:text-slate-100 font-arabic antialiased selection:bg-emerald-500 selection:text-white">
+
+  <div class="ambient-bg" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <header class="sticky top-0 z-50 border-b border-slate-200/80 dark:border-white/10 bg-white/80 dark:bg-surfaceDark/80 backdrop-blur-2xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <span class="w-11 h-11 rounded-2xl bg-gradient-to-br from-emerald-500 via-teal-500 to-indigo-600 text-white font-black text-xl flex items-center justify-center shadow-lg shadow-emerald-500/20">A</span>
+        <div class="leading-tight">
+          <div class="font-extrabold text-base sm:text-lg" data-i18n="brand_name">أحمد عبد الحميد</div>
+          <div class="text-[11px] text-slate-500 dark:text-slate-400 font-bold">FINANCE • SAP FICO • BI</div>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-bold text-slate-600 dark:text-slate-300">
+        <a href="index.html" class="nav-item" data-i18n="nav_home">الرئيسية</a>
+        <a href="experience.html" class="nav-item active" data-i18n="nav_exp">الخبرات والتدريبات</a>
+        <a href="projects.html" class="nav-item" data-i18n="nav_projects">المشاريع والشهادات</a>
+        <a href="contact.html" class="px-5 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white transition font-extrabold" data-i18n="nav_contact">تواصل معي</a>
+      </nav>
+
+      <div class="flex items-center gap-2.5">
+        <button id="langToggle" type="button" class="px-3.5 py-2 rounded-full border border-slate-300 dark:border-white/15 bg-white/60 dark:bg-white/5 text-xs font-extrabold flex items-center gap-1.5">
+          <i class="fa-solid fa-language text-emerald-400 text-sm"></i>
+          <span id="langLabel">EN</span>
+        </button>
+        <button id="themeToggle" type="button" aria-label="Toggle Theme" class="w-10 h-10 rounded-full border border-slate-300 dark:border-white/15 bg-white/60 dark:bg-white/5 flex items-center justify-center">
+          <i id="themeIcon" class="fa-solid fa-sun text-amber-400"></i>
+        </button>
+        <button id="mobileMenuBtn" type="button" aria-label="Menu" class="lg:hidden w-10 h-10 rounded-full border border-slate-300 dark:border-white/15 flex items-center justify-center">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobileMenu" class="hidden lg:hidden px-4 pb-6 pt-3 space-y-2.5 border-t border-slate-200 dark:border-white/10 bg-white/95 dark:bg-surfaceDark/95">
+      <a href="index.html" class="block py-2 font-bold" data-i18n="nav_home">الرئيسية</a>
+      <a href="experience.html" class="block py-2 font-bold text-emerald-400" data-i18n="nav_exp">الخبرات والتدريبات</a>
+      <a href="projects.html" class="block py-2 font-bold" data-i18n="nav_projects">المشاريع والشهادات</a>
+      <a href="contact.html" class="block py-3 text-center rounded-2xl bg-emerald-600 text-white font-extrabold" data-i18n="nav_contact">تواصل معي</a>
+    </div>
+  </header>
+
+  <main class="py-16">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-12">
+        <span class="tag-pill mb-3 inline-block">PROFESSIONAL EXPERIENCE</span>
+        <h1 class="text-3xl sm:text-5xl font-black mb-3" data-i18n="exp_page_title">الخبرات المهنية والتدريبات المصرفية</h1>
+        <p class="text-slate-600 dark:text-slate-400" data-i18n="exp_page_sub">تفاصيل الأدوار العملية والبنكية والمحاسبية والإدارية وفق السيرة الذاتية.</p>
+      </div>
+
+      <div class="space-y-5">
+        <article class="exp-card border-s-4 border-s-emerald-500">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <h2 class="text-lg font-extrabold">Ahl Masr Foundation — Junior Financial Analyst</h2>
+            <span class="exp-badge bg-emerald-500/15 text-emerald-400">Sep 2026 – Oct 2026</span>
+          </div>
+          <p class="text-xs font-bold text-slate-500 mb-3">Cairo, Egypt • Ahl Masr Burn Hospital (SAP FICO)</p>
+          <ul class="exp-list" data-i18n="exp_ahlmasr">
+            <li>تنفيذ ومراجعة المعاملات على نظام SAP FICO في مستشفى أهل مصر لعلاج الحروق عبر 6 عمليات مالية أساسية تشمل AP و AR ومحاسبة البنوك.</li>
+            <li>تسجيل قيود الموردين والبنوك وتطبيق المعالجة الضريبية لضرائب الخصم والتحصيل (Withholding Tax).</li>
+            <li>تحليل تدفقات المعاملات بين الأقسام المحاسبية للتحقق من التوجيه المحاسبي والرقابة المالية.</li>
+          </ul>
+        </article>
+
+        <article class="exp-card">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <h2 class="text-lg font-extrabold">Ahmed Abdelhamed Academy — Founder</h2>
+            <span class="exp-badge bg-indigo-500/15 text-indigo-400">Sep 2026 – Present</span>
+          </div>
+          <p class="text-xs font-bold text-slate-500 mb-3">Cairo, Egypt</p>
+          <ul class="exp-list" data-i18n="exp_academy">
+            <li>تأسيس أكاديمية لتقديم دورات عملية في Excel، تحليل البيانات، لوحات Power BI، وجودة البيانات.</li>
+            <li>تصميم مسارات تدريبية تركز على التقارير المالية والبيانات الدقيقة لدعم القرار.</li>
+          </ul>
+        </article>
+
+        <article class="exp-card">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <h2 class="text-lg font-extrabold">CIB Egypt — Personal Banker; Banker (EBSM)</h2>
+            <span class="exp-badge bg-sky-500/15 text-sky-400">Jul 2026 – Aug 2026</span>
+          </div>
+          <p class="text-xs font-bold text-slate-500 mb-3">Cairo, Egypt • Egyptian Banking System Model</p>
+          <ul class="exp-list" data-i18n="exp_cib">
+            <li>العمل كـ Personal Banker ضمن EBSM ودعم العمليات المصرفية للعملاء، استكمالاً لتدريب CIB الصيفي 2025 في التمويل المستدام وإدارة المخاطر والتحول الرقمي.</li>
+          </ul>
+        </article>
+
+        <article class="exp-card">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <h2 class="text-lg font-extrabold">Yasser Abdel Mageed Accounting & Tax Office — Junior Accountant Trainee</h2>
+            <span class="exp-badge bg-emerald-500/15 text-emerald-400">Jan 2026 – Mar 2026</span>
+          </div>
+          <p class="text-xs font-bold text-slate-500 mb-3">Cairo, Egypt</p>
+          <ul class="exp-list" data-i18n="exp_yasser">
+            <li>المساعدة في العمليات المحاسبية اليومية، إعداد التقارير المالية، دعم الضرائب، وإدخال البيانات على Excel لمدة 3 أشهر.</li>
+          </ul>
+        </article>
+
+        <article class="exp-card">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <h2 class="text-lg font-extrabold">TO-BIM — Digital Creative Specialist (prev. Senior Graphic Designer)</h2>
+            <span class="exp-badge bg-indigo-500/15 text-indigo-400">Jul 2025 – Present</span>
+          </div>
+          <p class="text-xs font-bold text-slate-500 mb-3">Cairo, Egypt</p>
+          <ul class="exp-list" data-i18n="exp_tobim">
+            <li>تقديم التصميم البصري، تطوير الويب، والموشن جرافيك، وبناء نظام إدخال بيانات لعميل عيادة طبية.</li>
+          </ul>
+        </article>
+
+        <article class="exp-card">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <h2 class="text-lg font-extrabold">Smart Career Hub (Co-Founder) & GDG On Campus Future Academy (PR Leader)</h2>
+            <span class="exp-badge bg-violet-500/15 text-violet-400">Nov 2025 – Present</span>
+          </div>
+          <p class="text-xs font-bold text-slate-500 mb-3">Cairo & El Obour, Egypt</p>
+          <ul class="exp-list" data-i18n="exp_ventures">
+            <li>المشاركة في تأسيس وقيادة Smart Career Hub، وقيادة العلاقات العامة والتصميم البصري في GDG On Campus Future Academy.</li>
+          </ul>
+        </article>
+
+        <article class="exp-card">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <h2 class="text-lg font-extrabold">Andalusia Dental Clinic — Data Analysis Manager (prev. Graphic Designer)</h2>
+            <span class="exp-badge bg-cyan-500/15 text-cyan-400">May 2024 – Jan 2026</span>
+          </div>
+          <p class="text-xs font-bold text-slate-500 mb-3">Cairo, Egypt (21 Months)</p>
+          <ul class="exp-list" data-i18n="exp_andalusia">
+            <li>إدارة أنشطة تحليل البيانات لمدة 21 شهراً وتنظيم بيانات المرضى والتصميمات الترويجية للعيادة.</li>
+          </ul>
+        </article>
+
+        <article class="exp-card">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <h2 class="text-lg font-extrabold">HMT Group — Financial Auditor; Data Entry Specialist</h2>
+            <span class="exp-badge bg-amber-500/15 text-amber-400">Dec 2024 – Feb 2025</span>
+          </div>
+          <p class="text-xs font-bold text-slate-500 mb-3">Cairo, Egypt</p>
+          <ul class="exp-list" data-i18n="exp_hmt">
+            <li>إدخال البيانات المالية بدقة ومراجعة العقود والمساهمة في خفض تكاليف التشغيل بنسبة 15%.</li>
+          </ul>
+        </article>
+
+        <article class="exp-card">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <h2 class="text-lg font-extrabold">Resala Charity Organization — Graphic Design Specialist (Volunteer)</h2>
+            <span class="exp-badge bg-rose-500/15 text-rose-400">Jul 2019 – May 2025</span>
+          </div>
+          <p class="text-xs font-bold text-slate-500 mb-3">Cairo, Egypt (5 Years 11 Months)</p>
+          <ul class="exp-list" data-i18n="exp_resala">
+            <li>العمل التطوعي في اللجنة المركزية للدعاية وتعييني ممثلاً للجنة لقيادة الأنشطة الترويجية.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="mt-14">
+        <h2 class="text-2xl font-black mb-6" data-i18n="bank_title">البرامج التدريبية المصرفية والمالية</h2>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="train-card">
+            <div class="font-extrabold text-sm">Banque Misr — Student Intern; Summer Internship (3 Placements)</div>
+            <div class="text-xs text-emerald-400 font-bold mt-1">Jun 2025 – Feb 2026</div>
+          </div>
+          <div class="train-card">
+            <div class="font-extrabold text-sm">Central Bank of Egypt — Youth Financial Literacy & Bank Credit Orientation</div>
+            <div class="text-xs text-emerald-400 font-bold mt-1">Jul 2025 – Nov 2025</div>
+          </div>
+          <div class="train-card">
+            <div class="font-extrabold text-sm">CIB Egypt — Accountant; Summer Internship Program 2025</div>
+            <div class="text-xs text-emerald-400 font-bold mt-1">Jul 2025 – Aug 2025</div>
+          </div>
+          <div class="train-card">
+            <div class="font-extrabold text-sm">EBANK / EGBANK — Accounting Intern; Accountant</div>
+            <div class="text-xs text-emerald-400 font-bold mt-1">Oct 2025 – Nov 2025</div>
+          </div>
+          <div class="train-card">
+            <div class="font-extrabold text-sm">Egyptian Banking System Model (EBSM) — Banking Trainee</div>
+            <div class="text-xs text-emerald-400 font-bold mt-1">Aug 2025 – Jan 2026</div>
+          </div>
+          <div class="train-card">
+            <div class="font-extrabold text-sm">TIEC, IFC, JBS Training & Consulting, SAS, EBI — Internship Trainee</div>
+            <div class="text-xs text-emerald-400 font-bold mt-1">Jul 2025 – Oct 2025</div>
+          </div>
+          <div class="train-card">
+            <div class="font-extrabold text-sm">Sanad for Alternative Parental Care — Research Assistant & Coordinator</div>
+            <div class="text-xs text-emerald-400 font-bold mt-1">Mar 2023 – Sep 2024</div>
+          </div>
+          <div class="train-card">
+            <div class="font-extrabold text-sm">Print-Academy — Printing Technician</div>
+            <div class="text-xs text-emerald-400 font-bold mt-1">Feb 2025 – Mar 2025</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="py-8 border-t border-slate-200 dark:border-white/10 text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p data-i18n="footer_rights">© 2026 أحمد عبد الحميد. جميع الحقوق محفوظة.</p>
+      <div class="flex items-center gap-5 font-bold">
+        <a href="index.html" class="hover:text-emerald-400" data-i18n="nav_home">الرئيسية</a>
+        <a href="experience.html" class="hover:text-emerald-400" data-i18n="nav_exp">الخبرات والتدريبات</a>
+        <a href="projects.html" class="hover:text-emerald-400" data-i18n="nav_projects">المشاريع والشهادات</a>
+        <a href="contact.html" class="hover:text-emerald-400" data-i18n="nav_contact">تواصل معي</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
