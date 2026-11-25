@@ -54,6 +54,26 @@ html.dark .surface-panel {
   border-color: rgba(52, 211, 153, 0.45);
 }
 
+/* Cover Image Frame */
+.cover-frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  border: 1px solid #e4e4e7;
+  background: #111115;
+}
+
+html.dark .cover-frame {
+  border-color: #27272a;
+}
+
+.cover-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .role-row {
   padding-block: 1.5rem;
   border-bottom: 1px solid #e4e4e7;
