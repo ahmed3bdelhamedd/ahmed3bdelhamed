@@ -11,6 +11,18 @@
     document.body.style.filter = 'none';
     document.body.style.backdropFilter = 'none';
 
+    const navbarEl = document.getElementById('main-navbar');
+    if (navbarEl) {
+      navbarEl.style.position = 'fixed';
+      navbarEl.style.top = '0';
+      navbarEl.style.left = '0';
+      navbarEl.style.right = '0';
+      navbarEl.style.zIndex = '999';
+      navbarEl.style.opacity = '1';
+      navbarEl.style.visibility = 'visible';
+      navbarEl.style.filter = 'none';
+    }
+
     const mainEl = document.querySelector('main');
     if (mainEl) {
       mainEl.style.opacity = '1';
@@ -382,8 +394,16 @@
     backdrop.addEventListener('click', () => setDrawerState(false));
   }
 
-  document.querySelectorAll('#mobile-menu-drawer a[href^="#"]').forEach((link) => {
-    link.addEventListener('click', () => setDrawerState(false));
+  document.querySelectorAll('[data-scroll-target]').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const selector = link.getAttribute('data-scroll-target');
+      const target = selector ? document.querySelector(selector) : null;
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      setDrawerState(false);
+    });
   });
 
   const floatBtn = document.getElementById('floating-scroll-btn');
