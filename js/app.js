@@ -1,3 +1,37 @@
+/* ==================== FORCE PAGE VISIBILITY GUARD ==================== */
+(function ensurePageVisible() {
+  function revealAll() {
+    document.documentElement.style.opacity = '1';
+    document.documentElement.style.visibility = 'visible';
+    document.body.style.opacity = '1';
+    document.body.style.visibility = 'visible';
+
+    const mainEl = document.querySelector('main');
+    if (mainEl) {
+      mainEl.style.opacity = '1';
+      mainEl.style.visibility = 'visible';
+      mainEl.style.display = 'block';
+    }
+
+    document.querySelectorAll('section, .reveal-item').forEach((el) => {
+      el.classList.add('visible', 'revealed', 'is-visible', 'active', 'show');
+      el.style.opacity = '1';
+      el.style.visibility = 'visible';
+      if (el.classList.contains('reveal-item')) {
+        el.style.transform = 'none';
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', revealAll);
+  } else {
+    revealAll();
+  }
+  window.addEventListener('load', revealAll);
+  setTimeout(revealAll, 400);
+})();
+
 /* ==================== INTRO SCREEN (FORCE CLOSE) ==================== */
 (function initIntroScreen() {
   const introScreen = document.getElementById('intro-screen');
@@ -375,6 +409,9 @@
 
     if (lang === 'ar' && typeof window.TRANSLATIONS !== 'undefined' && window.TRANSLATIONS.ar) {
       const dict = window.TRANSLATIONS.ar;
+      if (dict.meta && dict.meta.title) {
+        document.title = dict.meta.title;
+      }
       document.querySelectorAll('[data-i18n]').forEach((el) => {
         const keys = el.getAttribute('data-i18n').split('.');
         let val = dict;
