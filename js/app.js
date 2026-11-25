@@ -590,7 +590,6 @@ function closeProjectModal() {
 renderCertificate();
 setInterval(nextCertificate, 4000);
 
-/* ==================== CONTACT FORM (TELEGRAM) ==================== */
 /* ==================== CONTACT FORM (PHP API) ==================== */
 (function initContactForm() {
   const form = document.getElementById('contact-form');
