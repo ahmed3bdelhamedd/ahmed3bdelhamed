@@ -3,20 +3,29 @@
   function revealAll() {
     document.documentElement.style.opacity = '1';
     document.documentElement.style.visibility = 'visible';
+    document.documentElement.style.filter = 'none';
+    document.documentElement.style.backdropFilter = 'none';
+
     document.body.style.opacity = '1';
     document.body.style.visibility = 'visible';
+    document.body.style.filter = 'none';
+    document.body.style.backdropFilter = 'none';
 
     const mainEl = document.querySelector('main');
     if (mainEl) {
       mainEl.style.opacity = '1';
       mainEl.style.visibility = 'visible';
       mainEl.style.display = 'block';
+      mainEl.style.filter = 'none';
+      mainEl.style.backdropFilter = 'none';
     }
 
     document.querySelectorAll('section, .reveal-item').forEach((el) => {
       el.classList.add('visible', 'revealed', 'is-visible', 'active', 'show');
       el.style.opacity = '1';
       el.style.visibility = 'visible';
+      el.style.filter = 'none';
+      el.style.backdropFilter = 'none';
       if (el.classList.contains('reveal-item')) {
         el.style.transform = 'none';
       }
@@ -29,7 +38,7 @@
     revealAll();
   }
   window.addEventListener('load', revealAll);
-  setTimeout(revealAll, 400);
+  setTimeout(revealAll, 300);
 })();
 
 /* ==================== INTRO SCREEN (FORCE CLOSE) ==================== */
@@ -46,14 +55,18 @@
     isHidden = true;
     if (autoHideTimer) clearTimeout(autoHideTimer);
 
-    introScreen.style.transition = 'opacity 0.25s ease';
+    introScreen.style.transition = 'opacity 0.2s ease';
     introScreen.style.opacity = '0';
     introScreen.style.visibility = 'hidden';
     introScreen.style.pointerEvents = 'none';
+    introScreen.style.backdropFilter = 'none';
+    introScreen.style.webkitBackdropFilter = 'none';
+    introScreen.style.filter = 'none';
 
     setTimeout(() => {
       introScreen.style.setProperty('display', 'none', 'important');
-    }, 260);
+      introScreen.remove();
+    }, 220);
   }
 
   if (skipBtn) {
@@ -76,6 +89,7 @@
     el.style.opacity = '1';
     el.style.transform = 'none';
     el.style.visibility = 'visible';
+    el.style.filter = 'none';
   }
 
   if ('IntersectionObserver' in window) {
@@ -96,7 +110,7 @@
 
   setTimeout(() => {
     items.forEach(showElement);
-  }, 500);
+  }, 400);
 })();
 
 /* ==================== STARRY PARTICLE CANVAS ==================== */
