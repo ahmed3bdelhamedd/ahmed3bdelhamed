@@ -16,7 +16,16 @@ html {
   font-variant-numeric: tabular-nums;
 }
 
-/* Top navigation underline */
+/* Subtle modern top glow */
+.hero-glow {
+  background: radial-gradient(600px circle at 50% 0%, rgba(16, 185, 129, 0.12), transparent 70%);
+}
+
+html:not(.dark) .hero-glow {
+  background: radial-gradient(600px circle at 50% 0%, rgba(5, 150, 105, 0.08), transparent 70%);
+}
+
+/* Navigation active indicator */
 .nav-link {
   position: relative;
   padding-block: 0.25rem;
@@ -34,15 +43,16 @@ html {
   inset-inline: 0;
   bottom: -4px;
   height: 1.5px;
+  border-radius: 9999px;
   background: var(--accent);
 }
 
-/* Clean surface rows & cards */
+/* Cards & Panels */
 .surface-panel {
   background: #ffffff;
   border: 1px solid #e4e4e7;
   border-radius: 1rem;
-  transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
 html.dark .surface-panel {
@@ -51,16 +61,16 @@ html.dark .surface-panel {
 }
 
 .surface-panel:hover {
-  border-color: rgba(52, 211, 153, 0.45);
+  border-color: rgba(16, 185, 129, 0.45);
 }
 
-/* Cover Image Frame */
 .cover-frame {
   position: relative;
   overflow: hidden;
   border-radius: 1.25rem;
   border: 1px solid #e4e4e7;
   background: #111115;
+  box-shadow: 0 20px 40px -24px rgba(0, 0, 0, 0.35);
 }
 
 html.dark .cover-frame {
@@ -90,17 +100,17 @@ html.dark .role-row {
 .pill-badge {
   display: inline-flex;
   align-items: center;
-  padding: 0.25rem 0.7rem;
+  padding: 0.3rem 0.75rem;
   border-radius: 9999px;
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   background: var(--accent-soft);
   color: var(--accent);
 }
 
 .chip {
   display: inline-block;
-  padding: 0.3rem 0.65rem;
+  padding: 0.32rem 0.68rem;
   border-radius: 0.5rem;
   font-size: 0.75rem;
   font-weight: 500;
