@@ -591,56 +591,55 @@ renderCertificate();
 setInterval(nextCertificate, 4000);
 
 /* ==================== CONTACT FORM (TELEGRAM) ==================== */
+/* ==================== CONTACT FORM (PHP API) ==================== */
 (function initContactForm() {
   const form = document.getElementById('contact-form');
   const statusEl = document.getElementById('form-status-msg');
+  const submitBtn = document.getElementById('form-submit-btn');
   if (!form || !statusEl) return;
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const formData = new FormData(form);
-    const name = (formData.get('name') || '').toString().trim();
-    const email = (formData.get('email') || '').toString().trim();
-    const phone = (formData.get('phone') || '').toString().trim();
-    const message = (formData.get('message') || '').toString().trim();
 
-    if (!name || !email || !message) {
+    const formData = new FormData(form);
+    const payload = {
+      name: (formData.get('name') || '').toString().trim(),
+      email: (formData.get('email') || '').toString().trim(),
+      phone: (formData.get('phone') || '').toString().trim(),
+      message: (formData.get('message') || '').toString().trim(),
+    };
+
+    if (!payload.name || !payload.email || !payload.message) {
       statusEl.textContent = 'Please fill in all required fields.';
       return;
     }
 
-    const BOT_TOKEN = '';
-    const CHAT_ID = '';
-
-    if (!BOT_TOKEN || !CHAT_ID) {
-      statusEl.textContent = 'Message validated. Configure Telegram Bot Token & Chat ID in js/app.js to deliver messages.';
-      form.reset();
-      return;
-    }
-
-    const text = [
-      'New Portfolio Message:',
-      `Name: ${name}`,
-      `Email: ${email}`,
-      `Phone: ${phone || 'N/A'}`,
-      `Message: ${message}`,
-    ].join('\n');
+    if (submitBtn) submitBtn.disabled = true;
+    statusEl.textContent = 'Sending…';
 
     try {
-      const res = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+      const res = await fetch('api/contact.php', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ chat_id: CHAT_ID, text }),
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify(payload),
       });
 
-      if (res.ok) {
-        statusEl.textContent = 'Message sent successfully.';
+      const contentType = res.headers.get('content-type') || '';
+      const data = contentType.includes('application/json') ? await res.json() : null;
+
+      if (res.ok && (!data || data.ok !== false)) {
+        statusEl.textContent = (data && data.message) || 'Message sent successfully.';
         form.reset();
       } else {
-        statusEl.textContent = 'Failed to send message. Please try again.';
+        statusEl.textContent = (data && data.message) || 'Failed to send message. Please try again.';
       }
     } catch {
-      statusEl.textContent = 'Network error while sending message.';
+      statusEl.textContent = 'Unable to reach api/contact.php. Make sure your host supports PHP.';
+    } finally {
+      if (submitBtn) submitBtn.disabled = false;
     }
   });
 })();
