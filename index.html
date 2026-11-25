@@ -1,1235 +1,579 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl" class="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ahmed Abdelhamed | Financial Analyst, Data Analysis & SAP FICO</title>
-  <meta name="description" content="Ahmed Abdelhamed is a Financial Analyst, Business Information Systems student, and Digital Creative Specialist focused on SAP FICO, data analysis, Power BI, SQL, and UI/UX web design." />
-  <meta name="keywords" content="Ahmed Abdelhamed, Financial Analyst, Data Analysis, SAP FICO, Business Information Systems, Power BI, Excel, Accounting, UI/UX, Graphic Design" />
-  <meta name="author" content="Ahmed Abdelhamed" />
+  <title>Ahmed Abdelhamed | Financial Analyst, Full-Stack Developer & Founder</title>
+  <meta name="description" content="Official Portfolio of Ahmed Abdelhamed - Junior Financial Analyst (SAP FICO), Full-Stack Web Developer, Digital Creative Specialist, and Founder of Ahmed Abdelhamed Academy & Smart Career Hub." />
   
-  <!-- Open Graph / Meta -->
-  <meta property="og:title" content="Ahmed Abdelhamed | Financial Analyst, Data Analysis & SAP FICO" />
-  <meta property="og:description" content="Financial analysis, SAP FICO, data analysis, business systems, and visual design." />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Ahmed Abdelhamed Portfolio" />
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="alternate icon" href="favicon.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="favicon.svg" />
-
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=4.0" />
+  <!-- Google Fonts: Cairo & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#3b82f6',
+            secondary: '#10b981',
+            darkBg: '#090d16',
+            darkCard: '#111827',
+          },
+          fontFamily: {
+            arabic: ['Cairo', 'sans-serif'],
+            english: ['Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="antialiased">
+<body class="bg-slate-50 text-slate-900 dark:bg-darkBg dark:text-slate-100 transition-colors duration-300 font-arabic antialiased selection:bg-blue-600 selection:text-white">
 
-  <!-- Interactive Starry Canvas Background -->
-  <canvas id="particle-canvas"></canvas>
-
-  <!-- Ultra-Polished Animated Intro Screen -->
-  <div id="intro-screen" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
-    <div class="intro-glow"></div>
-    <div class="intro-glow-secondary"></div>
-    <div class="intro-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; margin: 0 auto; width: 100%;">
-      <div class="intro-badge" style="margin: 0 auto 1.5rem auto;">
-        <span class="intro-badge-dot"></span>
-        <span>PORTFOLIO 2026</span>
-      </div>
-      <h1 class="intro-name" style="text-align: center; margin: 0 auto;">
-        Ahmed <span class="gradient-text">Abdelhamed</span>
-      </h1>
-      <p class="intro-subtitle" style="text-align: center; margin: 1.25rem auto 0 auto;">Financial Analysis · Data Analysis · SAP FICO · Digital Creative</p>
-      <div class="intro-progress-container" style="margin: 2.5rem auto 0 auto;">
-        <div class="intro-progress-bar"></div>
-      </div>
-      <button type="button" id="intro-skip-btn" class="intro-skip-btn cursor-pointer" style="margin: 2rem auto 0 auto;" aria-label="Skip Intro">
-        <span>Skip</span>
-        <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 17 18 12 13 7"/><polyline points="6 17 11 12 6 7"/></svg>
-      </button>
-    </div>
+  <!-- Background Animated Glow -->
+  <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+    <div class="absolute -top-40 -right-40 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl animate-pulse"></div>
+    <div class="absolute top-1/2 -left-40 w-96 h-96 bg-emerald-500/15 rounded-full blur-3xl"></div>
   </div>
 
-  <!-- Sticky Floating Navbar -->
-  <nav id="main-navbar">
-    <div class="container mx-auto px-3 sm:px-6 lg:px-8 max-w-7xl">
-      <div class="navbar-row flex items-center justify-between h-14 flex-nowrap gap-2">
-        
-        <!-- Logo -->
-        <a href="javascript:void(0)" data-scroll-target="#hero" class="navbar-logo flex items-center gap-2 sm:gap-2.5 group flex-shrink-0" aria-label="Ahmed Abdelhamed home">
-          <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-br from-primary/25 to-secondary/15 border border-primary/35 flex items-center justify-center group-hover:border-primary/70 transition-all shadow-sm flex-shrink-0">
-            <span class="text-primary font-bold text-base sm:text-lg">A</span>
-          </div>
-          <div class="flex flex-col flex-shrink-0">
-            <span class="text-xs sm:text-sm font-bold text-foreground tracking-tight leading-tight whitespace-nowrap">Ahmed Abdelhamed</span>
-            <span class="text-[10px] text-primary font-medium tracking-wide flex items-center gap-1 mt-0.5 sm:flex hidden whitespace-nowrap">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse inline-block"></span>
-              <span data-i18n="Hero.focusValue">Finance, Data & SAP FICO</span>
-            </span>
-          </div>
-        </a>
-
-        <!-- Desktop Navigation Links -->
-        <div class="hidden xl:flex items-center gap-1">
-          <a href="javascript:void(0)" data-scroll-target="#about" class="nav-link px-2.5 py-2 text-sm font-medium" data-i18n="Navigation.about">About</a>
-          <a href="javascript:void(0)" data-scroll-target="#skills" class="nav-link px-2.5 py-2 text-sm font-medium" data-i18n="Navigation.skills">Skills</a>
-          <a href="javascript:void(0)" data-scroll-target="#projects" class="nav-link px-2.5 py-2 text-sm font-medium" data-i18n="Navigation.projects">Projects</a>
-          <a href="javascript:void(0)" data-scroll-target="#courses" class="nav-link px-2.5 py-2 text-sm font-medium" data-i18n="Navigation.courses">Courses</a>
-          <a href="javascript:void(0)" data-scroll-target="#certifications" class="nav-link px-2.5 py-2 text-sm font-medium" data-i18n="Navigation.certifications">Certificates</a>
-          <a href="javascript:void(0)" data-scroll-target="#experience" class="nav-link px-2.5 py-2 text-sm font-medium" data-i18n="Navigation.experience">Experience</a>
-          <a href="javascript:void(0)" data-scroll-target="#contact" class="nav-link px-2.5 py-2 text-sm font-medium" data-i18n="Navigation.contact">Contact</a>
+  <!-- Navbar -->
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-white/80 dark:bg-darkBg/80 border-b border-slate-200/70 dark:border-slate-800/70">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-emerald-500 flex items-center justify-center text-white font-extrabold text-xl shadow-lg shadow-blue-500/25 group-hover:scale-105 transition">
+          A
         </div>
+        <span class="font-bold text-lg tracking-tight" data-i18n="brand_name">أحمد عبد الحميد</span>
+      </a>
 
-        <!-- Desktop Controls -->
-        <div class="hidden xl:flex items-center gap-1.5 flex-shrink-0">
-          <!-- Language Switcher -->
-          <button type="button" class="nav-icon-btn lang-toggle-btn" aria-label="Toggle Language">
-            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
-            <span class="lang-label text-xs font-bold uppercase">ar</span>
-          </button>
-
-          <!-- Theme Toggle -->
-          <button type="button" class="nav-icon-btn theme-toggle-btn" aria-label="Toggle Theme"></button>
-
-          <!-- Social Links -->
-          <a href="https://www.linkedin.com/in/ahmed3bdelhamed/" target="_blank" rel="noreferrer" aria-label="LinkedIn" class="nav-icon-btn">
-            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-          </a>
-          <a href="https://www.behance.net/ahmedabdelhamed14" target="_blank" rel="noreferrer" aria-label="Behance" class="nav-icon-btn">
-            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
-          </a>
-        </div>
-
-        <!-- Mobile Controls (Quick Actions & Hamburger Button) -->
-        <div class="mobile-nav-group flex xl:hidden items-center gap-1.5 flex-nowrap flex-shrink-0">
-          <!-- Quick Lang Switcher -->
-          <button type="button" class="nav-icon-btn lang-toggle-btn mobile-quick-btn" aria-label="Toggle Language">
-            <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
-            <span class="lang-label text-xs font-bold uppercase">ar</span>
-          </button>
-
-          <!-- Quick Theme Switcher -->
-          <button type="button" class="nav-icon-btn theme-toggle-btn mobile-quick-btn" aria-label="Toggle Theme"></button>
-
-          <!-- Animated Hamburger Button -->
-          <button id="mobile-menu-btn" type="button" class="mobile-toggle-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-menu-drawer">
-            <span class="hamburger-box">
-              <span class="hamburger-bar bar-1"></span>
-              <span class="hamburger-bar bar-2"></span>
-              <span class="hamburger-bar bar-3"></span>
-            </span>
-          </button>
-        </div>
-
-      </div>
-    </div>
-  </nav>
-
-  <!-- Mobile Drawer Backdrop Overlay -->
-  <div id="mobile-backdrop" class="mobile-backdrop" aria-hidden="true"></div>
-
-  <!-- Modern Mobile Glass Drawer -->
-  <aside id="mobile-menu-drawer" class="mobile-menu-drawer" aria-label="Mobile Navigation" aria-hidden="true">
-    <div class="mobile-drawer-inner">
-      
-      <!-- Drawer Header with Monogram Profile & Close Button -->
-      <div class="mobile-drawer-header">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/30 to-secondary/20 border border-primary/40 flex items-center justify-center shadow-md">
-            <span class="text-primary font-bold text-lg">A</span>
-          </div>
-          <div>
-            <div class="font-bold text-foreground text-sm sm:text-base leading-tight">Ahmed Abdelhamed</div>
-            <div class="text-[11px] text-muted-foreground flex items-center gap-1.5 mt-0.5">
-              <span class="w-2 h-2 rounded-full bg-emerald-400 inline-block animate-pulse"></span>
-              <span data-i18n="Hero.status">Open to opportunities</span>
-            </div>
-          </div>
-        </div>
-        <button id="mobile-menu-close-btn" type="button" class="mobile-close-btn" aria-label="Close navigation menu">
-          <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-        </button>
-      </div>
-
-      <!-- Navigation Links List with Icons -->
-      <nav class="mobile-drawer-nav">
-        <a href="javascript:void(0)" data-scroll-target="#about" class="mobile-nav-item" data-section="about">
-          <div class="mobile-nav-icon">
-            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          </div>
-          <span class="mobile-nav-text" data-i18n="Navigation.about">About</span>
-          <svg class="mobile-nav-chevron w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-        </a>
-
-        <a href="javascript:void(0)" data-scroll-target="#skills" class="mobile-nav-item" data-section="skills">
-          <div class="mobile-nav-icon">
-            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-          </div>
-          <span class="mobile-nav-text" data-i18n="Navigation.skills">Skills</span>
-          <svg class="mobile-nav-chevron w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-        </a>
-
-        <a href="javascript:void(0)" data-scroll-target="#projects" class="mobile-nav-item" data-section="projects">
-          <div class="mobile-nav-icon">
-            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-          </div>
-          <span class="mobile-nav-text" data-i18n="Navigation.projects">Projects</span>
-          <svg class="mobile-nav-chevron w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-        </a>
-
-        <a href="javascript:void(0)" data-scroll-target="#courses" class="mobile-nav-item" data-section="courses">
-          <div class="mobile-nav-icon">
-            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
-          </div>
-          <span class="mobile-nav-text" data-i18n="Navigation.courses">Courses</span>
-          <svg class="mobile-nav-chevron w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-        </a>
-
-        <a href="javascript:void(0)" data-scroll-target="#certifications" class="mobile-nav-item" data-section="certifications">
-          <div class="mobile-nav-icon">
-            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
-          </div>
-          <span class="mobile-nav-text" data-i18n="Navigation.certifications">Certificates</span>
-          <svg class="mobile-nav-chevron w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-        </a>
-
-        <a href="javascript:void(0)" data-scroll-target="#experience" class="mobile-nav-item" data-section="experience">
-          <div class="mobile-nav-icon">
-            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
-          </div>
-          <span class="mobile-nav-text" data-i18n="Navigation.experience">Experience</span>
-          <svg class="mobile-nav-chevron w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-        </a>
-
-        <a href="javascript:void(0)" data-scroll-target="#contact" class="mobile-nav-item" data-section="contact">
-          <div class="mobile-nav-icon">
-            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-          </div>
-          <span class="mobile-nav-text" data-i18n="Navigation.contact">Contact</span>
-          <svg class="mobile-nav-chevron w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-        </a>
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold">
+        <a href="#about" class="hover:text-blue-500 transition" data-i18n="nav_about">نبذة عني</a>
+        <a href="#experience" class="hover:text-blue-500 transition" data-i18n="nav_exp">الخبرات</a>
+        <a href="#ventures" class="hover:text-blue-500 transition" data-i18n="nav_ventures">مشاريعي ومنصاتي</a>
+        <a href="#services" class="hover:text-blue-500 transition" data-i18n="nav_services">الخدمات</a>
+        <a href="#contact" class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white shadow-md shadow-blue-600/20 transition" data-i18n="nav_book">احجز استشارة / مشروع</a>
       </nav>
 
-      <!-- Quick Action CTA Button -->
-      <div class="mobile-drawer-cta">
-        <a href="javascript:void(0)" data-scroll-target="#contact" class="mobile-cta-btn">
-          <span data-i18n="Hero.contact">Get in touch</span>
-          <svg class="w-4 h-4 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-      </div>
+      <!-- Controls (Lang & Theme) -->
+      <div class="flex items-center gap-2.5">
+        <button id="langToggle" class="px-3 py-2 rounded-xl border border-slate-300 dark:border-slate-700 text-xs font-bold hover:bg-slate-200/50 dark:hover:bg-slate-800 transition flex items-center gap-1.5">
+          <i class="fa-solid fa-globe text-blue-500"></i>
+          <span id="langLabel">EN</span>
+        </button>
 
-      <!-- Social & Direct Channels in Drawer -->
-      <div class="mobile-drawer-footer">
-        <a href="https://www.linkedin.com/in/ahmed3bdelhamed/" target="_blank" rel="noreferrer" aria-label="LinkedIn" class="mobile-social-btn">
-          <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-        </a>
-        <a href="https://www.behance.net/ahmedabdelhamed14" target="_blank" rel="noreferrer" aria-label="Behance" class="mobile-social-btn">
-          <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
-        </a>
-        <a href="mailto:ahmed3bdelhamedwork@gmail.com" class="mobile-social-btn" aria-label="Email">
-          <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-        </a>
-      </div>
+        <button id="themeToggle" aria-label="Toggle Theme" class="w-10 h-10 rounded-xl border border-slate-300 dark:border-slate-700 flex items-center justify-center hover:bg-slate-200/50 dark:hover:bg-slate-800 transition">
+          <i id="themeIcon" class="fa-solid fa-sun text-amber-400"></i>
+        </button>
 
+        <!-- Mobile Menu Button -->
+        <button id="mobileMenuBtn" class="md:hidden w-10 h-10 rounded-xl border border-slate-300 dark:border-slate-700 flex items-center justify-center">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
     </div>
-  </aside>
 
-  <main>
-    <!-- ==================== HERO SECTION ==================== -->
-    <section id="hero" class="min-h-screen flex items-center relative overflow-hidden">
-      <div class="absolute inset-0 bg-grid opacity-20"></div>
-      <div class="absolute inset-0 bg-gradient-radial"></div>
-      <div class="absolute -top-24 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse-glow"></div>
-      <div class="absolute bottom-0 right-1/4 w-80 h-80 bg-secondary/10 rounded-full blur-3xl animate-pulse-glow" style="animation-delay: 1.5s;"></div>
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden px-4 pb-5 pt-2 space-y-3 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-darkBg">
+      <a href="#about" class="block py-2 font-semibold" data-i18n="nav_about">نبذة عني</a>
+      <a href="#experience" class="block py-2 font-semibold" data-i18n="nav_exp">الخبرات</a>
+      <a href="#ventures" class="block py-2 font-semibold" data-i18n="nav_ventures">مشاريعي ومنصاتي</a>
+      <a href="#services" class="block py-2 font-semibold" data-i18n="nav_services">الخدمات</a>
+      <a href="#contact" class="block py-2.5 text-center rounded-xl bg-blue-600 text-white font-bold" data-i18n="nav_book">احجز استشارة / مشروع</a>
+    </div>
+  </header>
 
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl relative z-10 pt-24 pb-16">
-        <div class="grid lg:grid-cols-[1.2fr_.8fr] gap-12 items-center">
-          
-          <div class="space-y-7 text-center lg:text-left rtl:lg:text-right reveal-item">
-            <!-- Status Badge -->
-            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20">
-              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-glow-pulse"></span>
-              <span class="text-sm text-muted-foreground" data-i18n="Hero.status">Open to opportunities and collaborations</span>
-            </div>
-
-            <!-- Name & Title -->
-            <div>
-              <p class="section-title" data-i18n="Hero.title">Financial Analyst · Data Analysis · SAP FICO</p>
-              <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold leading-tight">
-                <span class="gradient-text" data-i18n="Hero.firstName">Ahmed</span>
-                <br />
-                <span class="gradient-text" data-i18n="Hero.lastName">Abdelhamed</span>
-              </h1>
-            </div>
-
-            <p class="text-xl md:text-2xl text-foreground font-medium" data-i18n="Hero.subtitle">
-              Where finance, technology, and business meet for measurable impact.
-            </p>
-
-            <!-- Roles -->
-            <div class="flex flex-wrap items-center gap-4 text-sm text-muted-foreground justify-center lg:justify-start rtl:lg:justify-end">
-              <span class="inline-flex items-center gap-2">
-                <svg class="w-4 h-4 text-primary" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
-                <span data-i18n="Hero.role1">Financial & Data Analysis</span>
-              </span>
-              <span class="text-muted-foreground/30">|</span>
-              <span class="inline-flex items-center gap-2">
-                <svg class="w-4 h-4 text-secondary" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg>
-                <span data-i18n="Hero.role2">SAP FICO & ERP</span>
-              </span>
-              <span class="text-muted-foreground/30">|</span>
-              <span class="inline-flex items-center gap-2">
-                <svg class="w-4 h-4 text-emerald-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
-                <span data-i18n="Hero.role3">Digital Creative & Web</span>
-              </span>
-            </div>
-
-            <p class="text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 leading-relaxed" data-i18n="Hero.description">
-              Business Information Systems student with hands-on finance experience across SAP FICO, banking, auditing, and accounting internships—combining financial analysis, Power BI, SQL, and Excel with UI/UX, web development, and motion graphics.
-            </p>
-
-            <!-- Buttons -->
-            <div class="flex flex-wrap items-center gap-4 justify-center lg:justify-start rtl:lg:justify-end">
-              <a href="javascript:void(0)" data-scroll-target="#projects" class="btn-primary inline-flex items-center gap-2">
-                <span data-i18n="Hero.explore">Explore projects</span>
-                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
-              </a>
-              <a href="https://drive.google.com/file/d/1MP9KjWSY40EEfzIeCvYP-ioGCmX6hxop/view?usp=drive_link" target="_blank" rel="noreferrer" class="btn-outline inline-flex items-center gap-2">
-                <span data-i18n="Hero.viewCV">View CV</span>
-                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
-              </a>
-              <a href="javascript:void(0)" data-scroll-target="#contact" class="btn-outline" data-i18n="Hero.contact">Get in touch</a>
-            </div>
-
-            <!-- Location -->
-            <p class="inline-flex items-center gap-2 text-sm text-muted-foreground">
-              <svg class="w-4 h-4 text-primary" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
-              <span data-i18n="Hero.location">Cairo, Egypt</span>
-            </p>
-          </div>
-
-          <!-- Profile Image Card -->
-          <div class="relative mx-auto w-full max-w-sm reveal-item">
-            <div class="absolute -inset-5 bg-gradient-to-br from-primary/30 via-transparent to-secondary/20 rounded-[2rem] blur-2xl"></div>
-            <div class="relative aspect-square rounded-[2rem] overflow-hidden border border-primary/20 glass-card p-2 shadow-[0_25px_90px_-35px_hsl(var(--primary)/0.65)] hover:scale-105 transition-transform duration-500">
-              <img
-                src="images/ahmed-abdelhamed.jpg"
-                alt="Ahmed Abdelhamed"
-                class="w-full h-full object-cover rounded-[1.55rem]"
-              />
-            </div>
-            <!-- Focus Float Card -->
-            <div class="hero-focus-badge glass-card rounded-xl px-4 py-3 animate-float">
-              <p class="text-xs text-muted-foreground" data-i18n="Hero.focusLabel">Focus</p>
-              <p class="text-sm font-semibold text-foreground" data-i18n="Hero.focusValue">Finance, Data & SAP FICO</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Scroll Down Indicator -->
-      <div class="hero-scroll-indicator" style="position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 20;">
-        <a href="javascript:void(0)" data-scroll-target="#about" aria-label="Scroll to About section" class="p-3 rounded-full border border-primary/20 text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors bg-background/50 backdrop-blur-md">
-          <svg class="w-6 h-6 animate-bounce-slow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
-        </a>
-      </div>
-    </section>
-
-    <!-- ==================== ABOUT SECTION ==================== -->
-    <section id="about" class="py-24 relative">
-      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent"></div>
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
+  <!-- Hero Section -->
+  <section class="relative pt-16 pb-24 lg:pt-24 lg:pb-32 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
         
-        <div class="text-center mb-12 reveal-item">
-          <p class="section-title" data-i18n="About.sectionTitle">About me</p>
-          <h2 class="section-heading" data-i18n="About.heading">Delivering measurable impact across finance & tech</h2>
-        </div>
-
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-          <div class="space-y-6 reveal-item">
-            <p class="text-lg text-muted-foreground leading-relaxed" data-i18n="About.paragraph1">Business Information Systems student (expected July 2027) and Student Union Social Committee Head with hands-on finance experience across SAP FICO, banking, auditing, and accounting internships, including General Ledger, Accounts Payable, Accounts Receivable, Bank Accounting, and Withholding Tax.</p>
-            <p class="text-lg text-muted-foreground leading-relaxed" data-i18n="About.paragraph2">I combine financial analysis, Power BI, SQL, and Advanced Excel with UI/UX, web development, and motion graphics skills. As Founder of Ahmed Abdelhamed Academy and Co-Founder of Smart Career Hub, I focus on practical solutions where finance, technology, and business meet.</p>
-            <ul class="space-y-3">
-              <li class="flex items-start gap-3">
-                <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 animate-glow-pulse flex-shrink-0"></span>
-                <span class="text-muted-foreground" data-i18n="About.bullet1">Business Information Systems student at Future Academy & Student Union Social Committee Head</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 animate-glow-pulse flex-shrink-0"></span>
-                <span class="text-muted-foreground" data-i18n="About.bullet2">Hands-on SAP FICO experience across AP, AR, GL, Bank Accounting, and Withholding Tax</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 animate-glow-pulse flex-shrink-0"></span>
-                <span class="text-muted-foreground" data-i18n="About.bullet3">Founder of Ahmed Abdelhamed Academy & Co-Founder of Smart Career Hub</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 animate-glow-pulse flex-shrink-0"></span>
-                <span class="text-muted-foreground" data-i18n="About.bullet4">PR Leader at GDG On Campus Future Academy & Digital Creative Specialist at TO-BIM</span>
-              </li>
-            </ul>
+        <!-- Text Column -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 text-xs font-bold">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+            <span data-i18n="hero_badge">متاح للاستشارات والمشاريع التقنية والمالية</span>
           </div>
 
-          <!-- Highlight Cards -->
-          <div class="grid grid-cols-2 gap-4 reveal-item">
-            <div class="p-6 glass-card-hover">
-              <div class="p-3 rounded-lg bg-primary/10 w-fit mb-4">
-                <svg class="w-8 h-8 text-primary" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
-              </div>
-              <p class="text-foreground font-semibold" data-i18n="About.highlight1">Financial & Data Analysis</p>
-            </div>
-            <div class="p-6 glass-card-hover">
-              <div class="p-3 rounded-lg bg-emerald-400/10 w-fit mb-4">
-                <svg class="w-8 h-8 text-emerald-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12h.01"/><path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M22 13a18.15 18.15 0 0 1-20 0"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
-              </div>
-              <p class="text-foreground font-semibold" data-i18n="About.highlight2">SAP FICO & Accounting</p>
-            </div>
-            <div class="p-6 glass-card-hover">
-              <div class="p-3 rounded-lg bg-secondary/10 w-fit mb-4">
-                <svg class="w-8 h-8 text-secondary" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
-              </div>
-              <p class="text-foreground font-semibold" data-i18n="About.highlight3">UI/UX & Motion Graphics</p>
-            </div>
-            <div class="p-6 glass-card-hover">
-              <div class="p-3 rounded-lg bg-yellow-400/10 w-fit mb-4">
-                <svg class="w-8 h-8 text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-.838L12.83 2.18a2 2 0 0 0-1.66 0L2.6 10.084a1 1 0 0 0 0 1.832l8.57 7.908a2 2 0 0 0 1.66 0l8.57-7.908a1 1 0 0 0 .02-.994z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
-              </div>
-              <p class="text-foreground font-semibold" data-i18n="About.highlight4">Venture Founder & BIS</p>
-            </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
+            <span data-i18n="hero_hi">أهلاً، أنا</span>
+            <span class="bg-gradient-to-r from-blue-500 via-indigo-400 to-emerald-400 bg-clip-text text-transparent block mt-1" data-i18n="hero_name">أحمد عبد الحميد</span>
+          </h1>
+
+          <p class="text-lg sm:text-xl font-semibold text-slate-600 dark:text-slate-300" data-i18n="hero_roles">
+            محلل مالي (SAP FICO) • مطور برمجيات Full-Stack • مؤسس منصات تعليمية
+          </p>
+
+          <p class="text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl" data-i18n="hero_desc">
+            أجمع بين التحليل المالي وأنظمة ERP (SAP FICO)، وتطوير تطبيقات الويب المتكاملة، والتصميم الإبداعي. مؤسس أكاديمية أحمد عبد الحميد و Smart Career Hub، وأساعد الشركات والأفراد على بناء أنظمة ذكية وحضور رقمي احترافي.
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-wrap gap-4 pt-2">
+            <a href="#contact" class="px-7 py-3.5 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-bold shadow-lg shadow-blue-600/25 transition flex items-center gap-2">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span data-i18n="hero_cta_primary">ابدأ مشروعك أو احجز استشارة</span>
+            </a>
+            <a href="#ventures" class="px-7 py-3.5 rounded-2xl border border-slate-300 dark:border-slate-700 hover:border-blue-500 font-bold transition flex items-center gap-2">
+              <i class="fa-solid fa-layer-group text-blue-500"></i>
+              <span data-i18n="hero_cta_secondary">استكشف أعمالي</span>
+            </a>
           </div>
 
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== INTRO VIDEO SECTION ==================== -->
-    <section id="intro-video" class="py-24 relative">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
-        <div class="text-center mb-12 reveal-item">
-          <p class="section-title" data-i18n="Video.sectionTitle">Meet me</p>
-          <h2 class="section-heading" data-i18n="Video.heading">A short introduction</h2>
-          <p class="section-subheading mx-auto mt-4" data-i18n="Video.subheading">A quick video about who I am and what I work on.</p>
-        </div>
-        <div id="intro-video-frame" class="video-frame glass-card reveal-item overflow-hidden p-3 sm:p-5">
-          <div class="relative w-full aspect-video max-h-[680px] rounded-2xl overflow-hidden bg-black border border-primary/20 select-none">
-            <div id="yt-intro-player" class="w-full h-full pointer-events-none"></div>
-            <button
-              type="button"
-              id="video-surface-toggle"
-              aria-label="Play or pause video"
-              class="absolute inset-0 z-10 w-full h-full cursor-pointer bg-transparent focus:outline-none"
-            ></button>
-            <button
-              type="button"
-              id="center-play-btn"
-              aria-label="Play video"
-              class="absolute inset-0 z-20 m-auto w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-primary/90 text-white flex items-center justify-center shadow-2xl hover:scale-105 transition-all cursor-pointer"
-            >
-              <svg id="center-play-icon" class="w-7 h-7 sm:w-8 sm:h-8 ml-1" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="6 4 20 12 6 20 6 4"></polygon>
-              </svg>
-            </button>
-          </div>
-
-          <div id="custom-video-bar" class="mt-3 rounded-xl bg-background/80 backdrop-blur-md border border-border/60 px-3 sm:px-4 py-2.5 flex flex-col gap-2">
-            <input
-              type="range"
-              id="video-seek-bar"
-              min="0"
-              max="100"
-              value="0"
-              step="0.1"
-              aria-label="Seek video"
-              class="w-full h-1.5 accent-primary cursor-pointer rounded-lg"
-            />
-
-            <div class="flex items-center justify-between gap-2 sm:gap-4 text-xs sm:text-sm">
-              <div class="flex items-center gap-2 sm:gap-3">
-                <button
-                  type="button"
-                  id="bar-play-btn"
-                  aria-label="Play or pause"
-                  class="px-3 py-1.5 rounded-lg bg-primary text-white font-semibold hover:opacity-90 transition cursor-pointer flex items-center gap-1.5"
-                >
-                  <span id="bar-play-label">Play</span>
-                </button>
-
-                <span id="video-time-display" class="text-muted-foreground font-mono text-xs tabular-nums">
-                  00:00 / 00:00
-                </span>
-              </div>
-
-              <div class="flex items-center gap-2 sm:gap-3">
-                <button
-                  type="button"
-                  id="bar-mute-btn"
-                  aria-label="Mute or unmute"
-                  class="px-2.5 py-1.5 rounded-lg bg-muted/70 text-foreground hover:bg-muted transition cursor-pointer text-xs font-medium"
-                >
-                  <span id="bar-mute-label">Mute</span>
-                </button>
-
-                <input
-                  type="range"
-                  id="video-volume-bar"
-                  min="0"
-                  max="100"
-                  value="100"
-                  aria-label="Volume"
-                  class="w-16 sm:w-24 h-1.5 accent-primary cursor-pointer"
-                />
-
-                <button
-                  type="button"
-                  id="bar-fullscreen-btn"
-                  aria-label="Fullscreen"
-                  class="px-2.5 py-1.5 rounded-lg bg-muted/70 text-foreground hover:bg-muted transition cursor-pointer text-xs font-medium"
-                >
-                  Full
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== SKILLS SECTION ==================== -->
-    <section id="skills" class="py-24 relative">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-        <div class="text-center mb-12 reveal-item">
-          <p class="section-title" data-i18n="Skills.sectionTitle">Technical Skills</p>
-          <h2 class="section-heading" data-i18n="Skills.heading">Skills across finance, ERP, data & design</h2>
-          <p class="section-subheading mx-auto mt-4" data-i18n="Skills.subheading">A comprehensive toolkit spanning SAP FICO, financial operations, business intelligence, and digital design.</p>
-        </div>
-        
-        <div class="grid md:grid-cols-2 gap-6 reveal-item">
-          <!-- Cat 1: Finance & Accounting -->
-          <div class="p-6 glass-card-hover border-emerald-400/20">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="p-2 rounded-lg bg-emerald-400/10">
-                <svg class="w-5 h-5 text-emerald-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="18"/><line x1="10" x2="10" y1="18" y2="18"/><line x1="14" x2="14" y1="18" y2="18"/><line x1="18" x2="18" y1="18" y2="18"/><polygon points="12 2 20 7 4 7"/></svg>
-              </div>
-              <h3 class="text-xl font-semibold text-foreground" data-i18n="Skills.cat1">Finance & Accounting</h3>
-            </div>
-            <div class="flex flex-wrap gap-2">
-              <span class="skill-badge">Financial Analysis</span>
-              <span class="skill-badge">Financial Reporting</span>
-              <span class="skill-badge">General Ledger</span>
-              <span class="skill-badge">Accounts Payable</span>
-              <span class="skill-badge">Accounts Receivable</span>
-              <span class="skill-badge">Bank Accounting</span>
-              <span class="skill-badge">Fixed Assets</span>
-              <span class="skill-badge">Withholding Tax</span>
-              <span class="skill-badge">Audit & Compliance</span>
-            </div>
-          </div>
-
-          <!-- Cat 2: ERP & Data Tools -->
-          <div class="p-6 glass-card-hover border-primary/20">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="p-2 rounded-lg bg-primary/10">
-                <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg>
-              </div>
-              <h3 class="text-xl font-semibold text-foreground" data-i18n="Skills.cat2">ERP & Data Tools</h3>
-            </div>
-            <div class="flex flex-wrap gap-2">
-              <span class="skill-badge">SAP FICO</span>
-              <span class="skill-badge">Oracle</span>
-              <span class="skill-badge">Microsoft Power BI</span>
-              <span class="skill-badge">Tableau</span>
-              <span class="skill-badge">SQL</span>
-              <span class="skill-badge">Microsoft Access</span>
-              <span class="skill-badge">Advanced Excel</span>
-              <span class="skill-badge">Excel Management Accounting</span>
-              <span class="skill-badge">Data Cleaning & Validation</span>
-              <span class="skill-badge">Data Visualization</span>
-            </div>
-          </div>
-
-          <!-- Cat 3: Design & Web -->
-          <div class="p-6 glass-card-hover border-secondary/20">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="p-2 rounded-lg bg-secondary/10">
-                <svg class="w-5 h-5 text-secondary" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
-              </div>
-              <h3 class="text-xl font-semibold text-foreground" data-i18n="Skills.cat3">Design & Web</h3>
-            </div>
-            <div class="flex flex-wrap gap-2">
-              <span class="skill-badge">Web Development</span>
-              <span class="skill-badge">UI/UX Design</span>
-              <span class="skill-badge">Graphic Design</span>
-              <span class="skill-badge">Motion Graphics</span>
-              <span class="skill-badge">Visual Identity</span>
-              <span class="skill-badge">Digital Design</span>
-            </div>
-          </div>
-
-          <!-- Cat 4: Business & Leadership -->
-          <div class="p-6 glass-card-hover border-yellow-400/20">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="p-2 rounded-lg bg-yellow-400/10">
-                <svg class="w-5 h-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 21a8 8 0 0 0-16 0"/><circle cx="10" cy="8" r="5"/><path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"/></svg>
-              </div>
-              <h3 class="text-xl font-semibold text-foreground" data-i18n="Skills.cat4">Business & Leadership</h3>
-            </div>
-            <div class="flex flex-wrap gap-2">
-              <span class="skill-badge">Leadership</span>
-              <span class="skill-badge">Team Management</span>
-              <span class="skill-badge">Human Resources</span>
-              <span class="skill-badge">Communication</span>
-              <span class="skill-badge">Problem Solving</span>
-              <span class="skill-badge">Process Improvement</span>
-              <span class="skill-badge">Technical Documentation</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== PROJECTS SECTION ==================== -->
-    <section id="projects" class="py-24 relative">
-      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent"></div>
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
-        
-        <div class="text-center mb-12 reveal-item">
-          <p class="section-title" data-i18n="Projects.sectionTitle">Portfolio</p>
-          <h2 class="section-heading" data-i18n="Projects.heading">Selected projects & platforms</h2>
-          <p class="section-subheading mx-auto mt-4 max-w-2xl" data-i18n="Projects.subheading">Featured web platforms, operational data systems, and visual identity work.</p>
-        </div>
-
-        <div id="projects-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Project 1 -->
-          <article class="p-6 glass-card-hover flex flex-col justify-between">
+          <!-- Social & Quick Stats -->
+          <div class="pt-6 border-t border-slate-200 dark:border-slate-800 grid grid-cols-3 gap-4 max-w-lg">
             <div>
-              <span class="text-xs font-semibold uppercase tracking-wider text-primary">Web Platform</span>
-              <h3 class="text-xl font-bold text-foreground mt-2 mb-3">Portfolio Website (ahmedabdelhamed.com)</h3>
-              <p class="text-sm text-muted-foreground leading-relaxed mb-4">Designed and published a data analysis and business systems portfolio featuring projects, courses, and interactive credentials.</p>
+              <div class="text-2xl sm:text-3xl font-extrabold text-blue-500">+10K</div>
+              <div class="text-xs text-slate-500 dark:text-slate-400 font-semibold" data-i18n="stat_linkedin">متابع على LinkedIn</div>
             </div>
-            <div class="flex flex-wrap gap-2 mt-4">
-              <span class="px-2 py-1 rounded-md bg-muted/50 text-xs text-muted-foreground">HTML/CSS/JS</span>
-              <span class="px-2 py-1 rounded-md bg-muted/50 text-xs text-muted-foreground">UI/UX</span>
-              <span class="px-2 py-1 rounded-md bg-muted/50 text-xs text-muted-foreground">Bilingual</span>
-            </div>
-          </article>
-
-          <!-- Project 2 -->
-          <article class="p-6 glass-card-hover flex flex-col justify-between">
             <div>
-              <span class="text-xs font-semibold uppercase tracking-wider text-secondary">Business Systems</span>
-              <h3 class="text-xl font-bold text-foreground mt-2 mb-3">Clinic Data-Entry System (TO-BIM)</h3>
-              <p class="text-sm text-muted-foreground leading-relaxed mb-4">Built a structured data-entry and records management system for a healthcare clinic client alongside UI/UX web designs.</p>
+              <div class="text-2xl sm:text-3xl font-extrabold text-emerald-500">+15</div>
+              <div class="text-xs text-slate-500 dark:text-slate-400 font-semibold" data-i18n="stat_projects">نظام ومنصة ويب</div>
             </div>
-            <div class="flex flex-wrap gap-2 mt-4">
-              <span class="px-2 py-1 rounded-md bg-muted/50 text-xs text-muted-foreground">Data Systems</span>
-              <span class="px-2 py-1 rounded-md bg-muted/50 text-xs text-muted-foreground">Data Validation</span>
-              <span class="px-2 py-1 rounded-md bg-muted/50 text-xs text-muted-foreground">UI/UX Design</span>
-            </div>
-          </article>
-
-          <!-- Project 3 -->
-          <article class="p-6 glass-card-hover flex flex-col justify-between">
             <div>
-              <span class="text-xs font-semibold uppercase tracking-wider text-emerald-400">Visual Identity</span>
-              <h3 class="text-xl font-bold text-foreground mt-2 mb-3">Behance Design Portfolio (950+ Views)</h3>
-              <p class="text-sm text-muted-foreground leading-relaxed mb-4">Brand and social media campaigns including TO-BIM, Three Engineers, KCAU logo, Gossor, and NETPEAS.</p>
+              <div class="text-2xl sm:text-3xl font-extrabold text-indigo-500">3+</div>
+              <div class="text-xs text-slate-500 dark:text-slate-400 font-semibold" data-i18n="stat_exp">سنوات خبرة متنوعة</div>
             </div>
-            <div class="flex items-center justify-between mt-4">
-              <div class="flex flex-wrap gap-2">
-                <span class="px-2 py-1 rounded-md bg-muted/50 text-xs text-muted-foreground">Branding</span>
-                <span class="px-2 py-1 rounded-md bg-muted/50 text-xs text-muted-foreground">Motion</span>
-              </div>
-              <a href="https://www.behance.net/ahmedabdelhamed14" target="_blank" rel="noreferrer" class="text-xs font-semibold text-primary hover:underline">Behance →</a>
-            </div>
-          </article>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ==================== DATA FOCUS / AIML SECTION ==================== -->
-    <section id="data-focus" class="py-24 relative">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-        
-        <div class="text-center mb-12 reveal-item">
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 mb-4">
-            <svg class="w-4 h-4 text-primary" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
-            <span class="text-sm text-primary" data-i18n="AIML.badge">Professional focus</span>
           </div>
-          <h2 class="section-heading" data-i18n="AIML.heading">Finance, ERP & Data that drive decisions</h2>
-          <p class="section-subheading mx-auto mt-4" data-i18n="AIML.subheading">Bridging accounting controls, SAP FICO workflows, and clear business intelligence reporting.</p>
         </div>
 
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 reveal-item">
-          
-          <article class="p-6 glass-card-hover">
-            <div class="p-2.5 rounded-xl w-fit mb-5 bg-primary/10">
-              <svg class="w-7 h-7 text-primary" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+        <!-- Visual Card Column -->
+        <div class="lg:col-span-5">
+          <div class="relative rounded-3xl p-6 sm:p-8 bg-white/70 dark:bg-darkCard/80 backdrop-blur-xl border border-slate-200 dark:border-slate-800 shadow-2xl">
+            <div class="flex items-center justify-between mb-6">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-2xl bg-blue-600/10 text-blue-500 flex items-center justify-center text-2xl font-bold">
+                  <i class="fa-solid fa-code"></i>
+                </div>
+                <div>
+                  <h3 class="font-bold text-base" data-i18n="card_title">ملف التخصصات الهجين</h3>
+                  <p class="text-xs text-slate-500" data-i18n="card_sub">Finance × Tech × Creative</p>
+                </div>
+              </div>
+              <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-500 text-xs font-bold">Cairo, EG</span>
             </div>
-            <h3 class="text-lg font-semibold text-foreground mb-2" data-i18n="AIML.area1Title">Financial & Data Analysis</h3>
-            <p class="text-sm text-muted-foreground leading-relaxed" data-i18n="AIML.area1Desc">Analyzing transaction flows, tracking KPIs, and building Power BI and Excel reports.</p>
-          </article>
 
-          <article class="p-6 glass-card-hover">
-            <div class="p-2.5 rounded-xl w-fit mb-5 bg-secondary/10">
-              <svg class="w-7 h-7 text-secondary" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg>
+            <div class="space-y-4">
+              <div class="p-4 rounded-2xl bg-slate-100/80 dark:bg-slate-800/60 border border-slate-200/50 dark:border-slate-700/50">
+                <div class="flex items-center justify-between mb-1">
+                  <span class="font-bold text-sm text-blue-500"><i class="fa-solid fa-chart-line me-2"></i><span data-i18n="pillar1_title">التحليل المالي وأنظمة SAP</span></span>
+                </div>
+                <p class="text-xs text-slate-600 dark:text-slate-400" data-i18n="pillar1_desc">SAP FICO (GL, AP, AR, Bank, WHT)، القوائم المالية، وأتمتة التقارير المحاسبية.</p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-slate-100/80 dark:bg-slate-800/60 border border-slate-200/50 dark:border-slate-700/50">
+                <div class="flex items-center justify-between mb-1">
+                  <span class="font-bold text-sm text-emerald-500"><i class="fa-solid fa-laptop-code me-2"></i><span data-i18n="pillar2_title">تطوير الأنظمة والويب Full-Stack</span></span>
+                </div>
+                <p class="text-xs text-slate-600 dark:text-slate-400" data-i18n="pillar2_desc">PHP, MySQL, JavaScript, Tailwind CSS, Odoo API, بوابات الدفع Paymob وبوتات تليجرام.</p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-slate-100/80 dark:bg-slate-800/60 border border-slate-200/50 dark:border-slate-700/50">
+                <div class="flex items-center justify-between mb-1">
+                  <span class="font-bold text-sm text-purple-500"><i class="fa-solid fa-wand-magic-sparkles me-2"></i><span data-i18n="pillar3_title">التصميم الإبداعي وبناء العلامات</span></span>
+                </div>
+                <p class="text-xs text-slate-600 dark:text-slate-400" data-i18n="pillar3_desc">Adobe Illustrator, Premiere Pro، صناعة المحتوى، واستراتيجيات النمو على LinkedIn.</p>
+              </div>
             </div>
-            <h3 class="text-lg font-semibold text-foreground mb-2" data-i18n="AIML.area2Title">SAP FICO & ERP</h3>
-            <p class="text-sm text-muted-foreground leading-relaxed" data-i18n="AIML.area2Desc">Hands-on GL, AP, AR, Bank Accounting, Fixed Assets, and Withholding Tax workflows.</p>
-          </article>
 
-          <article class="p-6 glass-card-hover">
-            <div class="p-2.5 rounded-xl w-fit mb-5 bg-emerald-400/10">
-              <svg class="w-7 h-7 text-emerald-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h14a2 2 0 0 0 2-2V7.5L14.5 2H6a2 2 0 0 0-2 2v4"/><polyline points="14 2 14 8 20 8"/><path d="m3 15 2 2 4-4"/></svg>
+            <!-- Direct Links -->
+            <div class="mt-6 pt-5 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between">
+              <div class="flex gap-3">
+                <a href="https://www.linkedin.com" target="_blank" class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-blue-600 hover:text-white flex items-center justify-center transition"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://github.com" target="_blank" class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-900 hover:text-white flex items-center justify-center transition"><i class="fa-brands fa-github"></i></a>
+                <a href="https://wa.me/201116512028" target="_blank" class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-emerald-600 hover:text-white flex items-center justify-center transition"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="mailto:ahmed3bdelhamedwork@gmail.com" class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-rose-600 hover:text-white flex items-center justify-center transition"><i class="fa-solid fa-envelope"></i></a>
+              </div>
+              <span class="text-xs font-mono text-slate-400">ahmedabdelhamed.com</span>
             </div>
-            <h3 class="text-lg font-semibold text-foreground mb-2" data-i18n="AIML.area3Title">Data Quality & Audit</h3>
-            <p class="text-sm text-muted-foreground leading-relaxed" data-i18n="AIML.area3Desc">Cleaning, validating, and auditing financial records to ensure compliance and cost savings.</p>
-          </article>
+          </div>
+        </div>
 
-          <article class="p-6 glass-card-hover">
-            <div class="p-2.5 rounded-xl w-fit mb-5 bg-yellow-400/10">
-              <svg class="w-7 h-7 text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
-            </div>
-            <h3 class="text-lg font-semibold text-foreground mb-2" data-i18n="AIML.area4Title">Digital Creative & Web</h3>
-            <p class="text-sm text-muted-foreground leading-relaxed" data-i18n="AIML.area4Desc">Designing intuitive UI/UX web experiences, visual identities, and motion graphics.</p>
-          </article>
+      </div>
+    </div>
+  </section>
 
+  <!-- About & Education Section -->
+  <section id="about" class="py-20 bg-white/50 dark:bg-slate-900/40 border-y border-slate-200/60 dark:border-slate-800/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <h2 class="text-3xl sm:text-4xl font-extrabold mb-4" data-i18n="about_title">نبذة عني والتعليم والقيادة</h2>
+        <p class="text-slate-600 dark:text-slate-400" data-i18n="about_sub">رحلة تجمع بين الدراسة الأكاديمية في نظم معلومات الأعمال والعمل القيادي والتقني.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Education -->
+        <div class="p-6 rounded-3xl bg-white dark:bg-darkCard border border-slate-200 dark:border-slate-800 shadow-sm">
+          <div class="w-12 h-12 rounded-2xl bg-blue-500/10 text-blue-500 flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <h3 class="font-bold text-lg mb-2" data-i18n="edu_title">بكالوريوس نظم معلومات الأعمال (BIS)</h3>
+          <p class="text-sm text-blue-500 font-semibold mb-2" data-i18n="edu_uni">أكاديمية المستقبل للدراسات التكنولوجية المتخصصة</p>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mb-3">Sep 2023 – Jul 2027 • GPA: 3.12</p>
+          <p class="text-sm text-slate-600 dark:text-slate-400" data-i18n="edu_desc">دراسة متعمقة تربط بين الإدارة والمحاسبة وتطوير البرمجيات وتحليل البيانات.</p>
+        </div>
+
+        <!-- Leadership -->
+        <div class="p-6 rounded-3xl bg-white dark:bg-darkCard border border-slate-200 dark:border-slate-800 shadow-sm">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-users-gear"></i>
+          </div>
+          <h3 class="font-bold text-lg mb-2" data-i18n="lead_title">العمل الطلابي والمجتمعي</h3>
+          <p class="text-sm text-emerald-500 font-semibold mb-2">GDG Future Academy & Student Union</p>
+          <p class="text-sm text-slate-600 dark:text-slate-400" data-i18n="lead_desc">قائد العلاقات العامة (PR Leader) وعضو فريق التصميم في GDG Future Academy، ورئيس اللجنة الاجتماعية باتحاد الطلاب، ومشارك في مبادرة نواة.</p>
+        </div>
+
+        <!-- Certifications & Achievements -->
+        <div class="p-6 rounded-3xl bg-white dark:bg-darkCard border border-slate-200 dark:border-slate-800 shadow-sm">
+          <div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-500 flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-award"></i>
+          </div>
+          <h3 class="font-bold text-lg mb-2" data-i18n="cert_title">الشهادات والإنجازات</h3>
+          <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-2 list-disc list-inside" data-i18n="cert_list">
+            <li>التأهل للنهائيات في مسابقة موازنة المواطن (وزارة المالية 2026/2027)</li>
+            <li>شهادة القيادة المجتمعية – Harvard Leadership Hub</li>
+            <li>دبلومة PFA من معهد نظم المعلومات للقوات المسلحة</li>
+          </ul>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ==================== COURSES SECTION ==================== -->
-    <section id="courses" class="py-24 relative">
-      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-secondary/5 to-transparent"></div>
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
+  <!-- Experience Section -->
+  <section id="experience" class="py-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-extrabold mb-4" data-i18n="exp_title">الخبرات العملية والتدريبات</h2>
+        <p class="text-slate-600 dark:text-slate-400" data-i18n="exp_sub">مسار مهني يجمع بين المالية، البنوك، والتشغيل الرقمي.</p>
+      </div>
 
-        <!-- My own course -->
-        <div class="text-center mb-12 reveal-item">
-          <p class="section-title" data-i18n="Courses.sectionTitle">Ahmed Abdelhamed Academy</p>
-          <h2 class="section-heading" data-i18n="Courses.heading">Featured course</h2>
-          <p class="section-subheading mx-auto mt-4" data-i18n="Courses.subheading">Practical training built from real-world career and business experience.</p>
+      <div class="space-y-6 relative before:absolute before:inset-y-0 before:start-5 before:w-0.5 before:bg-slate-200 dark:before:bg-slate-800">
+        
+        <!-- Item 1 -->
+        <div class="relative ps-14">
+          <div class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center absolute start-0 top-1 shadow-md">
+            <i class="fa-solid fa-building-columns text-sm"></i>
+          </div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-darkCard border border-slate-200 dark:border-slate-800">
+            <div class="flex flex-wrap justify-between items-center gap-2 mb-2">
+              <h3 class="font-bold text-lg" data-i18n="exp1_role">محلل مالي مبتدئ (Junior Financial Analyst - SAP FICO)</h3>
+              <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-500 text-xs font-bold">Aug 2026 – Present</span>
+            </div>
+            <p class="text-sm font-semibold text-slate-500 mb-2" data-i18n="exp1_org">مؤسسة أهل مصر ومستشفى أهل مصر لعلاج الحروق</p>
+            <p class="text-sm text-slate-600 dark:text-slate-400" data-i18n="exp1_desc">العمل على نظام SAP FICO في إدارات الأستاذ العام (GL)، حسابات الموردين والعملاء (AP/AR)، محاسبة البنوك، وضرائب الخصم والتحصيل (WHT).</p>
+          </div>
         </div>
 
-        <article class="my-course glass-card reveal-item">
-          <a
-            href="https://couesese.ahmedabdelhamed.com/course?slug=linkedin-growth-engine-2026-from-profile-to-placement"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="my-course-cover block"
-            aria-label="LinkedIn Growth Engine 2026: From Profile to Placement"
-          >
-            <img src="images/linkedin Cover.png" alt="LinkedIn Growth Engine 2026: From Profile to Placement" loading="lazy" onerror="this.style.display='none'" />
-          </a>
+        <!-- Item 2 -->
+        <div class="relative ps-14">
+          <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center absolute start-0 top-1 shadow-md">
+            <i class="fa-solid fa-palette text-sm"></i>
+          </div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-darkCard border border-slate-200 dark:border-slate-800">
+            <div class="flex flex-wrap justify-between items-center gap-2 mb-2">
+              <h3 class="font-bold text-lg" data-i18n="exp2_role">أخصائي إبداعي رقمي ومنسق عمليات التدريب</h3>
+              <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-500 text-xs font-bold">Jul 2025 – Present</span>
+            </div>
+            <p class="text-sm font-semibold text-slate-500 mb-2">TOBIM (Engineering BIM Courses)</p>
+            <p class="text-sm text-slate-600 dark:text-slate-400" data-i18n="exp2_desc">إدارة الهوية البصرية والموشن جرافيك، تطوير المنصات الإلكترونية، تنسيق جدول التدريبات، وتفعيل حسابات Autodesk للطلاب.</p>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="relative ps-14">
+          <div class="w-10 h-10 rounded-full bg-indigo-600 text-white flex items-center justify-center absolute start-0 top-1 shadow-md">
+            <i class="fa-solid fa-landmark text-sm"></i>
+          </div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-darkCard border border-slate-200 dark:border-slate-800">
+            <div class="flex flex-wrap justify-between items-center gap-2 mb-2">
+              <h3 class="font-bold text-lg" data-i18n="exp3_role">تدريبات القطاع المصرفي والمحاسبة</h3>
+              <span class="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-500 text-xs font-bold">2025 – 2026</span>
+            </div>
+            <p class="text-sm font-semibold text-slate-500 mb-2">CIB Egypt • Banque Misr • Yasser Abdel Mageed Accounting Office</p>
+            <p class="text-sm text-slate-600 dark:text-slate-400" data-i18n="exp3_desc">إتمام برامج التدريب الصيفي في البنك التجاري الدولي (CIB Future Vest) وبنك مصر (برنامج رواد)، بالإضافة للتدريب المحاسبي والضريبي والمراجعة المالية في HMT Groups.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Ventures & Portfolio Section -->
+  <section id="ventures" class="py-20 bg-white/50 dark:bg-slate-900/40 border-y border-slate-200/60 dark:border-slate-800/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold mb-3" data-i18n="port_title">مشاريعي ومنصاتي الرقمية</h2>
+          <p class="text-slate-600 dark:text-slate-400" data-i18n="port_sub">مشاريع ريادية، أنظمة برمجية، وتطبيقات ويب قمت بتأسيسها وتطويرها.</p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap gap-2" id="portfolioFilters">
+          <button data-filter="all" class="filter-btn active px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white transition" data-i18n="filter_all">الكل</button>
+          <button data-filter="ventures" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-200 dark:bg-slate-800 hover:bg-blue-600 hover:text-white transition" data-i18n="filter_ventures">منصاتي التعليمية</button>
+          <button data-filter="web" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-200 dark:bg-slate-800 hover:bg-blue-600 hover:text-white transition" data-i18n="filter_web">أنظمة وتطوير ويب</button>
+          <button data-filter="finance" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-200 dark:bg-slate-800 hover:bg-blue-600 hover:text-white transition" data-i18n="filter_finance">أنظمة مالية وبيانات</button>
+        </div>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="projectsGrid">
+        
+        <!-- Project 1: Ahmed Abdelhamed Academy -->
+        <div class="project-card group rounded-3xl p-6 bg-white dark:bg-darkCard border border-slate-200 dark:border-slate-800 hover:border-blue-500 transition flex flex-col justify-between" data-category="ventures">
           <div>
-            <span class="my-course-tag" data-i18n="MyCourse.badge">Ahmed Abdelhamed Academy</span>
-            <h3 class="text-2xl sm:text-3xl font-bold text-foreground mb-3">
-              <a
-                href="https://couesese.ahmedabdelhamed.com/course?slug=linkedin-growth-engine-2026-from-profile-to-placement"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="hover:text-primary transition-colors"
-                data-i18n="MyCourse.title"
-              >
-                LinkedIn Growth Engine 2026: From Profile to Placement
-              </a>
-            </h3>
-            <p class="text-muted-foreground leading-relaxed" data-i18n="MyCourse.desc">A practical roadmap to optimize your LinkedIn profile, build authority, and turn connections into real career opportunities and placements.</p>
-            <ul>
-              <li data-i18n="MyCourse.point1">Position and optimize your profile to attract recruiters and clients</li>
-              <li data-i18n="MyCourse.point2">Create high-signal content and outreach workflows that drive growth</li>
-              <li data-i18n="MyCourse.point3">Convert profile visibility into interviews, offers, and placement</li>
-            </ul>
-            <div class="flex flex-wrap gap-2 text-xs text-muted-foreground mb-6">
-              <span class="px-2 py-1 rounded-md bg-muted/50" data-i18n="MyCourse.level">Level: All Levels</span>
-              <span class="px-2 py-1 rounded-md bg-muted/50" data-i18n="MyCourse.duration">Self-paced</span>
-              <span class="px-2 py-1 rounded-md bg-muted/50" data-i18n="MyCourse.language">Language: Arabic / English</span>
+            <div class="flex justify-between items-start mb-4">
+              <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-500 text-xs font-bold">Founder & Instructor</span>
+              <a href="https://couesese.ahmedabdelhamed.com" target="_blank" class="text-slate-400 hover:text-blue-500"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
             </div>
-            <a
-              href="https://couesese.ahmedabdelhamed.com/course?slug=linkedin-growth-engine-2026-from-profile-to-placement"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn-primary inline-flex items-center gap-2"
-            >
-              <span data-i18n="MyCourse.enroll">Enroll now</span>
-            </a>
+            <h3 class="text-xl font-bold mb-2">Ahmed Abdelhamed Academy</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mb-4" data-i18n="p1_desc">منصة تعليمية متكاملة تقدم دورات عملية في التطوير المهني، منها كورس LinkedIn Growth Engine 2026: From Profile to Placement.</p>
           </div>
-        </article>
-
-        <!-- Banking, Finance & Training Programs -->
-        <div class="text-center mt-20 mb-10 reveal-item">
-          <p class="section-title" data-i18n="Courses.takenLabel">Banking, Finance & Training Programs</p>
-          <h2 class="section-heading" data-i18n="Courses.takenHeading">Programs & internships completed</h2>
-          <p class="section-subheading mx-auto mt-4" data-i18n="Courses.takenSubheading">Selected banking, finance, and career readiness programs from my learning journey.</p>
+          <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-slate-800">
+            <span class="text-xs px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 font-mono">EdTech</span>
+            <span class="text-xs px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 font-mono">Paymob</span>
+            <span class="text-xs px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 font-mono">OAuth</span>
+          </div>
         </div>
 
-        <div id="taken-courses-grid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          <article class="p-5 glass-card-hover">
-            <p class="text-xs text-primary font-semibold mb-1">Jun 2025 – Feb 2026</p>
-            <h3 class="text-base font-bold text-foreground mb-2">Banque Misr</h3>
-            <p class="text-xs text-muted-foreground">Student Intern & Summer Internship (three placements) in banking operations, compliance, and transaction handling.</p>
-          </article>
-
-          <article class="p-5 glass-card-hover">
-            <p class="text-xs text-primary font-semibold mb-1">Jul 2025 – Nov 2025</p>
-            <h3 class="text-base font-bold text-foreground mb-2">Central Bank of Egypt & EBI</h3>
-            <p class="text-xs text-muted-foreground">Youth Financial Literacy & Bank Credit Orientation Program with Banking Credit certificate from the Egyptian Banking Institute.</p>
-          </article>
-
-          <article class="p-5 glass-card-hover">
-            <p class="text-xs text-primary font-semibold mb-1">Jul 2025 – Aug 2025</p>
-            <h3 class="text-base font-bold text-foreground mb-2">CIB Egypt</h3>
-            <p class="text-xs text-muted-foreground">Summer Internship Program 2025 — Sustainable Finance, Risk Management, and Digital Transformation.</p>
-          </article>
-
-          <article class="p-5 glass-card-hover">
-            <p class="text-xs text-primary font-semibold mb-1">Oct 2025 – Nov 2025</p>
-            <h3 class="text-base font-bold text-foreground mb-2">EBANK / EGBANK</h3>
-            <p class="text-xs text-muted-foreground">Accounting Intern & Accountant placement supporting banking accounting operations.</p>
-          </article>
+        <!-- Project 2: Smart Career Hub -->
+        <div class="project-card group rounded-3xl p-6 bg-white dark:bg-darkCard border border-slate-200 dark:border-slate-800 hover:border-emerald-500 transition flex flex-col justify-between" data-category="ventures">
+          <div>
+            <div class="flex justify-between items-start mb-4">
+              <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-500 text-xs font-bold">Co-Founder & Director</span>
+              <a href="https://smartcareerhub.ahmedabdelhamed.com" target="_blank" class="text-slate-400 hover:text-emerald-500"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Smart Career Hub</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mb-4" data-i18n="p2_desc">منصة ويب لتأهيل الشباب لسوق العمل عبر مسارات تدريبية في تحليل البيانات والمالية والمحاسبة مع بنية تحتية وقواعد بيانات متكاملة.</p>
+          </div>
+          <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-slate-800">
+            <span class="text-xs px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 font-mono">PHP / MySQL</span>
+            <span class="text-xs px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 font-mono">Career Tracks</span>
+          </div>
         </div>
 
-        <p class="text-center text-sm text-muted-foreground mt-8 reveal-item">
-          <a href="https://www.linkedin.com/in/ahmed3bdelhamed/details/certifications/" target="_blank" rel="noreferrer" class="text-primary hover:underline font-medium" data-i18n="Courses.linkedinMore">See all on LinkedIn →</a>
-        </p>
+        <!-- Project 3: SmartCare Hospital Platform -->
+        <div class="project-card group rounded-3xl p-6 bg-white dark:bg-darkCard border border-slate-200 dark:border-slate-800 hover:border-indigo-500 transition flex flex-col justify-between" data-category="web">
+          <div>
+            <div class="flex justify-between items-start mb-4">
+              <span class="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-500 text-xs font-bold">Full-Stack & ERP</span>
+              <i class="fa-solid fa-hospital text-slate-400"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">SmartCare Healthcare System</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mb-4" data-i18n="p3_desc">منصة تفاعلية لإدارة المستشفيات وحجز المواعيد الطبية مربوطة مباشرة بـ Odoo Backend API لتنظيم بيانات المرضى والعيادات.</p>
+          </div>
+          <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-slate-800">
+            <span class="text-xs px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 font-mono">Odoo API</span>
+            <span class="text-xs px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 font-mono">JavaScript</span>
+            <span class="text-xs px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 font-mono">Tailwind</span>
+          </div>
+        </div>
+
+        <!-- Project 4: Sherif Khalid Official Website -->
+        <div class="project-card group rounded-3xl p-6 bg-white dark:bg-darkCard border border-slate-200 dark:border-slate-800 hover:border-purple-500 transition flex flex-col justify-between" data-category="web">
+          <div>
+            <div class="flex justify-between items-start mb-4">
+              <span class="px-3 py-1 rounded-full bg-purple-500/10 text-purple-500 text-xs font-bold">Creator Portfolio</span>
+              <i class="fa-solid fa-music text-slate-400"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Sherif Khalid Official Platform</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mb-4" data-i18n="p4_desc">الموقع الرسمي ونظام الحجوزات لصانع المحتوى والمغني شريف خالد، بخلفيات فيديو، تضمين تيك توك، وإشعارات حجز فورية عبر Telegram Bot.</p>
+          </div>
+          <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-slate-800">
+            <span class="text-xs px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 font-mono">Telegram API</span>
+            <span class="text-xs px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 font-mono">Bilingual UI</span>
+          </div>
+        </div>
+
+        <!-- Project 5: TOBIM & Three Engineers Portals -->
+        <div class="project-card group rounded-3xl p-6 bg-white dark:bg-darkCard border border-slate-200 dark:border-slate-800 hover:border-cyan-500 transition flex flex-col justify-between" data-category="web">
+          <div>
+            <div class="flex justify-between items-start mb-4">
+              <span class="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-500 text-xs font-bold">Dashboards & Payments</span>
+              <i class="fa-solid fa-gauge-high text-slate-400"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">TOBIM & Three Engineers Portals</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mb-4" data-i18n="p5_desc">بوابات إلكترونية ولوحات تحكم داخلية لإدارة اشتراكات الطلاب والمدفوعات وتنظيم العمليات التدريبية والهندسية.</p>
+          </div>
+          <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-slate-800">
+            <span class="text-xs px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 font-mono">PHP</span>
+            <span class="text-xs px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 font-mono">MySQL</span>
+            <span class="text-xs px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 font-mono">SMTP</span>
+          </div>
+        </div>
+
+        <!-- Project 6: Dental Clinic & Financial Automation -->
+        <div class="project-card group rounded-3xl p-6 bg-white dark:bg-darkCard border border-slate-200 dark:border-slate-800 hover:border-amber-500 transition flex flex-col justify-between" data-category="finance">
+          <div>
+            <div class="flex justify-between items-start mb-4">
+              <span class="px-3 py-1 rounded-full bg-amber-500/10 text-amber-500 text-xs font-bold">Financial Automation</span>
+              <i class="fa-solid fa-file-excel text-slate-400"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2" data-i18n="p6_title">أنظمة أتمتة الحسابات والعيادات</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mb-4" data-i18n="p6_desc">بناء أنظمة تتبع بيانات المرضى والمصروفات والقيود اليومية والقوائم المالية والرواتب باستخدام معادلات Excel و Google Sheets المتقدمة.</p>
+          </div>
+          <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-slate-800">
+            <span class="text-xs px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 font-mono">Advanced Excel</span>
+            <span class="text-xs px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 font-mono">Power BI</span>
+            <span class="text-xs px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 font-mono">SAP FICO</span>
+          </div>
+        </div>
+
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ==================== CERTIFICATIONS SECTION ==================== -->
-    <section id="certifications" class="py-12 lg:py-16 relative min-h-screen flex items-center">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-        
-        <div class="text-center mb-12 reveal-item">
-          <p class="section-title" data-i18n="Certifications.sectionTitle">Credentials & Honors</p>
-          <h2 class="section-heading" data-i18n="Certifications.heading">Certificates & continuous learning</h2>
-          <p class="section-subheading mx-auto mt-4" data-i18n="Certifications.subheading">A rotating card changes automatically. Select a dot to view a certificate directly.</p>
+  <!-- Services Section -->
+  <section id="services" class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <h2 class="text-3xl sm:text-4xl font-extrabold mb-4" data-i18n="srv_title">الخدمات والاستشارات</h2>
+        <p class="text-slate-600 dark:text-slate-400" data-i18n="srv_sub">حلول عملية مصممة للشركات، رواد الأعمال، والأفراد.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="p-6 rounded-3xl bg-white dark:bg-darkCard border border-slate-200 dark:border-slate-800">
+          <i class="fa-solid fa-globe text-2xl text-blue-500 mb-4"></i>
+          <h3 class="font-bold text-lg mb-2" data-i18n="s1_title">تطوير المواقع والمنصات</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400" data-i18n="s1_desc">تصميم وبرمجة مواقع البورتفوليو، المنصات التعليمية، ولوحات التحكم المتكاملة.</p>
         </div>
 
-        <!-- 3D Flipper Stage -->
-        <div class="certificate-stage mx-auto max-w-4xl w-full reveal-item">
-          <div id="certificate-flipper" class="certificate-flipper">
-            
-            <!-- Front Face -->
-            <article class="certificate-face glass-card p-5 sm:p-8 flex flex-col justify-between">
-              <div class="flex items-start justify-between gap-4 mb-3">
-                <div class="p-2.5 rounded-xl bg-primary/10">
-                  <svg class="w-6 h-6 text-primary" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.747.513L12 19.8l-4.245 2.13a.5.5 0 0 1-.747-.514l1.515-8.525"/><circle cx="12" cy="8" r="6"/></svg>
-                </div>
-                <span id="cert-counter" class="px-3 py-1 rounded-full bg-muted/60 text-xs font-medium text-muted-foreground">01 / 08</span>
-              </div>
-              
-              <div class="relative w-full flex-1 min-h-0 rounded-xl overflow-hidden mb-3 sm:mb-4 flex items-center justify-center cursor-pointer group" onclick="openCertModal()">
-                <img id="cert-img" src="images/1.jpg" alt="Certificate" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" />
-                <div class="absolute inset-0 bg-background/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm z-10">
-                  <svg class="w-10 h-10 text-foreground" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 15 6 6m-6-6v4.8m0-4.8h4.8M9 9 3 3m6 6V4.2M9 9H4.2"/></svg>
-                </div>
-              </div>
-              
-              <div class="mt-auto pt-2 border-t border-border/50">
-                <p class="text-xs text-primary font-semibold uppercase tracking-wider mb-1" data-i18n="Certifications.certificateLabel">Certificate</p>
-                <h3 id="cert-title" class="text-lg sm:text-xl font-bold text-foreground leading-tight">Financial Inclusion Session, Banking Operations & Bank Branch Training</h3>
-                <p id="cert-issuer" class="text-xs text-muted-foreground mt-1">Certificate of Achievement · IC3, ICDL, Excel Management Accounting, EBI Banking Credit, CIB 2025</p>
-              </div>
-            </article>
+        <div class="p-6 rounded-3xl bg-white dark:bg-darkCard border border-slate-200 dark:border-slate-800">
+          <i class="fa-solid fa-calculator text-2xl text-emerald-500 mb-4"></i>
+          <h3 class="font-bold text-lg mb-2" data-i18n="s2_title">الأتمتة المالية والمحاسبية</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400" data-i18n="s2_desc">تصميم شيتات مالية ذكية، تقارير Power BI، وتنظيم الدورات المستندية والمحاسبية.</p>
+        </div>
 
-            <!-- Back Face -->
-            <article class="certificate-face certificate-back glass-card p-6 sm:p-10 flex flex-col justify-between overflow-y-auto">
-              <div class="p-3 rounded-xl bg-secondary/10 w-fit">
-                <svg class="w-8 h-8 text-secondary" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="m9 9.5 2 2 4-4"/></svg>
-              </div>
+        <div class="p-6 rounded-3xl bg-white dark:bg-darkCard border border-slate-200 dark:border-slate-800">
+          <i class="fa-brands fa-linkedin text-2xl text-sky-500 mb-4"></i>
+          <h3 class="font-bold text-lg mb-2" data-i18n="s3_title">استشارات LinkedIn والمسار المهني</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400" data-i18n="s3_desc">بناء بروفايل احترافي يجذب مسؤولي التوظيف وتطوير السيرة الذاتية.</p>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-white dark:bg-darkCard border border-slate-200 dark:border-slate-800">
+          <i class="fa-solid fa-pen-nib text-2xl text-purple-500 mb-4"></i>
+          <h3 class="font-bold text-lg mb-2" data-i18n="s4_title">الهوية البصرية والموشن</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400" data-i18n="s4_desc">تصميمات السوشيال ميديا، مونتاج الفيديو، وبناء الهوية البصرية للمشاريع.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking & Contact Section (Connected to Telegram Bot API) -->
+  <section id="contact" class="py-20 bg-white/50 dark:bg-slate-900/40 border-t border-slate-200/60 dark:border-slate-800/60">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-10 bg-white dark:bg-darkCard rounded-3xl p-6 sm:p-10 border border-slate-200 dark:border-slate-800 shadow-xl">
+        
+        <!-- Contact Info -->
+        <div class="lg:col-span-5 flex flex-col justify-between space-y-6">
+          <div>
+            <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-500 text-xs font-bold" data-i18n="contact_badge">تواصل مباشر وفوري</span>
+            <h2 class="text-3xl font-extrabold mt-3 mb-3" data-i18n="contact_title">احجز استشارتك أو اطلب مشروعك</h2>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="contact_desc">
+              املأ البيانات وسيصلني إشعار فوري على تليجرام بتفاصيل طلبك للتواصل معك في أسرع وقت.
+            </p>
+          </div>
+
+          <div class="space-y-4 text-sm">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-500 flex items-center justify-center"><i class="fa-solid fa-phone"></i></div>
               <div>
-                <p class="text-sm text-secondary mb-3 font-semibold uppercase tracking-wider" data-i18n="Certifications.learningFocus">Certifications & Honors</p>
-                <p id="cert-detail" class="text-lg sm:text-xl font-semibold text-foreground leading-relaxed">IC3 Digital Literacy · ICDL · Excel Management Accounting · Banking Credit (EBI) · CIB Summer Internship 2025 · Ideal Researcher (2023–2024) · Ideal Volunteer (2021)</p>
+                <div class="text-xs text-slate-400" data-i18n="lbl_phone">الهاتف / واتساب</div>
+                <a href="tel:+201116512028" dir="ltr" class="font-bold hover:text-blue-500">+20 111 651 2028</a>
               </div>
-              <p class="text-sm text-muted-foreground" data-i18n="Certifications.nextLoading">Next credential loading…</p>
-            </article>
-
-          </div>
-        </div>
-
-        <!-- Controls & Dots -->
-        <div class="flex items-center justify-center gap-3 mt-8 reveal-item">
-          <button type="button" onclick="prevCertificate()" aria-label="Previous certificate" class="p-2 rounded-lg glass-card-hover text-muted-foreground hover:text-foreground cursor-pointer">
-            <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
-          </button>
-          <div id="cert-dots" class="flex items-center gap-2"></div>
-          <button type="button" onclick="nextCertificate()" aria-label="Next certificate" class="p-2 rounded-lg glass-card-hover text-muted-foreground hover:text-foreground cursor-pointer">
-            <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-          </button>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ==================== EXPERIENCE SECTION ==================== -->
-    <section id="experience" class="py-24 relative">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
-        
-        <div class="text-center mb-12 reveal-item">
-          <p class="section-title" data-i18n="Experience.sectionTitle">Background</p>
-          <h2 class="section-heading" data-i18n="Experience.heading">Experience & education</h2>
-        </div>
-
-        <div class="grid lg:grid-cols-[.8fr_1.2fr] gap-8">
-          
-          <!-- Education & Languages Card -->
-          <div class="space-y-6 h-fit reveal-item">
-            <article class="p-7 glass-card">
-              <div class="p-3 rounded-xl bg-primary/10 w-fit mb-5">
-                <svg class="w-7 h-7 text-primary" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-.838L12.83 2.18a2 2 0 0 0-1.66 0L2.6 10.084a1 1 0 0 0 0 1.832l8.57 7.908a2 2 0 0 0 1.66 0l8.57-7.908a1 1 0 0 0 .02-.994z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
-              </div>
-              <p class="text-sm uppercase tracking-wider text-primary mb-2 font-medium" data-i18n="Experience.educationLabel">Education</p>
-              <h3 class="text-xl font-semibold text-foreground" data-i18n="Experience.educationTitle">Business Information Systems</h3>
-              <p class="text-primary mt-1 font-medium" data-i18n="Experience.educationOrg">Future Academy – Higher Future Institute for Specialized Technological Studies</p>
-              <p class="text-sm text-muted-foreground mt-4" data-i18n="Experience.educationDate">Sep 2023 – Jul 2027 (Expected) · Very Good</p>
-              <p class="text-muted-foreground mt-5 leading-relaxed" data-i18n="Experience.educationDesc">Coursework combining accounting, programming, and business systems management. Active Student Union member and Social Committee Head.</p>
-              <div class="mt-5 pt-4 border-t border-border/50 text-xs text-muted-foreground space-y-1">
-                <p><strong class="text-foreground">Harvard University:</strong> Leadership (Jan 2023 – Apr 2024)</p>
-                <p><strong class="text-foreground">Languages:</strong> Arabic (Native), Dutch (Professional Working), English (Elementary)</p>
-              </div>
-            </article>
-          </div>
-
-          <!-- Timeline Experiences -->
-          <div class="space-y-4 reveal-item">
-            
-            <!-- Exp 1: TO-BIM -->
-            <article class="p-5 glass-card-hover border-l-2 border-primary/60">
-              <div class="flex gap-3">
-                <div class="p-2 rounded-lg bg-muted/60 h-fit">
-                  <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12h.01"/><path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M22 13a18.15 18.15 0 0 1-20 0"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
-                </div>
-                <div class="min-w-0">
-                  <h3 class="text-lg font-semibold text-foreground" data-i18n="Experience.exp1Title">Digital Creative Specialist (prev. Senior Graphic Designer)</h3>
-                  <p class="text-primary font-medium" data-i18n="Experience.exp1Org">TO-BIM</p>
-                  <div class="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-xs text-muted-foreground">
-                    <span class="inline-flex items-center gap-1">
-                      <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
-                      <span data-i18n="Experience.exp1Date">Jul 2025 – Present</span>
-                    </span>
-                    <span class="inline-flex items-center gap-1">
-                      <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
-                      <span data-i18n="Experience.exp1Location">Cairo, Egypt</span>
-                    </span>
-                  </div>
-                  <p class="text-sm text-muted-foreground mt-3 leading-relaxed" data-i18n="Experience.exp1Desc">Deliver visual design, web development, and motion graphics; build a clinic data-entry system and UI/UX web layouts to boost audience engagement.</p>
-                  <div class="flex flex-wrap gap-1.5 mt-3">
-                    <span class="px-2 py-1 rounded-md bg-muted/50 text-xs text-muted-foreground">Web Development</span>
-                    <span class="px-2 py-1 rounded-md bg-muted/50 text-xs text-muted-foreground">UI/UX Design</span>
-                    <span class="px-2 py-1 rounded-md bg-muted/50 text-xs text-muted-foreground">Motion Graphics</span>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <!-- Exp 2: Ahmed Abdelhamed Academy -->
-            <article class="p-5 glass-card-hover border-l-2 border-primary/60">
-              <div class="flex gap-3">
-                <div class="p-2 rounded-lg bg-muted/60 h-fit">
-                  <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12h.01"/><path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M22 13a18.15 18.15 0 0 1-20 0"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
-                </div>
-                <div class="min-w-0">
-                  <h3 class="text-lg font-semibold text-foreground" data-i18n="Experience.exp2Title">Founder</h3>
-                  <p class="text-primary font-medium" data-i18n="Experience.exp2Org">Ahmed Abdelhamed Academy</p>
-                  <div class="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-xs text-muted-foreground">
-                    <span class="inline-flex items-center gap-1">
-                      <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
-                      <span data-i18n="Experience.exp2Date">Sep 2026 – Present</span>
-                    </span>
-                    <span class="inline-flex items-center gap-1">
-                      <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
-                      <span data-i18n="Experience.exp2Location">Cairo, Egypt</span>
-                    </span>
-                  </div>
-                  <p class="text-sm text-muted-foreground mt-3 leading-relaxed" data-i18n="Experience.exp2Desc">Founded an academy offering practical courses in Excel, data analysis, Power BI dashboards, data quality, and career placement.</p>
-                  <div class="flex flex-wrap gap-1.5 mt-3">
-                    <span class="px-2 py-1 rounded-md bg-muted/50 text-xs text-muted-foreground">Power BI</span>
-                    <span class="px-2 py-1 rounded-md bg-muted/50 text-xs text-muted-foreground">Excel</span>
-                    <span class="px-2 py-1 rounded-md bg-muted/50 text-xs text-muted-foreground">Data Analysis</span>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <!-- Exp 3: Ahl Masr Foundation -->
-            <article class="p-5 glass-card-hover border-l-2 border-primary/60">
-              <div class="flex gap-3">
-                <div class="p-2 rounded-lg bg-muted/60 h-fit">
-                  <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12h.01"/><path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M22 13a18.15 18.15 0 0 1-20 0"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
-                </div>
-                <div class="min-w-0">
-                  <h3 class="text-lg font-semibold text-foreground" data-i18n="Experience.exp3Title">Junior Financial Analyst</h3>
-                  <p class="text-primary font-medium" data-i18n="Experience.exp3Org">Ahl Masr Foundation (Ahl Masr Burn Hospital)</p>
-                  <div class="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-xs text-muted-foreground">
-                    <span class="inline-flex items-center gap-1">
-                      <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
-                      <span data-i18n="Experience.exp3Date">Sep 2026 – Oct 2026</span>
-                    </span>
-                    <span class="inline-flex items-center gap-1">
-                      <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
-                      <span data-i18n="Experience.exp3Location">Cairo, Egypt</span>
-                    </span>
-                  </div>
-                  <p class="text-sm text-muted-foreground mt-3 leading-relaxed" data-i18n="Experience.exp3Desc">Performed transaction processing and review in SAP FICO across six core finance processes including AP, AR, supplier and bank accounting, and withholding tax.</p>
-                  <div class="flex flex-wrap gap-1.5 mt-3">
-                    <span class="px-2 py-1 rounded-md bg-muted/50 text-xs text-muted-foreground">SAP FICO</span>
-                    <span class="px-2 py-1 rounded-md bg-muted/50 text-xs text-muted-foreground">AP / AR & Banking</span>
-                    <span class="px-2 py-1 rounded-md bg-muted/50 text-xs text-muted-foreground">Withholding Tax</span>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <!-- Exp 4: Smart Career Hub & GDG On Campus Future Academy -->
-            <article class="p-5 glass-card-hover border-l-2 border-primary/60">
-              <div class="flex gap-3">
-                <div class="p-2 rounded-lg bg-muted/60 h-fit">
-                  <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12h.01"/><path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M22 13a18.15 18.15 0 0 1-20 0"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
-                </div>
-                <div class="min-w-0">
-                  <h3 class="text-lg font-semibold text-foreground" data-i18n="Experience.exp4Title">Co-Founder & PR Leader</h3>
-                  <p class="text-primary font-medium" data-i18n="Experience.exp4Org">Smart Career Hub & GDG On Campus Future Academy</p>
-                  <div class="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-xs text-muted-foreground">
-                    <span class="inline-flex items-center gap-1">
-                      <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
-                      <span data-i18n="Experience.exp4Date">Nov 2025 – Present</span>
-                    </span>
-                    <span class="inline-flex items-center gap-1">
-                      <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
-                      <span data-i18n="Experience.exp4Location">Cairo & El Obour, Egypt</span>
-                    </span>
-                  </div>
-                  <p class="text-sm text-muted-foreground mt-3 leading-relaxed" data-i18n="Experience.exp4Desc">Directing operational strategy and digital brand presence at Smart Career Hub while leading public relations, outreach, and visual design at GDG On Campus Future Academy.</p>
-                  <div class="flex flex-wrap gap-1.5 mt-3">
-                    <span class="px-2 py-1 rounded-md bg-muted/50 text-xs text-muted-foreground">Leadership</span>
-                    <span class="px-2 py-1 rounded-md bg-muted/50 text-xs text-muted-foreground">Public Relations</span>
-                    <span class="px-2 py-1 rounded-md bg-muted/50 text-xs text-muted-foreground">Operations</span>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <!-- Exp 5: CIB Egypt, Yasser Abdel Mageed, Andalusia Clinic & HMT Group -->
-            <article class="p-5 glass-card-hover border-l-2 border-primary/60">
-              <div class="flex gap-3">
-                <div class="p-2 rounded-lg bg-muted/60 h-fit">
-                  <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12h.01"/><path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M22 13a18.15 18.15 0 0 1-20 0"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
-                </div>
-                <div class="min-w-0">
-                  <h3 class="text-lg font-semibold text-foreground" data-i18n="Experience.exp5Title">Personal Banker · Junior Accountant · Data Analysis Manager · Auditor</h3>
-                  <p class="text-primary font-medium" data-i18n="Experience.exp5Org">CIB Egypt (EBSM) · Yasser Abdel Mageed Office · Andalusia Dental Clinic · HMT Group</p>
-                  <div class="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-xs text-muted-foreground">
-                    <span class="inline-flex items-center gap-1">
-                      <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
-                      <span data-i18n="Experience.exp5Date">May 2024 – Aug 2026</span>
-                    </span>
-                    <span class="inline-flex items-center gap-1">
-                      <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
-                      <span data-i18n="Experience.exp5Location">Cairo, Egypt</span>
-                    </span>
-                  </div>
-                  <p class="text-sm text-muted-foreground mt-3 leading-relaxed" data-i18n="Experience.exp5Desc">Served as Personal Banker in CIB EBSM, supported tax and Excel accounting operations, managed clinic data analysis for 21 months, and identified contract savings reducing operating costs by 15% at HMT Group.</p>
-                  <div class="flex flex-wrap gap-1.5 mt-3">
-                    <span class="px-2 py-1 rounded-md bg-muted/50 text-xs text-muted-foreground">Banking</span>
-                    <span class="px-2 py-1 rounded-md bg-muted/50 text-xs text-muted-foreground">Tax & Accounting</span>
-                    <span class="px-2 py-1 rounded-md bg-muted/50 text-xs text-muted-foreground">15% Cost Reduction</span>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== CONTACT SECTION ==================== -->
-    <section id="contact" class="py-24 relative">
-      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent"></div>
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
-        
-        <div class="text-center mb-12 reveal-item">
-          <p class="section-title" data-i18n="Contact.sectionTitle">Get in touch</p>
-          <h2 class="section-heading" data-i18n="Contact.heading">Let's start a conversation</h2>
-          <p class="section-subheading mx-auto mt-4" data-i18n="Contact.subheading">Send a message and it will be delivered directly to Ahmed through Telegram.</p>
-        </div>
-
-        <div class="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto items-start">
-          
-          <!-- Contact Sidebar -->
-          <div class="space-y-4 reveal-item">
-            <!-- Email -->
-            <a href="mailto:ahmed3bdelhamedwork@gmail.com" class="p-4 sm:p-6 glass-card-hover flex items-center gap-3 sm:gap-4 overflow-hidden">
-              <span class="p-2.5 sm:p-3 rounded-lg bg-primary/10 flex-shrink-0">
-                <svg class="w-5 h-5 sm:w-6 sm:h-6 text-primary" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-              </span>
-              <span class="min-w-0 flex-1">
-                <span class="block text-base sm:text-lg font-semibold text-foreground" data-i18n="Contact.emailLabel">Email</span>
-                <span class="text-sm sm:text-base text-muted-foreground break-all">ahmed3bdelhamedwork@gmail.com</span>
-              </span>
-            </a>
-
-            <!-- Phone -->
-            <a href="tel:+201116512028" class="p-4 sm:p-6 glass-card-hover flex items-center gap-3 sm:gap-4 overflow-hidden">
-              <span class="p-2.5 sm:p-3 rounded-lg bg-primary/10 flex-shrink-0">
-                <svg class="w-5 h-5 sm:w-6 sm:h-6 text-primary" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              </span>
-              <span class="min-w-0 flex-1">
-                <span class="block text-base sm:text-lg font-semibold text-foreground" data-i18n="Contact.phoneLabel">Phone</span>
-                <span class="text-sm sm:text-base text-muted-foreground break-words" dir="ltr">01116512028</span>
-              </span>
-            </a>
-
-            <!-- WhatsApp -->
-            <a href="https://wa.me/201116512028" target="_blank" rel="noreferrer" class="p-4 sm:p-6 glass-card-hover flex items-center gap-3 sm:gap-4 overflow-hidden">
-              <span class="p-2.5 sm:p-3 rounded-lg bg-[#25D366]/10 flex-shrink-0">
-                <svg class="w-5 h-5 sm:w-6 sm:h-6 text-[#25D366]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-              </span>
-              <span class="min-w-0 flex-1">
-                <span class="block text-base sm:text-lg font-semibold text-foreground">WhatsApp</span>
-                <span class="text-sm sm:text-base text-muted-foreground break-words" dir="ltr">01116512028</span>
-              </span>
-            </a>
-
-            <!-- Location -->
-            <div class="p-4 sm:p-6 glass-card flex items-center gap-3 sm:gap-4 overflow-hidden">
-              <span class="p-2.5 sm:p-3 rounded-lg bg-primary/10 flex-shrink-0">
-                <svg class="w-5 h-5 sm:w-6 sm:h-6 text-primary" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
-              </span>
-              <span class="min-w-0 flex-1">
-                <span class="block text-base sm:text-lg font-semibold text-foreground" data-i18n="Contact.locationLabel">Location</span>
-                <span class="text-sm sm:text-base text-muted-foreground break-words" data-i18n="Contact.locationValue">Cairo, Egypt</span>
-              </span>
             </div>
 
-            <!-- LinkedIn -->
-            <a href="https://www.linkedin.com/in/ahmed3bdelhamed/" target="_blank" rel="noreferrer" class="p-4 sm:p-6 glass-card-hover flex items-center gap-3 sm:gap-4 overflow-hidden">
-              <span class="p-2.5 sm:p-3 rounded-lg bg-primary/10 flex-shrink-0">
-                <svg class="w-5 h-5 sm:w-6 sm:h-6 text-primary" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-              </span>
-              <span class="min-w-0 flex-1">
-                <span class="block text-base sm:text-lg font-semibold text-foreground" data-i18n="Contact.linkedinLabel">LinkedIn</span>
-                <span class="text-sm sm:text-base text-muted-foreground break-words" data-i18n="Contact.linkedinValue">linkedin.com/in/ahmed3bdelhamed</span>
-              </span>
-            </a>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <div class="text-xs text-slate-400" data-i18n="lbl_email">البريد الإلكتروني</div>
+                <a href="mailto:ahmed3bdelhamedwork@gmail.com" class="font-bold hover:text-emerald-500 break-all">ahmed3bdelhamedwork@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-500 flex items-center justify-center"><i class="fa-solid fa-location-dot"></i></div>
+              <div>
+                <div class="text-xs text-slate-400" data-i18n="lbl_loc">الموقع</div>
+                <span class="font-bold" data-i18n="val_loc">مصر الجديدة، القاهرة، مصر</span>
+              </div>
+            </div>
           </div>
-
-          <!-- Contact Form -->
-          <div class="p-8 glass-card reveal-item">
-            <form id="contact-form" class="space-y-4">
-              <div>
-                <label for="name" class="block text-sm font-medium text-foreground mb-1" data-i18n="Contact.nameLabel">Name</label>
-                <input type="text" id="name" name="name" required class="form-input" data-i18n-placeholder="Contact.namePlaceholder" placeholder="Your name" />
-              </div>
-
-              <div>
-                <label for="email" class="block text-sm font-medium text-foreground mb-1" data-i18n="Contact.emailFieldLabel">Email</label>
-                <input type="email" id="email" name="email" required class="form-input" data-i18n-placeholder="Contact.emailPlaceholder" placeholder="you@example.com" />
-              </div>
-
-              <div>
-                <label for="phone" class="block text-sm font-medium text-foreground mb-1" data-i18n="Contact.phoneFieldLabel">Phone Number</label>
-                <input type="tel" id="phone" name="phone" required class="form-input" data-i18n-placeholder="Contact.phonePlaceholder" placeholder="Your phone number" />
-              </div>
-
-              <div>
-                <label for="message" class="block text-sm font-medium text-foreground mb-1" data-i18n="Contact.messageLabel">Message</label>
-                <textarea id="message" name="message" rows="4" required class="form-input" data-i18n-placeholder="Contact.messagePlaceholder" placeholder="How can Ahmed help?"></textarea>
-              </div>
-
-              <button type="submit" id="form-submit-btn" class="btn-primary w-full justify-center cursor-pointer">
-                <span data-i18n="Contact.sendButton">Send Message</span>
-                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
-              </button>
-
-              <div id="form-status-msg" class="mt-4 text-sm font-medium text-center"></div>
-            </form>
-          </div>
-
         </div>
-      </div>
-    </section>
-  </main>
 
-  <!-- ==================== FOOTER ==================== -->
-  <footer class="py-8 border-t border-border/50 relative">
-    <div class="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent opacity-50"></div>
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10 flex flex-col md:flex-row items-center justify-between gap-4">
-      <div class="text-center md:text-left rtl:md:text-right">
-        <h3 class="text-lg font-semibold text-primary">Ahmed Abdelhamed</h3>
-        <p class="text-sm text-muted-foreground" data-i18n="Footer.tagline">Financial Analyst · Data Analysis · SAP FICO · Digital Creative Specialist</p>
+        <!-- Booking Form -->
+        <div class="lg:col-span-7">
+          <form id="bookingForm" class="space-y-4">
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold mb-1.5" data-i18n="form_name">الاسم بالكامل *</label>
+                <input type="text" id="clientName" required class="w-full px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 focus:border-blue-500 focus:outline-none text-sm" placeholder="مثال: محمد أحمد" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold mb-1.5" data-i18n="form_phone">رقم الهاتف / واتساب *</label>
+                <input type="tel" id="clientPhone" required dir="ltr" class="w-full px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 focus:border-blue-500 focus:outline-none text-sm" placeholder="+20 10X XXX XXXX" />
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold mb-1.5" data-i18n="form_email">البريد الإلكتروني</label>
+                <input type="email" id="clientEmail" dir="ltr" class="w-full px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 focus:border-blue-500 focus:outline-none text-sm" placeholder="name@example.com" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold mb-1.5" data-i18n="form_service">نوع الطلب / الخدمة *</label>
+                <select id="serviceType" required class="w-full px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 focus:border-blue-500 focus:outline-none text-sm">
+                  <option value="Web Development" data-i18n="opt_web">تطوير موقع إلكتروني / منصة</option>
+                  <option value="Financial & Excel Automation" data-i18n="opt_fin">أتمتة مالية / Excel / SAP</option>
+                  <option value="LinkedIn & Career Consultation" data-i18n="opt_career">استشارة LinkedIn ومسار مهني</option>
+                  <option value="Graphic & Motion Design" data-i18n="opt_design">تصميم جرافيك / مونتاج</option>
+                  <option value="Job Opportunity / Collaboration" data-i18n="opt_job">فرصة عمل / شراكة</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold mb-1.5" data-i18n="form_msg">تفاصيل المشروع أو الاستشارة *</label>
+              <textarea id="clientMessage" rows="4" required class="w-full px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 focus:border-blue-500 focus:outline-none text-sm" placeholder="اكتب تفاصيل طلبك هنا..."></textarea>
+            </div>
+
+            <button type="submit" id="submitBtn" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold shadow-lg shadow-blue-600/25 transition flex items-center justify-center gap-2">
+              <i class="fa-brands fa-telegram text-lg"></i>
+              <span data-i18n="form_submit">إرسال الطلب فوراً</span>
+            </button>
+
+            <div id="formStatus" class="hidden p-3.5 rounded-xl text-xs font-bold text-center"></div>
+          </form>
+        </div>
+
       </div>
-      <div class="flex items-center gap-3">
-        <a href="https://www.linkedin.com/in/ahmed3bdelhamed/" target="_blank" rel="noreferrer" class="p-2 rounded-lg hover:bg-muted/50 text-muted-foreground hover:text-foreground transition-all" aria-label="LinkedIn">
-          <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-        </a>
-        <a href="https://www.behance.net/ahmedabdelhamed14" target="_blank" rel="noreferrer" class="p-2 rounded-lg hover:bg-muted/50 text-muted-foreground hover:text-foreground transition-all" aria-label="Behance">
-          <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
-        </a>
-        <a href="mailto:ahmed3bdelhamedwork@gmail.com" class="p-2 rounded-lg hover:bg-muted/50 text-muted-foreground hover:text-foreground transition-all" aria-label="Email">
-          <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-        </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 border-t border-slate-200 dark:border-slate-800 text-center text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p data-i18n="footer_copy">© 2026 أحمد عبد الحميد. جميع الحقوق محفوظة.</p>
+      <div class="flex items-center gap-4">
+        <a href="https://couesese.ahmedabdelhamed.com" target="_blank" class="hover:text-blue-500">Academy</a>
+        <span>•</span>
+        <a href="https://smartcareerhub.ahmedabdelhamed.com" target="_blank" class="hover:text-blue-500">Smart Career Hub</a>
+        <span>•</span>
+        <a href="https://www.ahmedabdelhamed.com" target="_blank" class="hover:text-blue-500">Portfolio</a>
       </div>
-      <p class="flex items-center gap-1 text-sm text-muted-foreground">
-        <span data-i18n="Footer.copyright">© 2026</span>
-        <span data-i18n="Footer.by">by Ahmed Abdelhamed</span>
-      </p>
     </div>
   </footer>
 
-  <!-- ==================== FLOATING SCROLL BUTTON ==================== -->
-  <button id="floating-scroll-btn" aria-label="Scroll button">
-    <svg class="w-5 h-5 md:w-6 md:h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-  </button>
-
-  <!-- ==================== PROJECT DETAILS MODAL ==================== -->
-  <div id="project-modal" class="modal-overlay">
-    <div class="modal-box relative">
-      <button onclick="closeProjectModal()" class="modal-close-btn" aria-label="Close modal">
-        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-      </button>
-
-      <!-- Details Column -->
-      <div class="w-full md:w-1/2 p-6 sm:p-8 md:p-10 overflow-y-auto max-h-[50vh] md:max-h-[90vh] order-2 md:order-1">
-        <p id="modal-project-category" class="text-sm text-primary mb-2 font-medium tracking-wide uppercase"></p>
-        <h3 id="modal-project-title" class="text-2xl sm:text-3xl font-bold text-foreground mb-6 leading-tight"></h3>
-        
-        <p id="modal-project-desc" class="text-muted-foreground leading-relaxed mb-8"></p>
-        
-        <div class="mb-8">
-          <h4 class="text-sm font-semibold text-foreground uppercase tracking-wider mb-3" data-i18n="Projects.featuresLabel">Key Features</h4>
-          <ul id="modal-project-features" class="space-y-1"></ul>
-        </div>
-
-        <div class="mb-10">
-          <h4 class="text-sm font-semibold text-foreground uppercase tracking-wider mb-3" data-i18n="Projects.techLabel">Technologies</h4>
-          <div id="modal-project-tech" class="flex flex-wrap gap-2"></div>
-        </div>
-
-        <div id="modal-project-links" class="flex flex-wrap items-center gap-4"></div>
-      </div>
-
-      <!-- Slideshow Column -->
-      <div class="w-full md:w-1/2 relative bg-muted/20 border-b md:border-b-0 md:border-l border-border/50 h-[40vh] md:h-auto order-1 md:order-2 flex items-center justify-center p-4">
-        <img id="modal-project-img" src="" alt="Project Screenshot" class="w-full h-full object-contain rounded-lg drop-shadow-2xl transition-opacity duration-300" />
-        <div id="modal-project-dots" class="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2 px-3 py-2 rounded-full bg-background/50 backdrop-blur-md border border-border/50"></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ==================== CERTIFICATE ZOOM MODAL ==================== -->
-  <div id="cert-modal" class="modal-overlay">
-    <div class="relative z-10 w-full max-w-5xl max-h-[90vh] flex items-center justify-center">
-      <button onclick="closeCertModal()" class="modal-close-btn" style="top: -3rem; right: 0;" aria-label="Close">
-        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-      </button>
-      <img id="cert-modal-img" src="" alt="Certificate View" class="w-full h-auto max-h-[85vh] object-contain rounded-lg drop-shadow-2xl" />
-    </div>
-  </div>
-
-  <!-- Scripts -->
-  <script src="js/translations.js?v=4.0"></script>
-  <script src="js/app.js?v=4.0"></script>
+  <script src="app.js"></script>
 </body>
 </html>
