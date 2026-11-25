@@ -1,216 +1,169 @@
 // =====================================================
 // Endpoint Configuration (Posts JSON to api/contact.php)
 // =====================================================
-// If frontend is on GitHub Pages and PHP is hosted on your domain/server,
-// use full URL like: "https://ahmedabdelhamed.com/api/contact.php"
-// If both are on the same PHP server, "api/contact.php" works directly.
-const CONTACT_ENDPOINT = "https://www.ahmedabdelhamed.com/api/contact.php";
+const CONTACT_ENDPOINT = "api/contact.php";
 
 // =====================================================
-// Translations (AR / EN)
+// Clean Smooth Scroll (No # added to URL bar)
+// =====================================================
+document.querySelectorAll("[data-scroll]").forEach((trigger) => {
+  trigger.addEventListener("click", () => {
+    const targetId = trigger.getAttribute("data-scroll");
+    const targetEl = document.getElementById(targetId);
+    const mobileMenu = document.getElementById("mobileMenu");
+    if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
+      mobileMenu.classList.add("hidden");
+    }
+    if (targetEl) {
+      targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+      if (window.location.hash) {
+        history.replaceState(null, "", window.location.pathname + window.location.search);
+      }
+    }
+  });
+});
+
+// =====================================================
+// Bilingual Dictionary (AR / EN)
 // =====================================================
 const i18n = {
   ar: {
     brand_name: "أحمد عبد الحميد",
-    nav_about: "عني",
-    nav_exp: "الخبرات",
-    nav_ventures: "المنصات والمشاريع",
-    nav_services: "الخدمات",
-    nav_book: "تواصل وحجز",
-    hero_badge: "مفتوح للفرص النوعية، الاستشارات، وتنفيذ الأنظمة",
-    hero_hi: "مرحباً، أنا",
+    nav_about: "نبذة عني",
+    nav_skills: "المهارات المحاسبية والتقنية",
+    nav_exp: "الخبرات والتدريبات",
+    nav_projects: "المشاريع والشهادات",
+    nav_contact: "تواصل معي",
+    hero_badge: "محاسب ومحلل مالي • SAP FICO • تحليل البيانات المالية",
+    hero_welcome: "أهلاً بك في موقعي الرسمي، أنا",
     hero_name: "أحمد عبد الحميد",
-    hero_roles: "Financial Analyst (SAP FICO) • Full-Stack Web Developer • EdTech Founder",
-    hero_desc: "أجمع بين التحليل المالي وأنظمة SAP FICO، وتطوير تطبيقات الويب المتكاملة، والتصميم الإبداعي. مؤسس أكاديمية أحمد عبد الحميد و Smart Career Hub، وأبني أنظمة رقمية وحلول مالية وتقنية قابلة للنمو.",
-    hero_cta_primary: "احجز استشارة أو اطلب مشروع",
-    hero_cta_secondary: "استعرض السيرة والخبرات",
-    stat_1: "متابع على LinkedIn",
-    stat_2: "خبرات وتدريبات عملية",
-    stat_3: "منصات تعليمية وريادية",
-    spot_title: "أين أصنع الفارق؟",
-    spot1_t: "SAP FICO & Financial Control",
-    spot1_d: "GL, AP, AR, Bank Accounting, WHT، مراجعة العقود، والنماذج المالية على Excel و Power BI.",
-    spot2_t: "Full-Stack & API Integrations",
-    spot2_d: "PHP, MySQL, JS, Tailwind، تكامل Odoo API، بوابات Paymob، وبوتات Telegram.",
-    spot3_t: "Creative Production & Growth",
-    spot3_d: "Illustrator, Premiere Pro, Canva، إدارة المنصات، وبناء الحضور المهني على LinkedIn.",
-    about_tag: "PROFILE & BACKGROUND",
-    about_title: "التعليم، القيادة، والشهادات",
-    about_sub: "خلفية أكاديمية في نظم معلومات الأعمال مدعومة بالقيادة الطلابية والمبادرات والمنافسات العملية.",
-    edu_title: "بكالوريوس نظم معلومات الأعمال (BIS)",
-    edu_place: "Future Academy for Specialized Technological Studies",
-    edu_desc: "دراسة تجمع بين نظم المعلومات الإدارية، المحاسبة، قواعد البيانات، وتحليل الأعمال.",
-    lead_title: "القيادة الطلابية والمجتمعية",
-    lead_desc: "PR Leader وعضو فريق التصميم في GDG Future Academy، رئيس اللجنة الاجتماعية باتحاد الطلاب، وقيادة مبادرة نواة التنموية مع مؤسسة سند.",
-    cert_title: "إنجازات وبرامج تدريبية",
-    exp_tag: "CAREER & INTERNSHIPS",
-    exp_title: "الخبرات العملية والتدريبات كاملة",
-    exp_sub: "تسلسل زمني كامل لأدواري الحالية والسابقة في التحليل المالي، البنوك، المراجعة، والتشغيل الرقمي.",
-    e1_t: "Junior Financial Analyst (SAP FICO)",
-    e1_o: "مؤسسة أهل مصر ومستشفى أهل مصر لعلاج الحروق (Ahl Masr Foundation)",
-    e1_d: "العمل ضمن SAP FICO عبر الأستاذ العام (GL)، حسابات الموردين والعملاء (AP/AR)، محاسبة البنوك، وضرائب الخصم والتحصيل (WHT).",
-    e2_t: "Digital Creative Specialist & Training Operations Coordinator",
-    e2_d: "إدارة التصميم الجرافيكي والموشن، تطوير المنصات الإلكترونية، جدولة المحاضرات على Google Classroom، وتفعيل حسابات Autodesk، ودعم المتدربين.",
-    e3_t: "Banking Internships (Retail Banking & Customer Service)",
-    e3_d: "تدريبات مصرفية عملية في البنك التجاري الدولي وبنك مصر تغطي الخدمات المصرفية للأفراد، خدمة العملاء، وفهم العمليات البنكية.",
-    e4_t: "Junior Accountant Trainee",
-    e4_o: "مكتب ياسر عبد المجيد للمحاسبة والضرائب",
-    e4_d: "إدخال البيانات المالية، إعداد القيود والحسابات، ومتابعة دورات العمل المحاسبية والضريبية.",
-    e5_t: "Financial Auditor",
-    e5_d: "مراجعة عقود الموردين والسجلات المالية والتحقق من دقة البيانات والقيود.",
-    e6_t: "Social Media Specialist & Data/Expense Assistant",
-    e6_o: "عيادات أندلسية لطب الأسنان (Andalucía Dental Clinic)",
-    e6_d: "إدارة المحتوى والتصميمات الترويجية وبناء نظام تتبع بيانات المرضى ومساعدة مستمرة في شيتات المصروفات والبيانات.",
-    e7_t: "Research Assistant",
-    e7_o: "مؤسسة سند للرعاية الوالدية البديلة",
-    e7_d: "جمع وتحليل المعلومات ودعم الأبحاث والأنشطة المجتمعية المرتبطة بالرعاية البديلة.",
-    e8_t: "Retail Sales & Cashier",
-    e8_o: "تجارة التجزئة والملابس الحريمي والطرح",
-    e8_d: "البيع المباشر، خدمة العملاء، وإدارة الكاشير وحسابات المبيعات اليومية.",
-    port_tag: "VENTURES & SYSTEMS",
-    port_title: "المنصات والمشاريع والأنظمة",
-    port_sub: "مشاريع تعليمية، تكاملات ERP، ولوحات تحكم وأنظمة متابعة.",
-    f_all: "الكل",
-    f_ventures: "المنصات",
-    f_web: "الأنظمة والويب",
-    f_fin: "المالية والبيانات",
-    w1_d: "منصة تعليمية تضم كورس LinkedIn Growth Engine 2026: From Profile to Placement وتجربة مستخدم متكاملة.",
-    w2_d: "منصة تأهيل مهني وتدريب في تحليل البيانات والمالية والمحاسبة مع بنية قواعد بيانات متكاملة.",
-    w3_d: "منصة حجز مواعيد وإدارة صحية متصلة بواجهة برمجة Odoo (edu-smartcare.odoo.com).",
-    w4_d: "موقع رسمي وحجوزات بخلفيات فيديو، تضمين تيك توك، قسم فيلم وثائقي قصير، وإشعارات Telegram Bot.",
-    w5_d: "بوابات ويب ولوحات تحكم داخلية لمتابعة الاشتراكات والمدفوعات وإشعارات البريد SMTP.",
-    w6_t: "نماذج مالية وأتمتة بيانات",
-    w6_d: "أتمتة القيود اليومية، القوائم المالية، الرواتب، وبيانات العيادات والمرضى عبر Excel و Google Sheets و Power BI.",
-    srv_tag: "SERVICES",
-    srv_title: "الخدمات والاستشارات",
-    srv_sub: "حلول عملية للعملاء، الشركات، وصناع المحتوى والباحثين عن فرص مهنية.",
-    s1_t: "تطوير المواقع والمنصات",
-    s1_d: "مواقع بورتفوليو، منصات تعليمية، ولوحات تحكم بواجهة عصرية ودعم لغتين.",
-    s2_t: "الأتمتة المالية والمحاسبية",
-    s2_d: "شيتات حسابية وقوائم مالية ورواتب وتقارير Power BI دقيقة وسريعة.",
-    s3_t: "استشارات LinkedIn والكارير",
-    s3_d: "تحسين ملف LinkedIn، السيرة الذاتية، واستراتيجيات الوصول للوظائف.",
-    s4_t: "الجرافيك والمونتاج والموشن",
-    s4_d: "تصميمات سوشيال ميديا، مونتاج فيديو، ومواد بصرية للمشاريع والحملات.",
-    c_tag: "DIRECT DISPATCH",
-    c_title: "تواصل معي أو احجز استشارة",
-    c_desc: "يتم إرسال رسالتك مباشرة عبر api/contact.php إلى بوت تليجرام الخاص بي لتصلك استجابة سريعة.",
+    hero_subtitle: "Financial Analyst | Accountant (SAP FICO) | Data Analysis (Power BI, SQL, Excel)",
+    hero_intro: "محاسب ومحلل مالي متخصص في الدورة المحاسبية الكاملة وأنظمة ERP (SAP FICO)، بخبرة عملية في حسابات الموردين والعملاء (AP/AR)، الأستاذ العام (GL)، محاسبة البنوك، وضرائب الخصم والتحصيل، والمراجعة المالية. أدمج الدقة المحاسبية مع أدوات تحليل البيانات (Power BI, SQL, Advanced Excel) لتقديم تقارير مالية تدعم اتخاذ القرار وتخفض التكاليف التشغيلية.",
+    hero_cta1: "تواصل لفرص العمل والاستشارات",
+    hero_cta2: "استعرض الخبرات المهنية",
+    m1_label: "خفض التكاليف التشغيلية بالمراجعة",
+    m2_label: "عمليات مالية أساسية بـ SAP FICO",
+    m3_label: "شهراً في إدارة تحليل البيانات",
+    card_kicker: "EXECUTIVE PROFILE",
+    card_heading: "الملف المحاسبي والمالي",
+    p1_t: "المحاسبة المالية وأنظمة ERP",
+    p1_d: "SAP FICO, Oracle, General Ledger, Accounts Payable (AP), Accounts Receivable (AR), Bank Accounting, Fixed Assets & Withholding Tax.",
+    p2_t: "التحليل المالي وذكاء الأعمال (BI)",
+    p2_d: "Financial Reporting, Audit & Compliance, Microsoft Power BI, Tableau, SQL, Advanced Excel & Management Accounting.",
+    p3_t: "نظم المعلومات والتطوير الرقمي",
+    p3_d: "تطوير أنظمة إدخال البيانات، أتمتة التقارير، UI/UX، وتأسيس الأكاديميات والمنصات الرقمية.",
+    about_kicker: "ABOUT ME",
+    about_title: "نبذة عني والتعليم والقيادة",
+    about_bio: "طالب في تخصص نظم معلومات الأعمال (Business Information Systems) بأكاديمية المستقبل، ورئيس اللجنة الاجتماعية باتحاد الطلاب. أمتلك خبرة عملية في المحاسبة والتحليل المالي عبر أنظمة SAP FICO، والتدريب المصرفي، والمراجعة المالية، ومكاتب المحاسبة والضرائب، مع شغف ببناء حلول تقنية وأنظمة بيانات ترفع كفاءة الأعمال.",
+    edu1_t: "بكالوريوس نظم معلومات الأعمال (BIS)",
+    edu1_d: "مقررات تجمع بين المحاسبة المالية والإدارية، البرمجة، وإدارة نظم المعلومات.",
+    edu2_t: "القيادة والتكريمات",
+    edu2_d: "برنامج القيادة في جامعة هارفارد (2023–2024)، رئيس اللجنة الاجتماعية باتحاد الطلاب، وقائد العلاقات العامة في GDG On Campus Future Academy، وحاصل على لقب الباحث المثالي 2023–2024.",
+    edu3_t: "اللغات والتواصل المهني",
+    sk_kicker: "CORE COMPETENCIES",
+    sk_title: "المهارات المحاسبية والتقنية",
+    sk_sub: "منظومة مهارات متكاملة تغطي المحاسبة، أنظمة تخطيط موارد المؤسسات، تحليل البيانات، والتصميم.",
+    sk1_t: "Finance & Accounting",
+    sk2_t: "ERP & Data Tools",
+    sk3_t: "Design & Web",
+    sk4_t: "Business & Leadership",
+    exp_kicker: "EXPERIENCE RECORD",
+    exp_title: "الخبرات المهنية والتدريبات المصرفية",
+    exp_sub: "سجل كامل بالخبرات المحاسبية والمالية والإدارية والريادية حسب السيرة الذاتية.",
+    bank_title: "البرامج التدريبية المصرفية والمالية",
+    tr1: "العمليات المصرفية، الالتزام، علاقات العملاء، ودقة تنفيذ المعاملات.",
+    tr2: "برنامج التثقيف المالي والائتمان المصرفي بالتعاون مع المعهد المصرفي المصري (EBI).",
+    tr3: "تدريب المحاسبة والعمليات المصرفية في البنك التجاري الدولي.",
+    tr4: "تدريب عملي في المحاسبة المصرفية.",
+    tr5: "محاكاة العمليات البنكية والائتمان وخدمة العملاء.",
+    tr6: "برامج تدريبية متخصصة في الأعمال والبيانات والقطاع المالي.",
+    tr7: "مساعد باحث ومنسق برامج رعاية الشباب.",
+    tr8: "التشغيل الفني والطباعة والإنتاج.",
+    pr_kicker: "PORTFOLIO & CREDENTIALS",
+    pr_title: "المشاريع والشهادات المعتمدة",
+    pr1_d: "تصميم ونشر موقع بورتفوليو متخصص في تحليل البيانات ونظم الأعمال يعرض المشاريع والدورات والشهادات.",
+    pr2_d: "بناء نظام متكامل لإدخال وإدارة بيانات العيادات الطبية إلى جانب تصميم واجهات المستخدم UI/UX.",
+    pr3_d: "أعمال الهوية البصرية وحملات السوشيال ميديا لـ TO-BIM و Three Engineers وشعار KCAU و Gossor و NETPEAS.",
+    cert_heading: "الشهادات المهنية والتدريبية (Certifications)",
+    c_kicker: "GET IN TOUCH",
+    c_title: "تواصل معي مباشرة",
+    c_desc: "للفرص الوظيفية في المحاسبة والتحليل المالي (SAP FICO)، أو الاستشارات وأنظمة البيانات، أرسل رسالتك وسأتواصل معك فوراً.",
     lbl_phone: "الهاتف / واتساب",
     lbl_email: "البريد الإلكتروني",
-    lbl_loc: "الموقع والمناطق المفضلة",
-    val_loc: "مصر الجديدة، القاهرة (ومدينة نصر)",
-    f_name: "الاسم *",
+    f_name: "الاسم بالكامل *",
     f_phone: "رقم الهاتف *",
     f_email: "البريد الإلكتروني *",
-    f_topic: "نوع الطلب",
-    t_web: "تطوير موقع أو نظام",
-    t_fin: "مالية / Excel / SAP",
-    t_car: "استشارة LinkedIn ومسار مهني",
-    t_des: "جرافيك / مونتاج / تصميم",
-    t_opp: "فرصة عمل أو تعاون",
-    f_msg: "الرسالة / التفاصيل *",
+    f_msg: "الرسالة *",
     f_send: "إرسال الرسالة",
-    footer_rights: "© 2026 أحمد عبد الحميد. جميع الحقوق محفوظة."
+    footer_rights: "© 2026 أحمد عبد الحميد (Ahmed Abdelhamed). جميع الحقوق محفوظة."
   },
   en: {
     brand_name: "Ahmed Abdelhamed",
     nav_about: "About",
+    nav_skills: "Skills",
     nav_exp: "Experience",
-    nav_ventures: "Ventures & Work",
-    nav_services: "Services",
-    nav_book: "Contact & Book",
-    hero_badge: "Open for High-Impact Roles, Consulting & System Builds",
-    hero_hi: "Hello, I'm",
+    nav_projects: "Projects & Certs",
+    nav_contact: "Contact",
+    hero_badge: "Accountant & Financial Analyst • SAP FICO • Financial Data Analysis",
+    hero_welcome: "Welcome to my official portfolio, I'm",
     hero_name: "Ahmed Abdelhamed",
-    hero_roles: "Financial Analyst (SAP FICO) • Full-Stack Web Developer • EdTech Founder",
-    hero_desc: "Combining Financial Analysis & SAP FICO with Full-Stack Web Development and Creative Design. Founder of Ahmed Abdelhamed Academy & Smart Career Hub, building scalable systems, financial workflows, and digital platforms.",
-    hero_cta_primary: "Book Consultation / Project",
-    hero_cta_secondary: "View Full Experience",
-    stat_1: "LinkedIn Followers",
-    stat_2: "Roles & Internships",
-    stat_3: "Founded Platforms",
-    spot_title: "Where I Create Value",
-    spot1_t: "SAP FICO & Financial Control",
-    spot1_d: "GL, AP, AR, Bank Accounting, WHT, contract reviews, and Excel / Power BI models.",
-    spot2_t: "Full-Stack & API Integrations",
-    spot2_d: "PHP, MySQL, JS, Tailwind, Odoo API integration, Paymob flows, and Telegram bots.",
-    spot3_t: "Creative Production & Growth",
-    spot3_d: "Illustrator, Premiere Pro, Canva, platform operations, and LinkedIn positioning.",
-    about_tag: "PROFILE & BACKGROUND",
-    about_title: "Education, Leadership & Credentials",
-    about_sub: "Business Information Systems foundation backed by student leadership, initiatives, and competitions.",
-    edu_title: "B.Sc. in Business Information Systems (BIS)",
-    edu_place: "Future Academy for Specialized Technological Studies",
-    edu_desc: "Bridging business management, accounting, databases, systems analysis, and data workflows.",
-    lead_title: "Student & Community Leadership",
-    lead_desc: "PR Leader & Core Design Member at GDG Future Academy, Head of Social Committee at Student Union, and Co-lead of Nawaa Initiative with Sanad.",
-    cert_title: "Honors & Training Programs",
-    exp_tag: "CAREER & INTERNSHIPS",
-    exp_title: "Complete Experience & Internships",
-    exp_sub: "Full chronological record across financial analysis, banking, auditing, and digital operations.",
-    e1_t: "Junior Financial Analyst (SAP FICO)",
-    e1_o: "Ahl Masr Foundation & Ahl Masr Burn Hospital",
-    e1_d: "Worked across SAP FICO covering General Ledger (GL), Accounts Payable/Receivable (AP/AR), Bank Accounting, and Withholding Tax (WHT).",
-    e2_t: "Digital Creative Specialist & Training Operations Coordinator",
-    e2_d: "Managing graphic & motion design, web portals, Google Classroom schedules, Autodesk account activations, and trainee support.",
-    e3_t: "Banking Internships (Retail Banking & Customer Service)",
-    e3_d: "Completed retail banking and customer service internships at CIB Egypt (Future Vest) and Banque Misr (Ruwad Program).",
-    e4_t: "Junior Accountant Trainee",
-    e4_o: "Yasser Abdel Mageed Accounting & Tax Office",
-    e4_d: "Financial data entry, accounting records, and tax/accounting workflow support.",
-    e5_t: "Financial Auditor",
-    e5_d: "Auditing vendor contracts and financial records for accuracy and compliance.",
-    e6_t: "Social Media Specialist & Data/Expense Assistant",
-    e6_o: "Andalucía Dental Clinic",
-    e6_d: "Promotional design, social media management, patient data tracking system, and ongoing assistance with expense & clinic sheets.",
-    e7_t: "Research Assistant",
-    e7_o: "Sanad Association for Alternative Parental Care",
-    e7_d: "Research gathering, documentation, and support for alternative parental care initiatives.",
-    e8_t: "Retail Sales & Cashier",
-    e8_o: "Women's Clothing & Scarves Retail",
-    e8_d: "Direct sales, customer service, cashier operations, and daily sales reconciliation.",
-    port_tag: "VENTURES & SYSTEMS",
-    port_title: "Platforms, Projects & Systems",
-    port_sub: "Educational platforms, ERP API integrations, dashboards, and automation systems.",
-    f_all: "All",
-    f_ventures: "Platforms",
-    f_web: "Web & Systems",
-    f_fin: "Finance & Data",
-    w1_d: "Learning platform hosting LinkedIn Growth Engine 2026: From Profile to Placement.",
-    w2_d: "Career development hub offering Data Analysis and Finance & Accounting tracks with custom database architecture.",
-    w3_d: "Healthcare appointment and hospital booking web platform integrated with Odoo API (edu-smartcare.odoo.com).",
-    w4_d: "Official creator site & booking flow with video loops, TikTok embeds, documentary section, and Telegram Bot alerts.",
-    w5_d: "Web portals and internal subscription/payment dashboards with SMTP notifications.",
-    w6_t: "Financial Models & Data Automation",
-    w6_d: "Journal entries, financial statements, payroll calculations, and clinic data tracking via Excel, Sheets, and Power BI.",
-    srv_tag: "SERVICES",
-    srv_title: "Services & Consulting",
-    srv_sub: "Practical execution for businesses, founders, creators, and job seekers.",
-    s1_t: "Web & Platform Development",
-    s1_d: "Portfolios, learning platforms, and admin dashboards with bilingual support.",
-    s2_t: "Financial & Excel Automation",
-    s2_d: "Financial statements, payroll sheets, expense trackers, and Power BI reporting.",
-    s3_t: "LinkedIn & Career Consulting",
-    s3_d: "LinkedIn positioning, CV optimization, and targeted job-search strategy.",
-    s4_t: "Graphic, Video & Motion",
-    s4_d: "Social visuals, video editing, and promotional creative assets.",
-    c_tag: "DIRECT DISPATCH",
-    c_title: "Get in Touch or Book a Session",
-    c_desc: "Submissions post directly to api/contact.php and deliver an instant Telegram notification.",
+    hero_subtitle: "Financial Analyst | Accountant (SAP FICO) | Data Analysis (Power BI, SQL, Excel)",
+    hero_intro: "Accountant and Financial Analyst specializing in full-cycle accounting and SAP FICO ERP operations, with hands-on experience across Accounts Payable (AP), Accounts Receivable (AR), General Ledger (GL), Bank Accounting, Withholding Tax, and Financial Auditing. Combining accounting precision with Power BI, SQL, and Advanced Excel to drive accurate financial reporting and cost efficiency.",
+    hero_cta1: "Connect for Roles & Consulting",
+    hero_cta2: "View Professional Experience",
+    m1_label: "Operating Cost Reduction via Audit",
+    m2_label: "Core Finance Processes in SAP FICO",
+    m3_label: "Months Managing Data Analysis",
+    card_kicker: "EXECUTIVE PROFILE",
+    card_heading: "Accounting & Finance Profile",
+    p1_t: "Financial Accounting & ERP",
+    p1_d: "SAP FICO, Oracle, General Ledger, Accounts Payable (AP), Accounts Receivable (AR), Bank Accounting, Fixed Assets & Withholding Tax.",
+    p2_t: "Financial Analysis & BI",
+    p2_d: "Financial Reporting, Audit & Compliance, Microsoft Power BI, Tableau, SQL, Advanced Excel & Management Accounting.",
+    p3_t: "Business Systems & Automation",
+    p3_d: "Building data-entry systems, automated reporting workflows, UI/UX layouts, and digital education ventures.",
+    about_kicker: "ABOUT ME",
+    about_title: "Profile, Education & Leadership",
+    about_bio: "Business Information Systems student at Future Academy and Head of the Social Committee at the Student Union, with hands-on experience across SAP FICO, banking internships, financial auditing, and accounting & tax offices—focused on delivering measurable impact where finance, technology, and business meet.",
+    edu1_t: "B.Sc. in Business Information Systems",
+    edu1_d: "Coursework combining financial & managerial accounting, programming, and business systems management.",
+    edu2_t: "Leadership & Honors",
+    edu2_d: "Harvard University Leadership program (2023–2024), Student Union Social Committee Head, PR Leader at GDG On Campus Future Academy, and Ideal Researcher (2023–2024).",
+    edu3_t: "Languages",
+    sk_kicker: "CORE COMPETENCIES",
+    sk_title: "Technical & Accounting Skills",
+    sk_sub: "Comprehensive skill set spanning accounting, ERP systems, business intelligence, and digital systems.",
+    sk1_t: "Finance & Accounting",
+    sk2_t: "ERP & Data Tools",
+    sk3_t: "Design & Web",
+    sk4_t: "Business & Leadership",
+    exp_kicker: "EXPERIENCE RECORD",
+    exp_title: "Professional Experience & Banking Programs",
+    exp_sub: "Complete chronological record across accounting, financial analysis, banking, auditing, and ventures.",
+    bank_title: "Banking, Finance & Training Programs",
+    tr1: "Banking operations, compliance, customer relationships, and accurate transaction handling.",
+    tr2: "Youth Financial Literacy & Bank Credit Orientation with the Egyptian Banking Institute (EBI).",
+    tr3: "Accounting and banking internship at Commercial International Bank (CIB).",
+    tr4: "Hands-on banking accounting internship.",
+    tr5: "Simulated banking operations, credit, and client service.",
+    tr6: "Specialized training across business, data, and financial services.",
+    tr7: "Research assistance and youth care program coordination.",
+    tr8: "Technical printing and production operations.",
+    pr_kicker: "PORTFOLIO & CREDENTIALS",
+    pr_title: "Projects & Certifications",
+    pr1_d: "Designed and published a data analysis and business systems portfolio featuring projects, courses, and certificates.",
+    pr2_d: "Built a dedicated data-entry system for a clinic client alongside UI/UX web layouts.",
+    pr3_d: "Brand and social media campaigns for TO-BIM, Three Engineers, KCAU logo, Gossor, and NETPEAS.",
+    cert_heading: "Certifications",
+    c_kicker: "GET IN TOUCH",
+    c_title: "Direct Contact",
+    c_desc: "For Accounting, Financial Analysis (SAP FICO), or Data Analysis opportunities and inquiries, send a message directly.",
     lbl_phone: "Phone / WhatsApp",
     lbl_email: "Email",
-    lbl_loc: "Location & Preferred Areas",
-    val_loc: "Heliopolis, Cairo (and Nasr City)",
-    f_name: "Name *",
-    f_phone: "Phone *",
-    f_email: "Email *",
-    f_topic: "Inquiry Type",
-    t_web: "Web / System Development",
-    t_fin: "Finance / Excel / SAP",
-    t_car: "LinkedIn & Career Session",
-    t_des: "Graphic / Video / Design",
-    t_opp: "Job Opportunity / Partnership",
-    f_msg: "Message / Details *",
+    f_name: "Full Name *",
+    f_phone: "Phone Number *",
+    f_email: "Email Address *",
+    f_msg: "Message *",
     f_send: "Send Message",
     footer_rights: "© 2026 Ahmed Abdelhamed. All Rights Reserved."
   }
@@ -267,26 +220,11 @@ langToggle.addEventListener("click", () => {
 });
 
 // =====================================================
-// Mobile Menu & Portfolio Filter
+// Mobile Menu Toggle
 // =====================================================
 const mobileMenuBtn = document.getElementById("mobileMenuBtn");
 const mobileMenu = document.getElementById("mobileMenu");
 mobileMenuBtn.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
-
-const filterChips = document.querySelectorAll(".filter-chip");
-const workCards = document.querySelectorAll(".work-card");
-
-filterChips.forEach((chip) => {
-  chip.addEventListener("click", () => {
-    filterChips.forEach((c) => c.classList.remove("active-chip"));
-    chip.classList.add("active-chip");
-
-    const cat = chip.getAttribute("data-filter");
-    workCards.forEach((card) => {
-      card.style.display = (cat === "all" || card.getAttribute("data-cat") === cat) ? "flex" : "none";
-    });
-  });
-});
 
 // =====================================================
 // Form Submission -> api/contact.php
@@ -298,17 +236,11 @@ const statusBox = document.getElementById("statusBox");
 contactForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const name = document.getElementById("name").value.trim();
-  const phone = document.getElementById("phone").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const topic = document.getElementById("topic").value;
-  const rawMessage = document.getElementById("message").value.trim();
-
   const payload = {
-    name,
-    email,
-    phone,
-    message: `[Topic: ${topic}]\n\n${rawMessage}`
+    name: document.getElementById("name").value.trim(),
+    email: document.getElementById("email").value.trim(),
+    phone: document.getElementById("phone").value.trim(),
+    message: document.getElementById("message").value.trim()
   };
 
   submitBtn.disabled = true;
@@ -335,7 +267,7 @@ contactForm.addEventListener("submit", async (e) => {
       statusBox.classList.add("bg-emerald-500/15", "text-emerald-400", "border", "border-emerald-500/30");
       contactForm.reset();
     } else {
-      throw new Error(data.error || "Request failed");
+      throw new Error(data.error || "Unable to send message");
     }
   } catch (err) {
     statusBox.textContent = currentLang === "ar"
