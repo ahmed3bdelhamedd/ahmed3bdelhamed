@@ -590,7 +590,7 @@ function closeProjectModal() {
 renderCertificate();
 setInterval(nextCertificate, 4000);
 
-/* ==================== CONTACT FORM (PHP API) ==================== */
+/* ==================== CONTACT FORM (api/contact.php) ==================== */
 (function initContactForm() {
   const form = document.getElementById('contact-form');
   const statusEl = document.getElementById('form-status-msg');
@@ -608,8 +608,8 @@ setInterval(nextCertificate, 4000);
       message: (formData.get('message') || '').toString().trim(),
     };
 
-    if (!payload.name || !payload.email || !payload.message) {
-      statusEl.textContent = 'Please fill in all required fields.';
+    if (!payload.name || !payload.email || !payload.phone || !payload.message) {
+      statusEl.textContent = 'Please complete all required fields.';
       return;
     }
 
@@ -629,14 +629,14 @@ setInterval(nextCertificate, 4000);
       const contentType = res.headers.get('content-type') || '';
       const data = contentType.includes('application/json') ? await res.json() : null;
 
-      if (res.ok && (!data || data.ok !== false)) {
-        statusEl.textContent = (data && data.message) || 'Message sent successfully.';
+      if (res.ok && data && data.ok === true) {
+        statusEl.textContent = data.message || 'Thanks — your message has been sent.';
         form.reset();
       } else {
-        statusEl.textContent = (data && data.message) || 'Failed to send message. Please try again.';
+        statusEl.textContent = (data && data.error) || 'Failed to send message. Please try again.';
       }
     } catch {
-      statusEl.textContent = 'Unable to reach api/contact.php. Make sure your host supports PHP.';
+      statusEl.textContent = 'Network error while sending message.';
     } finally {
       if (submitBtn) submitBtn.disabled = false;
     }
