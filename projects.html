@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects, Skills & Certifications | Ahmed Abdelhamed</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: { surfaceDark: '#06080e', cardDark: '#0d121f', surfaceLight: '#f5f7fb' },
+          fontFamily: { arabic: ['Cairo', 'sans-serif'], english: ['Plus Jakarta Sans', 'sans-serif'] }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-surfaceLight text-slate-900 dark:bg-surfaceDark dark:text-slate-100 font-arabic antialiased selection:bg-emerald-500 selection:text-white">
+
+  <div class="ambient-bg" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <header class="sticky top-0 z-50 border-b border-slate-200/80 dark:border-white/10 bg-white/80 dark:bg-surfaceDark/80 backdrop-blur-2xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <span class="w-11 h-11 rounded-2xl bg-gradient-to-br from-emerald-500 via-teal-500 to-indigo-600 text-white font-black text-xl flex items-center justify-center shadow-lg shadow-emerald-500/20">A</span>
+        <div class="leading-tight">
+          <div class="font-extrabold text-base sm:text-lg" data-i18n="brand_name">أحمد عبد الحميد</div>
+          <div class="text-[11px] text-slate-500 dark:text-slate-400 font-bold">FINANCE • SAP FICO • BI</div>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-bold text-slate-600 dark:text-slate-300">
+        <a href="index.html" class="nav-item" data-i18n="nav_home">الرئيسية</a>
+        <a href="experience.html" class="nav-item" data-i18n="nav_exp">الخبرات والتدريبات</a>
+        <a href="projects.html" class="nav-item active" data-i18n="nav_projects">المشاريع والشهادات</a>
+        <a href="contact.html" class="px-5 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white transition font-extrabold" data-i18n="nav_contact">تواصل معي</a>
+      </nav>
+
+      <div class="flex items-center gap-2.5">
+        <button id="langToggle" type="button" class="px-3.5 py-2 rounded-full border border-slate-300 dark:border-white/15 bg-white/60 dark:bg-white/5 text-xs font-extrabold flex items-center gap-1.5">
+          <i class="fa-solid fa-language text-emerald-400 text-sm"></i>
+          <span id="langLabel">EN</span>
+        </button>
+        <button id="themeToggle" type="button" aria-label="Toggle Theme" class="w-10 h-10 rounded-full border border-slate-300 dark:border-white/15 bg-white/60 dark:bg-white/5 flex items-center justify-center">
+          <i id="themeIcon" class="fa-solid fa-sun text-amber-400"></i>
+        </button>
+        <button id="mobileMenuBtn" type="button" aria-label="Menu" class="lg:hidden w-10 h-10 rounded-full border border-slate-300 dark:border-white/15 flex items-center justify-center">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobileMenu" class="hidden lg:hidden px-4 pb-6 pt-3 space-y-2.5 border-t border-slate-200 dark:border-white/10 bg-white/95 dark:bg-surfaceDark/95">
+      <a href="index.html" class="block py-2 font-bold" data-i18n="nav_home">الرئيسية</a>
+      <a href="experience.html" class="block py-2 font-bold" data-i18n="nav_exp">الخبرات والتدريبات</a>
+      <a href="projects.html" class="block py-2 font-bold text-emerald-400" data-i18n="nav_projects">المشاريع والشهادات</a>
+      <a href="contact.html" class="block py-3 text-center rounded-2xl bg-emerald-600 text-white font-extrabold" data-i18n="nav_contact">تواصل معي</a>
+    </div>
+  </header>
+
+  <main class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+
+      <!-- Projects -->
+      <section>
+        <span class="tag-pill mb-3 inline-block">PROJECTS & PORTFOLIO</span>
+        <h1 class="text-3xl sm:text-5xl font-black mb-8" data-i18n="pr_page_title">المشاريع والمنصات</h1>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="glass-card">
+            <span class="tag-pill mb-3 inline-block">Data & Systems</span>
+            <h2 class="text-lg font-extrabold mb-2">Portfolio Website (ahmedabdelhamed.com)</h2>
+            <p class="text-sm text-slate-600 dark:text-slate-400" data-i18n="pr1_d">تصميم ونشر موقع بورتفوليو لتحليل البيانات ونظم الأعمال يعرض المشاريع والدورات والشهادات.</p>
+          </div>
+
+          <div class="glass-card">
+            <span class="tag-pill mb-3 inline-block">Healthcare System</span>
+            <h2 class="text-lg font-extrabold mb-2">Clinic Data-Entry System (TO-BIM)</h2>
+            <p class="text-sm text-slate-600 dark:text-slate-400" data-i18n="pr2_d">بناء نظام إدخال بيانات لعميل عيادة إلى جانب تصميم واجهات الويب UI/UX.</p>
+          </div>
+
+          <div class="glass-card">
+            <span class="tag-pill mb-3 inline-block">950+ Views</span>
+            <h2 class="text-lg font-extrabold mb-2">Behance Design Portfolio</h2>
+            <p class="text-sm text-slate-600 dark:text-slate-400" data-i18n="pr3_d">أعمال الهوية البصرية والسوشيال ميديا لـ TO-BIM و Three Engineers و KCAU و Gossor و NETPEAS.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section>
+        <h2 class="text-2xl sm:text-3xl font-black mb-6" data-i18n="sk_title">المهارات واللغات</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="glass-card">
+            <h3 class="font-extrabold text-base text-emerald-400 mb-3">Finance & Accounting</h3>
+            <div class="skill-tags">
+              <span>Financial Analysis</span><span>Financial Reporting</span><span>General Ledger</span>
+              <span>Accounts Payable</span><span>Accounts Receivable</span><span>Bank Accounting</span>
+              <span>Fixed Assets</span><span>Withholding Tax</span><span>Audit & Compliance</span>
+            </div>
+          </div>
+          <div class="glass-card">
+            <h3 class="font-extrabold text-base text-indigo-400 mb-3">ERP & Data Tools</h3>
+            <div class="skill-tags">
+              <span>SAP FICO</span><span>Oracle</span><span>Microsoft Power BI</span>
+              <span>Tableau</span><span>SQL</span><span>Microsoft Access</span>
+              <span>Advanced Excel</span><span>Management Accounting</span><span>Data Validation</span>
+            </div>
+          </div>
+          <div class="glass-card">
+            <h3 class="font-extrabold text-base text-violet-400 mb-3">Design & Web</h3>
+            <div class="skill-tags">
+              <span>Web Development</span><span>UI/UX Design</span><span>Graphic Design</span>
+              <span>Motion Graphics</span><span>Visual Identity</span><span>Digital Design</span>
+            </div>
+          </div>
+          <div class="glass-card">
+            <h3 class="font-extrabold text-base text-amber-400 mb-3">Business & Languages</h3>
+            <div class="skill-tags">
+              <span>Leadership</span><span>Team Management</span><span>Process Improvement</span>
+              <span>Arabic (Native)</span><span>Dutch (Prof. Working)</span><span>English (Elementary)</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Certifications & Education -->
+      <section class="glass-card rounded-3xl">
+        <h2 class="text-2xl font-black mb-4" data-i18n="cert_heading">التعليم والشهادات والتكريمات</h2>
+        <p class="text-sm text-slate-600 dark:text-slate-400 mb-5" data-i18n="edu_summary">
+          Future Academy — Business Information Systems (Sep 2023 – Jul 2027 Expected, Very Good) • Harvard University Leadership • Student Union Social Committee Head • Ideal Researcher (2023–2024) & Ideal Volunteer (2021).
+        </p>
+        <div class="flex flex-wrap gap-2.5 text-xs sm:text-sm font-bold">
+          <span class="cert-pill">Excel Management Accounting</span>
+          <span class="cert-pill">Banking Credit Course (Egyptian Banking Institute)</span>
+          <span class="cert-pill">CIB Summer Internship Program 2025</span>
+          <span class="cert-pill">Financial Inclusion & Bank Branch Training</span>
+          <span class="cert-pill">ICDL</span>
+          <span class="cert-pill">IC3 Digital Literacy Certification</span>
+          <span class="cert-pill">ESP Course</span>
+          <span class="cert-pill">Certified Baker: Bread and Rolls (CB)</span>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="py-8 border-t border-slate-200 dark:border-white/10 text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p data-i18n="footer_rights">© 2026 أحمد عبد الحميد. جميع الحقوق محفوظة.</p>
+      <div class="flex items-center gap-5 font-bold">
+        <a href="index.html" class="hover:text-emerald-400" data-i18n="nav_home">الرئيسية</a>
+        <a href="experience.html" class="hover:text-emerald-400" data-i18n="nav_exp">الخبرات والتدريبات</a>
+        <a href="projects.html" class="hover:text-emerald-400" data-i18n="nav_projects">المشاريع والشهادات</a>
+        <a href="contact.html" class="hover:text-emerald-400" data-i18n="nav_contact">تواصل معي</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
