@@ -77,7 +77,7 @@ const translations = {
         "Periodic reports and recommendations to support academic and psychological progress."
       ],
       project1Tech: "Web Application Design, UI/UX Design, User Flow Planning, Database-Oriented Workflow Design, Privacy-Focused Product Design",
-      
+
       project2Title: "Smart Career Hub",
       project2Category: "Career Development Platform",
       project2ShortDesc: "A free Arabic career platform that helps young professionals move from learning to employment through specialized career tracks, expert guidance, LinkedIn support, and job opportunities.",
@@ -518,3 +518,5 @@ const translations = {
     }
   }
 };
+
+window.TRANSLATIONS = translations;
