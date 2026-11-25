@@ -2,41 +2,39 @@ const CONTACT_ENDPOINT = "api/contact.php";
 
 const i18n = {
   ar: {
-    brand_name: "أحمد عبد الحميد",
+    brand: "أحمد عبد الحميد",
     nav_home: "الرئيسية",
-    nav_exp: "الخبرات والتدريبات",
+    nav_exp: "الخبرات",
     nav_projects: "المشاريع والشهادات",
-    nav_contact: "تواصل معي",
-    hero_badge: "محاسب ومحلل مالي • SAP FICO • تحليل البيانات المالية",
-    hero_welcome: "مرحباً بك في موقعي الرسمي، أنا",
-    hero_name: "أحمد عبد الحميد",
-    hero_subtitle: "Financial Analyst | Data Analysis | SAP FICO | Accountant",
-    hero_bio: "طالب نظم معلومات الأعمال ورئيس اللجنة الاجتماعية باتحاد الطلاب، أمتلك خبرة عملية في المحاسبة والتحليل المالي عبر SAP FICO، والتدريب المصرفي، والمراجعة المالية، ومكاتب المحاسبة والضرائب، شاملة حسابات الموردين (AP)، العملاء (AR)، ومحاسبة البنوك. أجمع بين التحليل المالي و Power BI و SQL و Excel مع بناء الأنظمة والمنصات الرقمية لتحقيق أثر مالي وتشغيلي ملموس.",
-    cta_exp: "استعرض الخبرات والتدريبات",
-    cta_contact: "تواصل معي الآن",
-    m1: "خفض تكاليف التشغيل بالمراجعة",
-    m2: "عمليات مالية بـ SAP FICO",
-    m3: "شهراً في تحليل البيانات",
-    card_title: "ملخص الكفاءة المالية",
-    h1_t: "المحاسبة وأنظمة ERP",
-    h1_d: "SAP FICO, Oracle, General Ledger, Accounts Payable, Accounts Receivable, Bank Accounting, Fixed Assets, Withholding Tax & Audit.",
-    h2_t: "تحليل البيانات والتقارير",
-    h2_d: "Microsoft Power BI, Tableau, SQL, Microsoft Access, Advanced Excel, Management Accounting & Data Validation.",
-    h3_t: "التعليم والقيادة",
-    h3_d: "B.Sc. Business Information Systems (Future Academy, Expected Jul 2027) • Harvard Leadership • Student Union Social Committee Head.",
-    card_link: "المشاريع والشهادات →",
-    exp_page_title: "الخبرات المهنية والتدريبات المصرفية",
-    exp_page_sub: "تفاصيل الأدوار العملية والبنكية والمحاسبية والإدارية وفق السيرة الذاتية.",
-    bank_title: "البرامج التدريبية المصرفية والمالية",
-    pr_page_title: "المشاريع والمنصات",
-    pr1_d: "تصميم ونشر موقع بورتفوليو لتحليل البيانات ونظم الأعمال يعرض المشاريع والدورات والشهادات.",
-    pr2_d: "بناء نظام إدخال بيانات لعميل عيادة إلى جانب تصميم واجهات الويب UI/UX.",
-    pr3_d: "أعمال الهوية البصرية والسوشيال ميديا لـ TO-BIM و Three Engineers و KCAU و Gossor و NETPEAS.",
-    sk_title: "المهارات واللغات",
-    cert_heading: "التعليم والشهادات والتكريمات",
-    edu_summary: "Future Academy — Business Information Systems (Sep 2023 – Jul 2027 Expected, Very Good) • Harvard University Leadership • Student Union Social Committee Head • Ideal Researcher (2023–2024) & Ideal Volunteer (2021).",
-    c_title: "تواصل معي مباشرة",
-    c_desc: "للفرص الوظيفية في التحليل المالي والمحاسبة (SAP FICO) أو الاستشارات وأنظمة البيانات، أرسل رسالتك وسيتم إرسالها فوراً.",
+    nav_contact: "تواصل",
+    intro_tag: "محاسب • محلل مالي • SAP FICO",
+    intro_hi: "أهلاً، أنا",
+    intro_name: "أحمد عبد الحميد",
+    intro_role: "Financial Analyst | Data Analysis | SAP FICO | Accountant",
+    intro_bio: "طالب في نظم معلومات الأعمال ورئيس اللجنة الاجتماعية باتحاد الطلاب، أعمل في مجال المحاسبة والتحليل المالي عبر أنظمة SAP FICO، والتدريب المصرفي، والمراجعة المالية، ومكاتب المحاسبة والضرائب—مع خبرة عملية في حسابات الموردين والعملاء ومحاسبة البنوك، والربط بين التحليل المالي وأدوات Power BI و SQL و Excel لتقديم تقارير دقيقة وأثر مالي واضح.",
+    cta_exp: "استعراض الخبرات",
+    cta_contact: "تواصل معي",
+    fig1: "خفض تكاليف التشغيل عبر المراجعة",
+    fig2: "عمليات مالية أساسية على SAP FICO",
+    fig3: "شهراً في إدارة تحليل البيانات",
+    p1_title: "المحاسبة وأنظمة ERP",
+    p1_desc: "SAP FICO, Oracle, General Ledger, Accounts Payable, Accounts Receivable, Bank Accounting, Fixed Assets, Withholding Tax & Audit.",
+    p2_title: "التحليل المالي والبيانات",
+    p2_desc: "Financial Reporting, Microsoft Power BI, Tableau, SQL, Microsoft Access, Advanced Excel, Management Accounting & Data Validation.",
+    p3_title: "نظم الأعمال والمنصات",
+    p3_desc: "BIS student at Future Academy (Expected Jul 2027), data-entry systems, UI/UX & web layouts, and founder roles across education & career hubs.",
+    exp_h1: "الخبرات والتدريبات",
+    exp_sub: "الأدوار المحاسبية والمالية والمصرفية والريادية حسب السيرة الذاتية.",
+    tr_h2: "البرامج التدريبية والمصرفية",
+    pr_h1: "المشاريع والشهادات",
+    pr_sub: "المشاريع، المهارات، التعليم، والشهادات الواردة في السيرة الذاتية.",
+    pr1: "تصميم ونشر موقع بورتفوليو لتحليل البيانات ونظم الأعمال يعرض المشاريع والدورات والشهادات.",
+    pr2: "بناء نظام إدخال بيانات لعميل عيادة إلى جانب تصميم واجهات الويب UI/UX.",
+    pr3: "أعمال الهوية البصرية والسوشيال ميديا لـ TO-BIM و Three Engineers و KCAU و Gossor و NETPEAS.",
+    edu_cert_h2: "التعليم والشهادات والتكريمات",
+    edu_line: "Future Academy — Business Information Systems (Sep 2023 – Jul 2027 Expected, Very Good) • Harvard University Leadership • Student Union Social Committee Head • Ideal Researcher (2023–2024) & Ideal Volunteer (2021).",
+    c_h1: "تواصل معي",
+    c_sub: "للفرص الوظيفية في التحليل المالي والمحاسبة (SAP FICO) أو الاستشارات والبيانات.",
     lbl_phone: "الهاتف",
     lbl_email: "البريد الإلكتروني",
     f_name: "الاسم *",
@@ -44,44 +42,42 @@ const i18n = {
     f_email: "البريد الإلكتروني *",
     f_msg: "الرسالة *",
     f_send: "إرسال الرسالة",
-    footer_rights: "© 2026 أحمد عبد الحميد. جميع الحقوق محفوظة."
+    footer: "أحمد عبد الحميد — ahmed3bdelhamedwork@gmail.com • 01116512028"
   },
   en: {
-    brand_name: "Ahmed Abdelhamed",
+    brand: "Ahmed Abdelhamed",
     nav_home: "Home",
     nav_exp: "Experience",
     nav_projects: "Projects & Certs",
     nav_contact: "Contact",
-    hero_badge: "Financial Analyst • SAP FICO • Financial Data Analysis",
-    hero_welcome: "Welcome to my official portfolio, I'm",
-    hero_name: "Ahmed Abdelhamed",
-    hero_subtitle: "Financial Analyst | Data Analysis | SAP FICO | Accountant",
-    hero_bio: "Business Information Systems student and Student Union Social Committee Head with hands-on finance experience across SAP FICO, banking, auditing, and accounting internships, including Accounts Payable, Accounts Receivable, and Bank Accounting. Combines financial analysis, Power BI, SQL, and Excel with systems and platforms to deliver measurable impact.",
-    cta_exp: "View Experience & Internships",
-    cta_contact: "Contact Me",
-    m1: "Operating Cost Reduction via Audit",
-    m2: "Core Finance Processes in SAP FICO",
-    m3: "Months Managing Data Analysis",
-    card_title: "Financial & Accounting Snapshot",
-    h1_t: "Accounting & ERP",
-    h1_d: "SAP FICO, Oracle, General Ledger, Accounts Payable, Accounts Receivable, Bank Accounting, Fixed Assets, Withholding Tax & Audit.",
-    h2_t: "Data Analysis & Reporting",
-    h2_d: "Microsoft Power BI, Tableau, SQL, Microsoft Access, Advanced Excel, Management Accounting & Data Validation.",
-    h3_t: "Education & Leadership",
-    h3_d: "B.Sc. Business Information Systems (Future Academy, Expected Jul 2027) • Harvard Leadership • Student Union Social Committee Head.",
-    card_link: "Projects & Certs →",
-    exp_page_title: "Professional Experience & Banking Programs",
-    exp_page_sub: "Complete record across finance, banking, auditing, accounting, and ventures.",
-    bank_title: "Banking, Finance & Training Programs",
-    pr_page_title: "Projects & Platforms",
-    pr1_d: "Designed and published a data analysis and business systems portfolio featuring projects, courses, and certificates.",
-    pr2_d: "Built a clinic data-entry system alongside UI/UX web designs.",
-    pr3_d: "Brand and social media work for TO-BIM, Three Engineers, KCAU logo, Gossor, and NETPEAS.",
-    sk_title: "Skills & Languages",
-    cert_heading: "Education, Certifications & Honors",
-    edu_summary: "Future Academy — Business Information Systems (Sep 2023 – Jul 2027 Expected, Very Good) • Harvard University Leadership • Student Union Social Committee Head • Ideal Researcher (2023–2024) & Ideal Volunteer (2021).",
-    c_title: "Direct Contact",
-    c_desc: "For Financial Analysis, Accounting (SAP FICO), or Data Analysis opportunities and inquiries, send your message directly.",
+    intro_tag: "Accountant • Financial Analyst • SAP FICO",
+    intro_hi: "Hello, I'm",
+    intro_name: "Ahmed Abdelhamed",
+    intro_role: "Financial Analyst | Data Analysis | SAP FICO | Accountant",
+    intro_bio: "Business Information Systems student and Student Union Social Committee Head with hands-on finance experience across SAP FICO, banking, auditing, and accounting internships, including Accounts Payable, Accounts Receivable, and Bank Accounting. Combines financial analysis, Power BI, SQL, and Excel with systems and platforms to deliver measurable impact.",
+    cta_exp: "View Experience",
+    cta_contact: "Get in Touch",
+    fig1: "Operating Cost Reduction via Audit",
+    fig2: "Core Finance Processes in SAP FICO",
+    fig3: "Months Managing Data Analysis",
+    p1_title: "Accounting & ERP",
+    p1_desc: "SAP FICO, Oracle, General Ledger, Accounts Payable, Accounts Receivable, Bank Accounting, Fixed Assets, Withholding Tax & Audit.",
+    p2_title: "Data Analysis & Reporting",
+    p2_desc: "Financial Reporting, Microsoft Power BI, Tableau, SQL, Microsoft Access, Advanced Excel, Management Accounting & Data Validation.",
+    p3_title: "Business Systems & Ventures",
+    p3_desc: "BIS student at Future Academy (Expected Jul 2027), data-entry systems, UI/UX & web layouts, and founder roles across education & career hubs.",
+    exp_h1: "Experience & Internships",
+    exp_sub: "Accounting, finance, banking, auditing, and venture roles from the CV.",
+    tr_h2: "Banking & Training Programs",
+    pr_h1: "Projects & Certifications",
+    pr_sub: "Projects, skills, education, and certifications from the CV.",
+    pr1: "Designed and published a data analysis and business systems portfolio featuring projects, courses, and certificates.",
+    pr2: "Built a clinic data-entry system alongside UI/UX web designs.",
+    pr3: "Brand and social media work for TO-BIM, Three Engineers, KCAU logo, Gossor, and NETPEAS.",
+    edu_cert_h2: "Education, Certifications & Honors",
+    edu_line: "Future Academy — Business Information Systems (Sep 2023 – Jul 2027 Expected, Very Good) • Harvard University Leadership • Student Union Social Committee Head • Ideal Researcher (2023–2024) & Ideal Volunteer (2021).",
+    c_h1: "Contact",
+    c_sub: "For Financial Analysis, Accounting (SAP FICO), or Data Analysis inquiries.",
     lbl_phone: "Phone",
     lbl_email: "Email",
     f_name: "Name *",
@@ -89,7 +85,7 @@ const i18n = {
     f_email: "Email *",
     f_msg: "Message *",
     f_send: "Send Message",
-    footer_rights: "© 2026 Ahmed Abdelhamed. All Rights Reserved."
+    footer: "Ahmed Abdelhamed — ahmed3bdelhamedwork@gmail.com • 01116512028"
   }
 };
 
@@ -100,7 +96,7 @@ const themeIcon = document.getElementById("themeIcon");
 function applyTheme(isDark) {
   htmlEl.classList.toggle("dark", isDark);
   if (themeIcon) {
-    themeIcon.className = isDark ? "fa-solid fa-sun text-amber-400" : "fa-solid fa-moon text-slate-700";
+    themeIcon.className = isDark ? "fa-solid fa-sun text-xs text-amber-400" : "fa-solid fa-moon text-xs text-zinc-700";
   }
   localStorage.setItem("portfolio_theme", isDark ? "dark" : "light");
 }
@@ -167,8 +163,8 @@ if (contactForm) {
     };
 
     submitBtn.disabled = true;
-    submitBtn.classList.add("opacity-70");
-    statusBox.className = "hidden p-4 rounded-2xl text-xs sm:text-sm font-bold text-center";
+    submitBtn.classList.add("opacity-60");
+    statusBox.className = "hidden p-3.5 rounded-xl text-xs sm:text-sm font-semibold";
 
     try {
       const res = await fetch(CONTACT_ENDPOINT, {
@@ -184,8 +180,8 @@ if (contactForm) {
 
       if (res.ok && data.ok) {
         statusBox.textContent = currentLang === "ar"
-          ? "تم إرسال رسالتك بنجاح! سأتواصل معك قريباً."
-          : "Your message has been sent successfully!";
+          ? "تم إرسال رسالتك بنجاح."
+          : "Your message has been sent.";
         statusBox.classList.remove("hidden");
         statusBox.classList.add("bg-emerald-500/15", "text-emerald-400", "border", "border-emerald-500/30");
         contactForm.reset();
@@ -200,7 +196,7 @@ if (contactForm) {
       statusBox.classList.add("bg-rose-500/15", "text-rose-400", "border", "border-rose-500/30");
     } finally {
       submitBtn.disabled = false;
-      submitBtn.classList.remove("opacity-70");
+      submitBtn.classList.remove("opacity-60");
     }
   });
 }
