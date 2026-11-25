@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ahmed Abdelhamed | Financial Analyst & Accountant</title>
-  <meta name="description" content="Ahmed Abdelhamed — Financial Analyst, Accountant (SAP FICO), Data Analysis (Power BI, SQL, Excel)." />
+  <title>Ahmed Abdelhamed — Financial Analyst & Accountant</title>
+  <meta name="description" content="Ahmed Abdelhamed — Financial Analyst, Accountant (SAP FICO), and Data Analysis (Power BI, SQL, Excel)." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -17,9 +17,8 @@
       theme: {
         extend: {
           colors: {
-            surfaceDark: '#06080e',
-            cardDark: '#0d121f',
-            surfaceLight: '#f5f7fb'
+            lightBg: '#fafafa',
+            darkBg: '#09090b'
           },
           fontFamily: {
             arabic: ['Cairo', 'sans-serif'],
@@ -31,163 +30,132 @@
   </script>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="bg-surfaceLight text-slate-900 dark:bg-surfaceDark dark:text-slate-100 font-arabic antialiased selection:bg-emerald-500 selection:text-white">
+<body class="bg-lightBg text-zinc-900 dark:bg-darkBg dark:text-zinc-100 font-arabic antialiased selection:bg-emerald-600 selection:text-white">
 
-  <div class="ambient-bg" aria-hidden="true">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="grid-overlay"></div>
-  </div>
-
-  <!-- Shared Header -->
-  <header class="sticky top-0 z-50 border-b border-slate-200/80 dark:border-white/10 bg-white/80 dark:bg-surfaceDark/80 backdrop-blur-2xl">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-3 group">
-        <span class="w-11 h-11 rounded-2xl bg-gradient-to-br from-emerald-500 via-teal-500 to-indigo-600 text-white font-black text-xl flex items-center justify-center shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition">
-          A
-        </span>
-        <div class="leading-tight">
-          <div class="font-extrabold text-base sm:text-lg tracking-tight" data-i18n="brand_name">أحمد عبد الحميد</div>
-          <div class="text-[11px] text-slate-500 dark:text-slate-400 font-bold tracking-wider">FINANCE • SAP FICO • BI</div>
-        </div>
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b border-zinc-200/80 dark:border-zinc-800/80 bg-lightBg/85 dark:bg-darkBg/85 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
+      <a href="index.html" class="font-extrabold text-base sm:text-lg tracking-tight flex items-center gap-2.5">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+        <span data-i18n="brand">أحمد عبد الحميد</span>
       </a>
 
-      <nav class="hidden lg:flex items-center gap-8 text-sm font-bold text-slate-600 dark:text-slate-300">
-        <a href="index.html" class="nav-item active" data-i18n="nav_home">الرئيسية</a>
-        <a href="experience.html" class="nav-item" data-i18n="nav_exp">الخبرات والتدريبات</a>
-        <a href="projects.html" class="nav-item" data-i18n="nav_projects">المشاريع والشهادات</a>
-        <a href="contact.html" class="px-5 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white transition font-extrabold shadow-md shadow-emerald-600/20" data-i18n="nav_contact">تواصل معي</a>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-zinc-600 dark:text-zinc-400">
+        <a href="index.html" class="nav-link active" data-i18n="nav_home">الرئيسية</a>
+        <a href="experience.html" class="nav-link" data-i18n="nav_exp">الخبرات</a>
+        <a href="projects.html" class="nav-link" data-i18n="nav_projects">المشاريع والشهادات</a>
+        <a href="contact.html" class="nav-link" data-i18n="nav_contact">تواصل</a>
       </nav>
 
-      <div class="flex items-center gap-2.5">
-        <button id="langToggle" type="button" class="px-3.5 py-2 rounded-full border border-slate-300 dark:border-white/15 bg-white/60 dark:bg-white/5 hover:border-emerald-500 text-xs font-extrabold flex items-center gap-1.5 transition">
-          <i class="fa-solid fa-language text-emerald-400 text-sm"></i>
+      <div class="flex items-center gap-2">
+        <button id="langToggle" type="button" class="px-3 py-1.5 rounded-lg border border-zinc-300 dark:border-zinc-800 text-xs font-bold hover:border-emerald-500 transition">
           <span id="langLabel">EN</span>
         </button>
-
-        <button id="themeToggle" type="button" aria-label="Toggle Theme" class="w-10 h-10 rounded-full border border-slate-300 dark:border-white/15 bg-white/60 dark:bg-white/5 hover:border-emerald-500 flex items-center justify-center transition">
-          <i id="themeIcon" class="fa-solid fa-sun text-amber-400"></i>
+        <button id="themeToggle" type="button" aria-label="Toggle Theme" class="w-8 h-8 rounded-lg border border-zinc-300 dark:border-zinc-800 flex items-center justify-center hover:border-emerald-500 transition">
+          <i id="themeIcon" class="fa-solid fa-sun text-xs text-amber-400"></i>
         </button>
-
-        <button id="mobileMenuBtn" type="button" aria-label="Menu" class="lg:hidden w-10 h-10 rounded-full border border-slate-300 dark:border-white/15 flex items-center justify-center">
-          <i class="fa-solid fa-bars"></i>
+        <button id="mobileMenuBtn" type="button" aria-label="Menu" class="md:hidden w-8 h-8 rounded-lg border border-zinc-300 dark:border-zinc-800 flex items-center justify-center">
+          <i class="fa-solid fa-bars text-xs"></i>
         </button>
       </div>
     </div>
 
-    <div id="mobileMenu" class="hidden lg:hidden px-4 pb-6 pt-3 space-y-2.5 border-t border-slate-200 dark:border-white/10 bg-white/95 dark:bg-surfaceDark/95 backdrop-blur-xl">
-      <a href="index.html" class="block py-2 font-bold text-emerald-400" data-i18n="nav_home">الرئيسية</a>
-      <a href="experience.html" class="block py-2 font-bold" data-i18n="nav_exp">الخبرات والتدريبات</a>
-      <a href="projects.html" class="block py-2 font-bold" data-i18n="nav_projects">المشاريع والشهادات</a>
-      <a href="contact.html" class="block py-3 text-center rounded-2xl bg-emerald-600 text-white font-extrabold" data-i18n="nav_contact">تواصل معي</a>
+    <div id="mobileMenu" class="hidden md:hidden px-5 py-4 space-y-2.5 border-t border-zinc-200 dark:border-zinc-800 bg-lightBg dark:bg-darkBg text-sm font-semibold">
+      <a href="index.html" class="block py-1 text-emerald-500" data-i18n="nav_home">الرئيسية</a>
+      <a href="experience.html" class="block py-1" data-i18n="nav_exp">الخبرات</a>
+      <a href="projects.html" class="block py-1" data-i18n="nav_projects">المشاريع والشهادات</a>
+      <a href="contact.html" class="block py-1" data-i18n="nav_contact">تواصل</a>
     </div>
   </header>
 
-  <main>
-    <!-- Hero Intro Section -->
-    <section class="relative pt-14 pb-20 lg:pt-24 lg:pb-28">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-12 gap-12 items-center">
+  <main class="max-w-6xl mx-auto px-5 sm:px-8">
 
-          <div class="lg:col-span-7 space-y-6">
-            <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-extrabold tracking-wide">
-              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              <span data-i18n="hero_badge">محاسب ومحلل مالي • SAP FICO • تحليل البيانات المالية</span>
-            </div>
+    <!-- Editorial Intro -->
+    <section class="pt-16 pb-16 sm:pt-24 sm:pb-20 border-b border-zinc-200 dark:border-zinc-800/80">
+      <div class="max-w-3xl space-y-6">
+        <span class="pill-badge" data-i18n="intro_tag">محاسب • محلل مالي • SAP FICO</span>
 
-            <div class="space-y-2">
-              <p class="text-lg sm:text-xl font-bold text-slate-500 dark:text-slate-400" data-i18n="hero_welcome">مرحباً بك في موقعي الرسمي، أنا</p>
-              <h1 class="text-4xl sm:text-6xl xl:text-[4.25rem] font-black leading-[1.12] tracking-tight">
-                <span class="hero-gradient-text" data-i18n="hero_name">أحمد عبد الحميد</span>
-              </h1>
-            </div>
+        <div class="space-y-2">
+          <p class="text-sm sm:text-base font-semibold text-zinc-500 dark:text-zinc-400" data-i18n="intro_hi">أهلاً، أنا</p>
+          <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.12]" data-i18n="intro_name">
+            أحمد عبد الحميد
+          </h1>
+        </div>
 
-            <p class="text-base sm:text-xl font-extrabold text-slate-800 dark:text-slate-200" data-i18n="hero_subtitle">
-              Financial Analyst | Data Analysis | SAP FICO | Accountant
-            </p>
+        <p class="text-lg sm:text-xl font-bold text-zinc-700 dark:text-zinc-200" data-i18n="intro_role">
+          Financial Analyst | Data Analysis | SAP FICO | Accountant
+        </p>
 
-            <p class="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed max-w-2xl" data-i18n="hero_bio">
-              طالب نظم معلومات الأعمال ورئيس اللجنة الاجتماعية باتحاد الطلاب، أمتلك خبرة عملية في المحاسبة والتحليل المالي عبر SAP FICO، والتدريب المصرفي، والمراجعة المالية، ومكاتب المحاسبة والضرائب، شاملة حسابات الموردين (AP)، العملاء (AR)، ومحاسبة البنوك. أجمع بين التحليل المالي و Power BI و SQL و Excel مع بناء الأنظمة والمنصات الرقمية لتحقيق أثر مالي وتشغيلي ملموس.
-            </p>
+        <p class="text-base sm:text-[17px] leading-8 text-zinc-600 dark:text-zinc-400" data-i18n="intro_bio">
+          طالب في نظم معلومات الأعمال ورئيس اللجنة الاجتماعية باتحاد الطلاب، أعمل في مجال المحاسبة والتحليل المالي عبر أنظمة SAP FICO، والتدريب المصرفي، والمراجعة المالية، ومكاتب المحاسبة والضرائب—مع خبرة عملية في حسابات الموردين والعملاء ومحاسبة البنوك، والربط بين التحليل المالي وأدوات Power BI و SQL و Excel لتقديم تقارير دقيقة وأثر مالي واضح.
+        </p>
 
-            <div class="flex flex-wrap gap-4 pt-2">
-              <a href="experience.html" class="px-7 py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold shadow-xl shadow-emerald-600/25 transition flex items-center gap-2.5">
-                <i class="fa-solid fa-briefcase"></i>
-                <span data-i18n="cta_exp">استعرض الخبرات والتدريبات</span>
-              </a>
-              <a href="contact.html" class="px-7 py-4 rounded-2xl border border-slate-300 dark:border-white/15 bg-white/70 dark:bg-white/5 hover:border-emerald-500 font-extrabold transition flex items-center gap-2.5">
-                <i class="fa-solid fa-paper-plane text-emerald-400"></i>
-                <span data-i18n="cta_contact">تواصل معي الآن</span>
-              </a>
-            </div>
+        <div class="flex flex-wrap items-center gap-3 pt-2">
+          <a href="experience.html" class="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-bold transition inline-flex items-center gap-2">
+            <span data-i18n="cta_exp">استعراض الخبرات</span>
+            <i class="fa-solid fa-arrow-left rtl:rotate-0 ltr:rotate-180 text-xs"></i>
+          </a>
+          <a href="contact.html" class="px-5 py-2.5 rounded-xl border border-zinc-300 dark:border-zinc-800 hover:border-emerald-500 text-sm font-bold transition">
+            <span data-i18n="cta_contact">تواصل معي</span>
+          </a>
+        </div>
+      </div>
 
-            <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-200 dark:border-white/10 max-w-xl">
-              <div class="p-4 rounded-2xl bg-white/80 dark:bg-cardDark/85 border border-slate-200/80 dark:border-white/10">
-                <div class="text-2xl sm:text-3xl font-black text-emerald-500">15%</div>
-                <div class="text-xs font-bold text-slate-500 dark:text-slate-400 mt-1" data-i18n="m1">خفض تكاليف التشغيل بالمراجعة</div>
-              </div>
-              <div class="p-4 rounded-2xl bg-white/80 dark:bg-cardDark/85 border border-slate-200/80 dark:border-white/10">
-                <div class="text-2xl sm:text-3xl font-black text-indigo-400">6</div>
-                <div class="text-xs font-bold text-slate-500 dark:text-slate-400 mt-1" data-i18n="m2">عمليات مالية بـ SAP FICO</div>
-              </div>
-              <div class="p-4 rounded-2xl bg-white/80 dark:bg-cardDark/85 border border-slate-200/80 dark:border-white/10">
-                <div class="text-2xl sm:text-3xl font-black text-amber-400">21</div>
-                <div class="text-xs font-bold text-slate-500 dark:text-slate-400 mt-1" data-i18n="m3">شهراً في تحليل البيانات</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="lg:col-span-5">
-            <div class="glass-card rounded-[2rem] p-6 sm:p-8 shadow-2xl">
-              <div class="flex items-center justify-between pb-5 border-b border-slate-200/80 dark:border-white/10">
-                <div>
-                  <span class="text-[11px] font-extrabold uppercase tracking-widest text-emerald-400">ACCOUNTING & FINANCE</span>
-                  <h2 class="text-xl font-black mt-1" data-i18n="card_title">ملخص الكفاءة المالية</h2>
-                </div>
-                <div class="w-12 h-12 rounded-2xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center text-xl">
-                  <i class="fa-solid fa-scale-balanced"></i>
-                </div>
-              </div>
-
-              <div class="divide-y divide-slate-200/70 dark:divide-white/10 my-2">
-                <div class="py-4">
-                  <h3 class="font-extrabold text-sm sm:text-base text-emerald-400" data-i18n="h1_t">المحاسبة وأنظمة ERP</h3>
-                  <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1" data-i18n="h1_d">SAP FICO, Oracle, General Ledger, Accounts Payable, Accounts Receivable, Bank Accounting, Fixed Assets, Withholding Tax & Audit.</p>
-                </div>
-                <div class="py-4">
-                  <h3 class="font-extrabold text-sm sm:text-base text-indigo-400" data-i18n="h2_t">تحليل البيانات والتقارير</h3>
-                  <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1" data-i18n="h2_d">Microsoft Power BI, Tableau, SQL, Microsoft Access, Advanced Excel, Management Accounting & Data Validation.</p>
-                </div>
-                <div class="py-4">
-                  <h3 class="font-extrabold text-sm sm:text-base text-amber-400" data-i18n="h3_t">التعليم والقيادة</h3>
-                  <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1" data-i18n="h3_d">B.Sc. Business Information Systems (Future Academy, Expected Jul 2027) • Harvard Leadership • Student Union Social Committee Head.</p>
-                </div>
-              </div>
-
-              <div class="pt-4 flex items-center justify-between">
-                <div class="flex gap-2">
-                  <a href="https://linkedin.com/in/ahmed3bdelhamed" target="_blank" rel="noopener" class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-white/5 hover:bg-emerald-600 hover:text-white flex items-center justify-center transition"><i class="fa-brands fa-linkedin-in"></i></a>
-                  <a href="https://wa.me/201116512028" target="_blank" rel="noopener" class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-white/5 hover:bg-emerald-600 hover:text-white flex items-center justify-center transition"><i class="fa-brands fa-whatsapp"></i></a>
-                  <a href="mailto:ahmed3bdelhamedwork@gmail.com" class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-white/5 hover:bg-emerald-600 hover:text-white flex items-center justify-center transition"><i class="fa-solid fa-envelope"></i></a>
-                </div>
-                <a href="projects.html" class="text-xs font-extrabold text-emerald-400 hover:underline" data-i18n="card_link">المشاريع والشهادات →</a>
-              </div>
-            </div>
-          </div>
-
+      <!-- Clean Key Figures -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-14">
+        <div class="surface-panel p-5">
+          <div class="text-2xl sm:text-3xl font-extrabold text-emerald-500 tabular-nums">15%</div>
+          <div class="text-xs sm:text-sm font-semibold text-zinc-500 dark:text-zinc-400 mt-1" data-i18n="fig1">خفض تكاليف التشغيل عبر المراجعة</div>
+        </div>
+        <div class="surface-panel p-5">
+          <div class="text-2xl sm:text-3xl font-extrabold text-zinc-900 dark:text-zinc-100 tabular-nums">6</div>
+          <div class="text-xs sm:text-sm font-semibold text-zinc-500 dark:text-zinc-400 mt-1" data-i18n="fig2">عمليات مالية أساسية على SAP FICO</div>
+        </div>
+        <div class="surface-panel p-5">
+          <div class="text-2xl sm:text-3xl font-extrabold text-zinc-900 dark:text-zinc-100 tabular-nums">21</div>
+          <div class="text-xs sm:text-sm font-semibold text-zinc-500 dark:text-zinc-400 mt-1" data-i18n="fig3">شهراً في إدارة تحليل البيانات</div>
         </div>
       </div>
     </section>
+
+    <!-- Focus Pillars -->
+    <section class="py-16 grid md:grid-cols-3 gap-6">
+      <div class="surface-panel p-6 space-y-2.5">
+        <div class="text-xs font-bold uppercase tracking-wider text-emerald-500">01 / ACCOUNTING & ERP</div>
+        <h2 class="text-lg font-bold" data-i18n="p1_title">المحاسبة وأنظمة ERP</h2>
+        <p class="text-sm leading-7 text-zinc-600 dark:text-zinc-400" data-i18n="p1_desc">
+          SAP FICO, Oracle, General Ledger, Accounts Payable, Accounts Receivable, Bank Accounting, Fixed Assets, Withholding Tax & Audit.
+        </p>
+      </div>
+
+      <div class="surface-panel p-6 space-y-2.5">
+        <div class="text-xs font-bold uppercase tracking-wider text-emerald-500">02 / DATA & REPORTING</div>
+        <h2 class="text-lg font-bold" data-i18n="p2_title">التحليل المالي والبيانات</h2>
+        <p class="text-sm leading-7 text-zinc-600 dark:text-zinc-400" data-i18n="p2_desc">
+          Financial Reporting, Microsoft Power BI, Tableau, SQL, Microsoft Access, Advanced Excel, Management Accounting & Data Validation.
+        </p>
+      </div>
+
+      <div class="surface-panel p-6 space-y-2.5">
+        <div class="text-xs font-bold uppercase tracking-wider text-emerald-500">03 / EDUCATION & SYSTEMS</div>
+        <h2 class="text-lg font-bold" data-i18n="p3_title">نظم الأعمال والمنصات</h2>
+        <p class="text-sm leading-7 text-zinc-600 dark:text-zinc-400" data-i18n="p3_desc">
+          BIS student at Future Academy (Expected Jul 2027), data-entry systems, UI/UX & web layouts, and founder roles across education & career hubs.
+        </p>
+      </div>
+    </section>
+
   </main>
 
-  <footer class="py-8 border-t border-slate-200 dark:border-white/10 text-xs text-slate-500">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p data-i18n="footer_rights">© 2026 أحمد عبد الحميد. جميع الحقوق محفوظة.</p>
-      <div class="flex items-center gap-5 font-bold">
-        <a href="index.html" class="hover:text-emerald-400" data-i18n="nav_home">الرئيسية</a>
-        <a href="experience.html" class="hover:text-emerald-400" data-i18n="nav_exp">الخبرات والتدريبات</a>
-        <a href="projects.html" class="hover:text-emerald-400" data-i18n="nav_projects">المشاريع والشهادات</a>
-        <a href="contact.html" class="hover:text-emerald-400" data-i18n="nav_contact">تواصل معي</a>
+  <!-- Footer -->
+  <footer class="border-t border-zinc-200 dark:border-zinc-800/80 py-8 text-xs text-zinc-500">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <span data-i18n="footer">أحمد عبد الحميد — ahmed3bdelhamedwork@gmail.com • 01116512028</span>
+      <div class="flex items-center gap-5 font-semibold">
+        <a href="https://linkedin.com/in/ahmed3bdelhamed" target="_blank" rel="noopener" class="hover:text-emerald-500">LinkedIn</a>
+        <a href="experience.html" class="hover:text-emerald-500" data-i18n="nav_exp">الخبرات</a>
+        <a href="projects.html" class="hover:text-emerald-500" data-i18n="nav_projects">المشاريع والشهادات</a>
+        <a href="contact.html" class="hover:text-emerald-500" data-i18n="nav_contact">تواصل</a>
       </div>
     </div>
   </footer>
